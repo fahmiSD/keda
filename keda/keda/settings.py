@@ -38,6 +38,7 @@ INTERNAL_IPS = [
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
+NPM_BIN_PATH = "C:/Program Files/nodejs/npm.cmd"
 
 # Application definition
 
