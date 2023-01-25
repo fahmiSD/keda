@@ -1,0 +1,60 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="container d-flex justify-content-center">
+  <div class="row">
+    <div class="col-sm-8 card-space">
+      <div class="card" style="width: 25rem">
+        <div class="card text-center">
+          <div class="card-body">
+            <h5 class="card-title">{{ career.career_name }}</h5>
+            <span class="badge bg-primary">{{ career.career_tag_id }}</span>
+            <hr />
+            <p class="card-text text-start">{{ career.description }}</p>
+            {% for message in messages %} {% if message.tags == 'success' %}
+
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+              <strong>{{ message }}</strong>
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {%else %}
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+              <strong>{{ message }}</strong>
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {% endif %} {% endfor %}
+            <form action="" method="POST" enctype="multipart/form-data">
+              {% csrf_token %}
+              <div class="mb-3 mt-3">
+                <label for="name" class="form-label float-start">Nama</label>
+                {{ form.candidate_name }} {{ form.candidate_name.errors }}
+              </div>
+              <div class="mb-3">
+                <label for="name" class="form-label float-start">Posisi yang dilamar</label>
+                <div class="input-group">{{ form.career_tag_id }}{{ form.career_tag_id.errors }}</div>
+              </div>
+              <div class="mb-3">
+                <label for="name" class="form-label float-start">Whatsapp Number</label>
+                <div class="input-group">{{ form.whatsapp_number }}{{ form.whatsapp_number.errors }}</div>
+              </div>
+              <div class="mb-3">
+                <label for="emails" class="form-label float-start">Email</label>
+                {{ form.email }}{{ form.email.errors }}
+              </div>
+              <div class="mb-5">
+                <label for="emails" class="form-label float-start">CV</label>
+                {{ form.cv }}{{ form.cv.errors }}
+                <small id="cvHelp" class="form-text text-muted float-start">Only accept pdf files, less than 2 mb</small>
+              </div>
+              <div class="">
+                <button type="submit" class="btn btn-primary form-control">Join Now</button>
+                <small id="applyBefore" class="form-text fst-italic float-start">Apply before : {{ career.deadline }}</small>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

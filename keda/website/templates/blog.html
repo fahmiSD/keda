@@ -1,0 +1,27 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="container">
+  <div class="col-lg-10" style="float: none; margin: auto">
+    <div class="row justify-content-evenly mt-5">
+      {% for blog in blogs %}
+
+      <div class="col-sm-5">
+        <div class="card" style="">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">{{ blog.blog_header }}</h5>
+              <span class="badge bg-primary">{{ blog.blog_tag }}</span>
+              <hr />
+              <p class="card-text text-start">{{ blog.description|truncatechars:100|safe }}</p>
+            </div>
+            <a href="{% url 'blog_detail' blog.id %}" class="btn btn-primary">Baca selengkapnya</a>
+          </div>
+        </div>
+      </div>
+
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% endblock %}

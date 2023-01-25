@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container d-flex justify-content-center align-items-center mt-5">
+
+    <div class="row">
+
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                  Consultation Page
+                </div>
+                <div class="card-body">
+                  <h3>Consult with Us Now</h3>
+                        {% for message in messages %} {% if message.tags == 'success' %}
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                <strong>{{ message }}</strong>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                            {%else %}
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                <strong>{{ message }}</strong>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        {% endif %} {% endfor %}
+                        
+                        <form action="" method="POST">
+                            {% csrf_token %}
+                            <div class="mb-3 mt-3">
+                                <label for="name" class="form-label">Nama</label>
+                                {{ form.name }}
+                            </div>
+                            <div class="mb-3">
+                                <label for="sector_business" class="form-label">Sektor Usaha Anda</label>
+                                {{ form.business_sector }}
+                            </div>
+                            <div class="mb-3">
+
+                                <label for="phone_number" class="form-label">Nomor HP</label>
+                                <div class="input-group">
+                                    {{ form.phone_number }}
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="emails" class="form-label">Email</label>
+                                {{ form.email }}
+                            </div>
+                            <div class="mb-3">
+                                <label for="question" class="form-label">Pertanyaan Anda</label>
+                                {{ form.question }}
+                            </div>
+                            <button type="submit" class="btn btn-primary float-end">Kirim</button>
+                        </form>
+                </div>
+              </div>
+        </div
+
+</div>
+
+{% endblock %}
