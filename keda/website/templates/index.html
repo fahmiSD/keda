@@ -1,59 +1,161 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} {% load static %} {% block content %}
 
-<nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
-  <div class="container flex flex-wrap items-center justify-between mx-auto">
-    <a href="https://flowbite.com/" class="flex items-center">
-      <img src="https://flowbite.com/docs/images/logo.svg" class="h-6 mr-3 sm:h-9" alt="Flowbite Logo" />
-      <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
-    </a>
-    <button
-      data-collapse-toggle="navbar-default"
-      type="button"
-      class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-      aria-controls="navbar-default"
-      aria-expanded="false"
-    >
-      <span class="sr-only">Open main menu</span>
-      <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-        <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
-      </svg>
-    </button>
-    <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-      <ul class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-        <li>
-          <a href="#" class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-red-700 md:p-0 dark:text-white" aria-current="page">Home</a>
-        </li>
-        <li>
-          <a
-            href="#"
-            class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-            >About</a
-          >
-        </li>
-        <li>
-          <a
-            href="#"
-            class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-            >Services</a
-          >
-        </li>
-        <li>
-          <a
-            href="#"
-            class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-            >Pricing</a
-          >
-        </li>
-        <li>
-          <a
-            href="#"
-            class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-            >Contact</a
-          >
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+<div>
+   {% comment %} banner  {% endcomment %}
+        <div class="bg-[url('{% static 'image/public/BackgroundHomeDark.svg' %})'] h-[646px]">
+          <div class="col-span-3 container px-20 pt-32">
+              <img src="{% static "image/public/logoHomePage.svg" %}" alt="logo" class="mb-6" width={448} height={254}/>
+              <p class="text-white text-3xl font-semibold mb-14">Your Digital Transformation Partner</p>
+              <button class="px-12 py-4 border text-2xl font-bold bg-[#d20008] border-[#d20008] text-white rounded  hover:bg-[#b3020f] hover:border-[#d20008] transition duration-300">Book a chat</button>
+            </div>
+        </div>
+    {% comment %} quote {% endcomment %}
+        <div class="bg-[url('/BackgroundHomeLight.svg')] h-[763px] shadow-black">
+          <div class="container px-28 pt-64">
+            <p class="text-4xl font-bold leading-normal italic">"Diawali dengan perkumpulan programmer yang ahli dari Amerika, <span class="text-[#d20008]">KeDA Tech</span> berkomitmen untuk membantu revolusi bisnis Anda dan mempersiapkan teknologi yang pas untuk Anda menghadapi tantangan bisnis di era digital"</p>
+          </div>
+        </div>
+    {% comment %} prosess  {% endcomment %}
+        <div class="bg-white  ">
+          <div class="container px-10 py-14">
+            <div class="grid grid-cols-2 gap-14">
+              <div class="col-span-1"><img src="{% static "image/public/prosesHomePage.svg" %}" alt="" width={607} height={582}/></div>
+              <div class="mt-36 pl-5 col-span-1">
+                <p class="text-3xl font-semibold mb-7">Proses yang Kami Lakukan</p>
+                <p class="text-4xl font-bold mb-5">Kami mandengar dan paham kebutuhan bisnis Anda</p>
+                <button class="px-24 py-2 border text-lg font-bold bg-[#d20008] border-[#d20008] text-white rounded hover:bg-[#b3020f] hover:border-[#d20008] transition duration-300">Detail</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    {% comment %} solution  {% endcomment %}
+        <div class="bg-white  ">
+          <div class="py-14">
+            <h1 class="text-center text-6xl font-bold mb-14">Solusi yang Kami Berikan</h1>
+            <div class="flex items-center px-28 py-8 hover:bg-[#f3f3f3] active:bg-[#d20008] transition duration-300 cursor-pointer">
+              <img src="{% static "image/public/solusi.svg" %}" alt="" />
+              <div class="ml-6">
+                <h2 class="font-bold text-2xl mb-4">Pengembangan Website</h2>
+                <p>User Interface yang baik dan tepat bisa meningkatkan conversion rates website sampai 200%. Jadi sudah seharusnya website bisnis Anda menjadi efektif dengan desain yang menarik, fitur yang lengkap dan mudah diatur.</p>
+              </div>
+            </div>
+            <div class="flex items-center px-28 py-8 hover:bg-[#f3f3f3] active:bg-[#d20008] transition duration-300 cursor-pointer">
+              <img src="{% static "image/public/solusi.svg" %}" alt="" />
+              <div class="ml-6">
+                <h2 class="font-bold text-2xl mb-4">Pengembangan Website</h2>
+                <p>User Interface yang baik dan tepat bisa meningkatkan conversion rates website sampai 200%. Jadi sudah seharusnya website bisnis Anda menjadi efektif dengan desain yang menarik, fitur yang lengkap dan mudah diatur.</p>
+              </div>
+            </div>
+            <div class="flex items-center px-28 py-8 hover:bg-[#f3f3f3] active:bg-[#d20008] transition duration-300 cursor-pointer">
+              <img src="{% static "image/public/solusi.svg" %}" alt="" />
+              <div class="ml-6">
+                <h2 class="font-bold text-2xl mb-4">Pengembangan Website</h2>
+                <p>User Interface yang baik dan tepat bisa meningkatkan conversion rates website sampai 200%. Jadi sudah seharusnya website bisnis Anda menjadi efektif dengan desain yang menarik, fitur yang lengkap dan mudah diatur.</p>
+              </div>
+            </div>
+            <div class="flex items-center px-28 py-8 hover:bg-[#f3f3f3] active:bg-[#d20008] transition duration-300 cursor-pointer">
+              <img src="{% static "image/public/solusi.svg" %}" alt="" />
+              <div class="ml-6">
+                <h2 class="font-bold text-2xl mb-4">Pengembangan Website</h2>
+                <p>User Interface yang baik dan tepat bisa meningkatkan conversion rates website sampai 200%. Jadi sudah seharusnya website bisnis Anda menjadi efektif dengan desain yang menarik, fitur yang lengkap dan mudah diatur.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    {% comment %} Our Project {% endcomment %}
+        <div class="bg-white  ">
+          <div class="container px-20 py-14">
+            <h1 class="text-center text-6xl font-bold mb-14">Proyek Kami</h1>
+            <div class="grid grid-cols-3">
+              <div class="block max-w-xs py-5 bg-white shadow-gray-500 shadow-md hover:shadow-2xl hover:shadow-black transition duration-300 cursor-pointer">
+                <div>
+                  <p class="px-6 text-xl font-semibold mb-5">Pengembangan Website</p>
+                </div>
+                <div class="mb-5">
+                  <img src="{% static "image/public/proyek.svg" %}" alt="" />
+                </div>
+                <div class="px-7">
+                  <h3 class="text-3xl font-bold mb-3">Container Loader</h3>
+                  <p>Sebuah software simulasi yang mampu menghitung secara optimal tentang konfigurasi barang yang masuk dalam kargo atau kontainer.</p>
+                </div>
+              </div>
+              <div class="block max-w-xs py-5 bg-white shadow-gray-500 shadow-md hover:shadow-2xl hover:shadow-black transition duration-300 cursor-pointer">
+                <div>
+                  <p class="px-6 text-xl font-semibold mb-5">Pengembangan Website</p>
+                </div>
+                <div class="mb-5">
+                  <img src="{% static "image/public/proyek.svg" %}" alt="" />
+                </div>
+                <div class="px-7">
+                  <h3 class="text-3xl font-bold mb-3">Container Loader</h3>
+                  <p>Sebuah software simulasi yang mampu menghitung secara optimal tentang konfigurasi barang yang masuk dalam kargo atau kontainer.</p>
+                </div>
+              </div>
+              <div class="block max-w-xs py-5 bg-white shadow-gray-500 shadow-md hover:shadow-2xl hover:shadow-black transition duration-300 cursor-pointer">
+                <div>
+                  <p class="px-6 text-xl font-semibold mb-5">Pengembangan Website</p>
+                </div>
+                <div class="mb-5">
+                  <img src="{% static "image/public/proyek.svg" %}" alt="" />
+                </div>
+                <div class="px-7">
+                  <h3 class="text-3xl font-bold mb-3">Container Loader</h3>
+                  <p>Sebuah software simulasi yang mampu menghitung secara optimal tentang konfigurasi barang yang masuk dalam kargo atau kontainer.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    {% comment %} Digital Transformaton  {% endcomment %}
+        <div class="bg-[url('/backgroundDigitalTransformationGreen.svg')] h-[283px]">
+          <div class="container px-20 py-16">
+            <img src="{% static "image/public/YourDigitalTransfoemationPartner.svg" %}" alt="" />
+            <button class="ml-6 mt-6 px-7 py-5 border bg-[#d20008] text-xl text-white rounded-sm hover:bg-[#b3020f] font-medium transition duration-300">Book a chat</button>
+          </div>
+        </div>
+    {% comment %} Footer {% endcomment %}
+        <div class="bg-black  ">
+          <div class="container px-20 pt-12 pb-5">
+            <div class="flex justify-between ite">
+              <div>
+                <img src="{% static "image/public/logo2.svg" %}" alt="logo" class="mb-5"/>
+                <p class="text-white">Komplek Green Ville, Jalan Ratu</p>
+                <p class="text-white">Kemuning Blok BL No. 1,</p>
+                <p class="text-white">RT08/RW14, DKI Jakarta</p>
+                <p class="text-white">+(62-81) 398-716-212</p>
+              </div>
+              <div class="grid grid-cols-2 gap-24 pt-5">
+                <div class="grid gap-3">
+                  <h1 class="text-white text-2xl font-bold">Quick Links</h1>
+                  <p class="text-white">Home</p>
+                  <p class="text-white">About</p>
+                  <p class="text-white">Services</p>
+                  <p class="text-white">Process</p>
+                  <p class="text-white">Projects</p>
+                </div>
+                <div class="grid gap-3">
+                  <h1 class="text-white text-2xl font-bold">Find Us On</h1>
+                  <p class="text-white">Facebook</p>
+                  <p class="text-white">Instagram</p>
+                  <p class="text-white">Facebook</p>
+                  <p class="text-white">Linkedin</p>
+                </div>
+              </div>
+            </div>
+              <p class="text-white text-center mt-7">Copyright © 2022 KeDA Tech. All Rights Reserved.</p>
+          </div>
+        </div>
+   {% comment %} after footer {% endcomment %}
+        <div class="bg-[url('/bgAfterFooterGreen.svg')] h-[720px] shadow-black">
+          <div class="container px-64 pt-72">
+            <h1 class="text-5xl font-bold mb-4">Tetap Terhubung Bersama Kami</h1>
+            <p class="text-2xl pr-20 mb-4">Sign up for the lat­est up­dates to our Way of Working, case stud­ies, and more.</p>
+            <div>
+              <input type="email" placeholder="Email Anda di sini" class="w-80 py-1 rounded border-gray-300 shadow-sm focus:ring-[#d20008] focus:border-gray-200 transition duration-300"/>
+              <button class="px-3 py-1 border bg-[#d20008] text-white text-md ml-3 font-bold rounded hover:bg-[#b3020f] hover:border-[#d20008] transition duration-300">Berlangganan</button>
+            </div>
+          </div>
+        </div>
+</div>
 
 {% endblock content %}
