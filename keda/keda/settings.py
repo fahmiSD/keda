@@ -32,6 +32,10 @@ ALLOWED_HOSTS = [
 
 ]
 
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
+
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 
@@ -49,7 +53,12 @@ INSTALLED_APPS = [
     'phonenumber_field',
     'ckeditor', 
     'ckeditor_uploader',
+    'tailwind',
+    'theme',
+    'django_browser_reload'
 ]
+
+TAILWIND_APP_NAME = 'theme'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -59,6 +68,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "django_browser_reload.middleware.BrowserReloadMiddleware",
 ]
 
 ROOT_URLCONF = 'keda.urls'
@@ -66,7 +76,7 @@ ROOT_URLCONF = 'keda.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': ['theme/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -128,10 +138,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/dev/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = 'theme/static/'
 
 STATICFILES_DIRS = [
-    BASE_DIR / 'static',
+    BASE_DIR / 'theme/static/',
 ] 
 
 
@@ -155,12 +165,12 @@ JAZZMIN_SETTINGS = {
     # Title on the brand (19 chars max) (defaults to current_admin_site.site_header if absent or None)
     "site_brand": "Keda Admin",
 
-    "site_logo": "logo/keda.png",
+    "site_logo": "image/logo/keda.png",
 
     # Logo to use for your site, must be present in static files, used for login form logo (defaults to site_logo)
-    "login_logo": "logo/keda_text.png",
+    "login_logo": "image/logo/keda_text.png",
 
-    "site_icon": "logo/keda.png",
+    "site_icon": "image/logo/keda.png",
 
     "welcome_sign": "Welcome to the Keda Tech Admin Page",
     "site_logo_classes": "img-circle",

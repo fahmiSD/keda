@@ -33,6 +33,8 @@ urlpatterns = [
     path('blog/<int:id_blog>', blog_detail, name="blog_detail"),
     path('team/', team, name="team"),
     re_path(r'^ckeditor/', include('ckeditor_uploader.urls')),
+    path("__reload__/", include("django_browser_reload.urls")),
+
 ]
 
 if settings.DEBUG:
