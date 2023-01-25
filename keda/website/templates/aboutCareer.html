@@ -1,0 +1,174 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+    <div>
+    {% comment %} Banner Careers  {% endcomment %}
+        <div class="bg-white h-[641px] px-10 py-10">
+            <div class="grid grid-cols-5 py-28 px-10">
+                <img src="{% static "image/public/imgCareer.svg" %}" alt="" class="w-[409px] col-span-2"/>
+                <div class="col-span-3 mt-12 pl-8">
+                    <h1 class="text-5xl font-bold mb-5">Careers</h1>
+                    <p class="mb-5">Kami adalah sekumpulan programmer, designers, dan project manager yang tersebar di seluruh penjuru Indonesia. 
+                    <br/><br/>Karena kami tahu di KeDA Tech, Anda bisa beekerja dari mana saja dan yang dapat kami pastikan adalah kesungguhan hati kami dalam memberikan teknologi yang tepat untuk bisnis para client. </p>
+                </div>
+            </div>
+        </div>
+    {% comment %} ICON ICON {% endcomment %}
+        <div class="bg-[fbfbfb] h-[562px] py-28">
+            <div class="grid grid-cols-4 px-24 mb-5">
+                <img src="{% static "image/public/iconCareer1.svg" %}" alt="" class="pl-10 pt-3"/>
+                <img src="{% static "image/public/iconCareer2.svg" %}" alt="" class="pl-16 pt-3"/>
+                <img src="{% static "image/public/iconCareer3.svg" %}" alt="" class="pl-10 pt-3"/>
+                <img src="{% static "image/public/iconCareer4.svg" %}" alt="" class="pl-20"/>
+            </div>
+            <div class="">
+                <p class="text-center text-4xl font-bold italic px-24 leading-normal">Dengan tim yang berisi anak muda, KeDA Tech penuh dengan 
+                kretivitas dan inovasi untuk kemajuan bersama. </p>
+            </div>
+        </div>
+    {% comment %} Benefit {% endcomment %}
+        <div>
+            <div class="bg-white flex items-center justify-end pb-8 pt-12 px-10">
+                <p class="pr-4 text-2xl font-bold">1/6</p>
+                <img src="{% static "image/public/iconDetailTechnologies.svg" %}" alt="" />
+            </div>
+            <div class="bg-white grid grid-cols-2 py-14">
+                <div class="py-20 pl-12">
+                    <h1 class="text-5xl font-bold mb-5">work from anywhere</h1>
+                    <p class="pr-10 leading-normal text-2xl">Anda bisa bekerja dari mana saja asal tetap terhubung dengan kami.</p>
+                </div>
+                <div class="pl-24">
+                    <img src="{% static "image/public/workFromAnywhere.svg" %}" alt="" class="w-[490px]"/>
+                </div>
+            </div>
+        </div>
+    {% comment %} Question Hiring Process {% endcomment %}
+        <div class="bg-[#f8f8f8] py-28">
+          <div>
+            <h1 class="text-center text-5xl font-bold">So what’s the hir­ing process like?</h1>
+          </div>
+        </div>
+    {% comment %} Process Overview {% endcomment %}
+        <div class="bg-white">
+            <div class="py-10 px-24">
+                <h1 class="text-5xl font-bold">It could look some­thing like this</h1>
+            </div>
+            <div class="flex justify-center py-14">
+                <img src="{% static "image/public/hiringProcess.svg" %}" alt="" class="w-[904px]"/>
+            </div>
+        </div>
+    {% comment %} Open Roles {% endcomment %}
+        <div class="bg-[white] py-28 px-16">
+            <div class="mb-14 ">
+                <h1 class="text-5xl font-bold">Open Roles</h1>
+            </div>
+            <div class=" grid grid-cols-2 place-content-between pb-16">
+                <Input type="search" placeholder="⌕ Search" class="w-[559px] py-2 rounded-sm border-gray-300 shadow-sm focus:ring-[#d20008] focus:border-gray-200 transition duration-300"/>
+                <div class="grid grid-cols-4 pl-10 items-center gap-4">
+                    <div class="flex bg-[#d20008] justify-center items-center py-2 rounded-lg gap-3">
+                        <p class="text-white">Programmer</p>
+                        <p class="text-white">x</p>
+                    </div>
+                    <div class="flex bg-[#d20008] justify-center items-center py-2 rounded-lg gap-3">
+                        <p class="text-white">Programmer</p>
+                        <p class="text-white">x</p>
+                    </div>
+                    <div class="flex bg-[#d20008] justify-center items-center py-2 rounded-lg gap-3">
+                        <p class="text-white">Programmer</p>
+                        <p class="text-white">x</p>
+                    </div>
+                    <div class="flex bg-[#d20008] justify-center items-center py-2 rounded-lg gap-3">
+                        <p class="text-white">Programmer</p>
+                        <p class="text-white">x</p>
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-10">
+              <Card class="p-8 block w-full py-5 rounded-xl bg-white shadow-md">
+                <div>
+                  <div class="flex justify-between mb-3">
+                    <h1 class="text-2xl font-bold">Senior Backend Engineer</h1>
+                    <img src="3dot.svg" alt="" />
+                  </div>
+                  <p class="bg-[#022889] w-[132px] py-1 text-center rounded-full text-white mb-3">Programmer</p>
+                  <p class="text-lg">simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s </p>
+                  <p class="text-lg font-semibold">Apply Before 30 July 2022</p>
+                  <Button class="mt-5 py-2 w-full border bg-[#d20008] text-white rounded-md hover:bg-[#b3020f] font-medium transition duration-300" onClick={() => router.push("/detail-career")}>Apply Now </Button>
+               </div>
+              </Card>
+              <Card class="p-8 block w-full py-5 rounded-xl bg-white shadow-md">
+                <div>
+                  <div class="flex justify-between mb-3">
+                    <h1 class="text-2xl font-bold">Senior Backend Engineer</h1>
+                    <img src="3dot.svg" alt="" />
+                  </div>
+                  <p class="bg-[#022889] w-[132px] py-1 text-center rounded-full text-white mb-3">Programmer</p>
+                  <p class="text-lg">simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s </p>
+                  <p class="text-lg font-semibold">Apply Before 30 July 2022</p>
+                  <Button class="mt-5 py-2 w-full border bg-[#d20008] text-white rounded-md hover:bg-[#b3020f] font-medium transition duration-300">Apply Now </Button>
+               </div>
+              </Card>
+              <Card class="p-8 block w-full py-5 rounded-xl bg-white shadow-md">
+                <div>
+                  <div class="flex justify-between mb-3">
+                    <h1 class="text-2xl font-bold">Senior Backend Engineer</h1>
+                    <img src="3dot.svg" alt="" />
+                  </div>
+                  <p class="bg-[#022889] w-[132px] py-1 text-center rounded-full text-white mb-3">Programmer</p>
+                  <p class="text-lg">simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s </p>
+                  <p class="text-lg font-semibold">Apply Before 30 July 2022</p>
+                  <Button class="mt-5 py-2 w-full border bg-[#d20008] text-white rounded-md hover:bg-[#b3020f] font-medium transition duration-300">Apply Now </Button>
+               </div>
+              </Card>
+            </div>
+        </div>
+    {% comment %} Digital Transformation {% endcomment %}
+        <div style="background-image: url('{% static "image/public/backgroundDigitalTransformationTosca.svg" %}')" class="h-[283px]">
+          <div class="container px-20 py-16">
+            <img src="/YourDigitalTransfoemationPartner.svg" alt="" />
+            <Button class="ml-6 mt-6 px-7 py-5 border bg-[#d20008] text-xl text-white rounded-sm hover:bg-[#b3020f] font-medium transition duration-300">Book a chat</Button>
+          </div>
+        </div>
+    {% comment %} Footer {% endcomment %}
+        <div class="bg-black  ">
+          <div class="container px-20 pt-12 pb-5">
+            <div class="flex justify-between">
+              <div>
+                <img src="/logo2.svg" alt="logo" class="mb-5"/>
+                <p class="text-white">Komplek Green Ville, Jalan Ratu</p>
+                <p class="text-white">Kemuning Blok BL No. 1,</p>
+                <p class="text-white">RT08/RW14, DKI Jakarta</p>
+                <p class="text-white">+(62-81) 398-716-212</p>
+              </div>
+              <div class="grid grid-cols-2 gap-24 pt-5">
+                <div class="grid gap-3">
+                  <h1 class="text-white text-2xl font-bold">Quick Links</h1>
+                  <p class="text-white">Home</p>
+                  <p class="text-white">About</p>
+                  <p class="text-white">Services</p>
+                  <p class="text-white">Process</p>
+                  <p class="text-white">Projects</p>
+                </div>
+                <div class="grid gap-3">
+                  <h1 class="text-white text-2xl font-bold">Find Us On</h1>
+                  <p class="text-white">Facebook</p>
+                  <p class="text-white">Instagram</p>
+                  <p class="text-white">Facebook</p>
+                  <p class="text-white">Linkedin</p>
+                </div>
+              </div>
+            </div>
+              <p class="text-white text-center mt-7">Copyright © 2022 KeDA Tech. All Rights Reserved.</p>
+          </div>
+        </div>
+    {% comment %} After Footer {% endcomment %}
+        <div style="background-image: url('{% static "image/public/bgAfterFooterTosca.svg" %}')" class="h-[720px] shadow-black">
+          <div class="container px-64 pt-72">
+            <h1 class="text-5xl font-bold mb-4">Tetap Terhubung Bersama Kami</h1>
+            <p class="text-2xl pr-20 mb-4">Sign up for the lat­est up­dates to our Way of Working, case stud­ies, and more.</p>
+            <div>
+              <input type="email" placeholder="Email Anda di sini" class="w-80 py-1 rounded border-gray-300 shadow-sm focus:ring-[#d20008] focus:border-gray-200 transition duration-300"/>
+              <Button class="px-3 py-1 border bg-[#d20008] text-white text-md ml-3 font-bold rounded hover:bg-[#b3020f] hover:border-[#d20008] transition duration-300">Berlangganan</Button>
+            </div>
+          </div>
+        </div>
+    </div>
+{% endblock content %}

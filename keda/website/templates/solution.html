@@ -1,0 +1,105 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+    <div>
+    {% comment %} banner  {% endcomment %}
+        <div style="background-image: url('{% static "image/public/bannerSolution.svg" %}')" class="h-[329px]">
+        </div>
+    {% comment %} solution {% endcomment %}
+        <div class="bg-white h-[312px] ">
+            <div class="px-20 py-16">
+                <h1 class="text-8xl font-bold mb-7">Solutions</h1>
+                <p class="text-2xl pl-12 ">Beberapa solusi yang kami sediakan spesial untuk kemajuan bisnis Anda.</p>
+            </div>
+        </div>
+      {% comment %} web developing {% endcomment %}
+        <div class="bg-[#fbfbfb] h-[720px] flex justify-around items-center px-16 gap-24">
+            <img src="{% static "image/public/webDeveloping.svg" %}" alt="" class="w-[492px]"/>
+            <div class="">
+                <h1 class="text-5xl font-bold mb-5">Web Developing</h1>
+                <p class="leading-loose">User Interface yang baik dan tepat bisa meningkatkan conversion rates website sampai 200%. Jadi sudah seharusnya website bisnis Anda menjadi efektif dengan desain yang menarik, fitur yang lengkap dan mudah diatur. Kami bisa kerjakan semuanya sesuai kebutuhan dan keinginan Anda. 
+                <br/><br/>
+                Mulai dari pembuatan website corporate, e-commerce, microsite, landing page sampai custom dengan design profesional dan kaya fitur.</p>
+            </div>
+        </div>
+      {% comment %} mobile apps {% endcomment %}
+        <div class="bg-[#fbfbfb] h-[720px] flex justify-around items-center px-16 gap-24">
+            <div class="">
+                <h1 class="text-5xl font-bold mb-5">Mobile apps</h1>
+                <p class="leading-loose">70% pelaku belanja online yang meninggalkan keranjangnya akibat pengalaman pengguna yang buruk dalam mengakses aplikasi. Jangan sampai hal ini terjadi pada bisnis digital Anda. Mulai lah bersama kami, 
+                <br/><br/>
+                karena selain menekankan pada kemudahan pengguna dalam mengakses aplikasi bisnis Anda, kami juga akan memberikan perhatian lebih pada bagian desain yang menarik dan menyenangkan untuk pengguna.</p>
+            </div>
+            <img src="{% static "image/public/mobileApps.svg" %}" alt="" class="w-[492px]"/>
+        </div>
+       {% comment %} game developing {% endcomment %}
+        <div class="bg-[#fbfbfb] h-[720px] flex justify-around items-center px-16 gap-24">
+            <img src="{% static "image/public/gameDeveloping.svg" %}" alt="" class="w-[492px]"/>
+            <div class="">
+                <h1 class="text-5xl font-bold mb-5">game developing</h1>
+                <p class="leading-loose">Suatu game ternyata bisa menjadi media iklan yang menarik juga berbeda untuk bisnis Anda. Jangan khawatir tentang bagaimana kami akan membuatnya tampak menarik. Karena kami akan mendiskusikannya dahulu idenya dengan Anda. 
+                <br/><br/>
+                Dimulai dari perencanaan game apa yang sesuai dengan bisnis Anda, desain, sampai produksinya yang akan dilakukan untuk  video game komputer, game konsol, atau juga mobile devices.</p>
+            </div>
+        </div>
+      {% comment %} enterprise Resource Planning {% endcomment %}
+        <div class="bg-[#fbfbfb] h-[720px] flex justify-around items-center px-16 gap-24">
+            <div class="">
+                <h1 class="text-5xl font-bold mb-5">Enterprise Resource Planning</h1>
+                <p class="leading-loose">Data mengenai Enterprise Resource Planning atau ERP yang tepat bisa menghemat pengeluaran bisnis Anda sebesar 46% dan meningkatkan proses bisnis sampai 90%. Tentunya hal ini bisa dicapai saat menerapkan fitur apa yang tepat untuk bisnis Anda. 
+                <br/><br/>
+                Kami bekerja sama dengan Odoo ERP, menyiapkan banyak fitur untuk implementasi ERP Anda. Anda bisa mengonsultasikannya dahulu dengan tim kami untuk mendapatkan fitur yang terbaik. </p>
+                <Button class="mt-6 px-7 py-5 border bg-[#d20008] text-xl text-white rounded-sm hover:bg-[#b3020f] font-medium transition duration-300">Book ERP</Button>
+            </div>
+            <img src="{% static "image/public/enterpriseResourcePlanning.svg" %}" alt="" class="w-[492px]"/>
+        </div>
+       {% comment %} digital transformation  {% endcomment %}
+        <div style="background-image: url('{% static "image/public/backgroundDigitalTransformationPurples.svg" %}')" class="h-[283px]">
+          <div class="container px-20 py-16">
+            <img src="{% static "image/public/YourDigitalTransfoemationPartner.svg" %}" alt="" />
+            <Button class="ml-6 mt-6 px-7 py-5 border bg-[#d20008] text-xl text-white rounded-sm hover:bg-[#b3020f] font-medium transition duration-300">Book a chat</Button>
+          </div>
+        </div>
+       {% comment %} footer {% endcomment %}
+        <div class="bg-black  ">
+          <div class="container px-20 pt-12 pb-5">
+            <div class="flex justify-between ite">
+              <div>
+                <img src="{% static "image/public/logo2.svg" %}" alt="logo" class="mb-5"/>
+                <p class="text-white">Komplek Green Ville, Jalan Ratu</p>
+                <p class="text-white">Kemuning Blok BL No. 1,</p>
+                <p class="text-white">RT08/RW14, DKI Jakarta</p>
+                <p class="text-white">+(62-81) 398-716-212</p>
+              </div>
+              <div class="grid grid-cols-2 gap-24 pt-5">
+                <div class="grid gap-3">
+                  <h1 class="text-white text-2xl font-bold">Quick Links</h1>
+                  <p class="text-white">Home</p>
+                  <p class="text-white">About</p>
+                  <p class="text-white">Services</p>
+                  <p class="text-white">Process</p>
+                  <p class="text-white">Projects</p>
+                </div>
+                <div class="grid gap-3">
+                  <h1 class="text-white text-2xl font-bold">Find Us On</h1>
+                  <p class="text-white">Facebook</p>
+                  <p class="text-white">Instagram</p>
+                  <p class="text-white">Facebook</p>
+                  <p class="text-white">Linkedin</p>
+                </div>
+              </div>
+            </div>
+              <p class="text-white text-center mt-7">Copyright © 2022 KeDA Tech. All Rights Reserved.</p>
+          </div>
+        </div>
+       {% comment %} after footer {% endcomment %}
+        <div style="background-image: url('{% static "image/public/bgAfterFooterPurples.svg" %}')" class="h-[720px] shadow-black">
+          <div class="container px-64 pt-72">
+            <h1 class="text-5xl font-bold mb-4">Tetap Terhubung Bersama Kami</h1>
+            <p class="text-2xl pr-20 mb-4">Sign up for the lat­est up­dates to our Way of Working, case stud­ies, and more.</p>
+            <div>
+                <input type="email" placeholder="Email Anda di sini" class="w-80 py-1 rounded border-gray-300 shadow-sm focus:ring-[#d20008] focus:border-gray-200 transition duration-300"/>
+              <Button class="px-3 py-1 border bg-[#d20008] text-white text-md ml-3 font-bold rounded hover:bg-[#b3020f] hover:border-[#d20008] transition duration-300">Berlangganan</Button>
+            </div>
+          </div>
+        </div>
+    </div>
+{% endblock content %}

@@ -6,6 +6,12 @@ from website.forms import *
 def index(request):
     return render(request, 'index.html')
 
+def solution(request):
+    return render(request, 'solution.html')
+
+def aboutCareer(request):
+    return render(request, 'aboutCareer.html')
+
 def blog(request):
     blogs = Blog.objects.all()
     context = {
