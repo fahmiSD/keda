@@ -2,7 +2,7 @@
 
 <div>
    {% comment %} banner  {% endcomment %}
-        <div class="bg-[url('{% static 'image/public/BackgroundHomeDark.svg' %})'] h-[646px]">
+        <div style="background-image: url('{% static "image/public/BackgroundHomeDark.svg" %}')" class="h-[646px]">
           <div class="col-span-3 container px-20 pt-32">
               <img src="{% static "image/public/logoHomePage.svg" %}" alt="logo" class="mb-6" width={448} height={254}/>
               <p class="text-white text-3xl font-semibold mb-14">Your Digital Transformation Partner</p>
@@ -10,7 +10,7 @@
             </div>
         </div>
     {% comment %} quote {% endcomment %}
-        <div class="bg-[url('/BackgroundHomeLight.svg')] h-[763px] shadow-black">
+        <div style="background-image: url('{% static "image/public/BackgroundHomeLight.svg" %}')" class=" h-[763px] shadow-black">
           <div class="container px-28 pt-64">
             <p class="text-4xl font-bold leading-normal italic">"Diawali dengan perkumpulan programmer yang ahli dari Amerika, <span class="text-[#d20008]">KeDA Tech</span> berkomitmen untuk membantu revolusi bisnis Anda dan mempersiapkan teknologi yang pas untuk Anda menghadapi tantangan bisnis di era digital"</p>
           </div>
@@ -107,7 +107,7 @@
           </div>
         </div>
     {% comment %} Digital Transformaton  {% endcomment %}
-        <div class="bg-[url('/backgroundDigitalTransformationGreen.svg')] h-[283px]">
+        <div style="background-image: url('{% static "image/public/backgroundDigitalTransformationGreen.svg" %}')" class="h-[283px]">
           <div class="container px-20 py-16">
             <img src="{% static "image/public/YourDigitalTransfoemationPartner.svg" %}" alt="" />
             <button class="ml-6 mt-6 px-7 py-5 border bg-[#d20008] text-xl text-white rounded-sm hover:bg-[#b3020f] font-medium transition duration-300">Book a chat</button>
@@ -146,7 +146,7 @@
           </div>
         </div>
    {% comment %} after footer {% endcomment %}
-        <div class="bg-[url('/bgAfterFooterGreen.svg')] h-[720px] shadow-black">
+        <div style="background-image: url('{% static "image/public/bgAfterFooterGreen.svg" %}')" class="h-[720px] shadow-black">
           <div class="container px-64 pt-72">
             <h1 class="text-5xl font-bold mb-4">Tetap Terhubung Bersama Kami</h1>
             <p class="text-2xl pr-20 mb-4">Sign up for the lat­est up­dates to our Way of Working, case stud­ies, and more.</p>
