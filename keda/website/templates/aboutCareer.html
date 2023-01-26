@@ -82,48 +82,30 @@
                 </div>
             </div>
             <div class="grid grid-cols-2 gap-10">
+
+              {% for career in careers %}
+
               <Card class="p-8 block w-full py-5 rounded-xl bg-white shadow-md">
                 <div>
                   <div class="flex justify-between mb-3">
-                    <h1 class="text-2xl font-bold">Senior Backend Engineer</h1>
-                    <img src="3dot.svg" alt="" />
+                    <h1 class="text-2xl font-bold">{{ career.career_name }}</h1>
+                    <img src="{% static "image/public/3dot.svg" %}" alt="" />
                   </div>
-                  <p class="bg-[#022889] w-[132px] py-1 text-center rounded-full text-white mb-3">Programmer</p>
-                  <p class="text-lg">simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s </p>
-                  <p class="text-lg font-semibold">Apply Before 30 July 2022</p>
-                  <Button class="mt-5 py-2 w-full border bg-[#d20008] text-white rounded-md hover:bg-[#b3020f] font-medium transition duration-300" onClick={() => router.push("/detail-career")}>Apply Now </Button>
-               </div>
-              </Card>
-              <Card class="p-8 block w-full py-5 rounded-xl bg-white shadow-md">
-                <div>
-                  <div class="flex justify-between mb-3">
-                    <h1 class="text-2xl font-bold">Senior Backend Engineer</h1>
-                    <img src="3dot.svg" alt="" />
-                  </div>
-                  <p class="bg-[#022889] w-[132px] py-1 text-center rounded-full text-white mb-3">Programmer</p>
-                  <p class="text-lg">simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s </p>
-                  <p class="text-lg font-semibold">Apply Before 30 July 2022</p>
+                  <p class="bg-[#022889] w-[132px] py-1 text-center rounded-full text-white mb-3">{{ career.career_tag_id}}</p>
+                  <p class="text-lg">{{ career.description|truncatechars:140 }}</p>
+                  <p class="text-lg font-semibold">Apply before: {{career.deadline}}</p>
                   <Button class="mt-5 py-2 w-full border bg-[#d20008] text-white rounded-md hover:bg-[#b3020f] font-medium transition duration-300">Apply Now </Button>
                </div>
               </Card>
-              <Card class="p-8 block w-full py-5 rounded-xl bg-white shadow-md">
-                <div>
-                  <div class="flex justify-between mb-3">
-                    <h1 class="text-2xl font-bold">Senior Backend Engineer</h1>
-                    <img src="3dot.svg" alt="" />
-                  </div>
-                  <p class="bg-[#022889] w-[132px] py-1 text-center rounded-full text-white mb-3">Programmer</p>
-                  <p class="text-lg">simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s </p>
-                  <p class="text-lg font-semibold">Apply Before 30 July 2022</p>
-                  <Button class="mt-5 py-2 w-full border bg-[#d20008] text-white rounded-md hover:bg-[#b3020f] font-medium transition duration-300">Apply Now </Button>
-               </div>
-              </Card>
+
+              {% endfor %}
+
             </div>
         </div>
     {% comment %} Digital Transformation {% endcomment %}
         <div style="background-image: url('{% static "image/public/backgroundDigitalTransformationTosca.svg" %}')" class="h-[283px]">
           <div class="container px-20 py-16">
-            <img src="/YourDigitalTransfoemationPartner.svg" alt="" />
+            <img src="{% static 'image/public//YourDigitalTransfoemationPartner.svg' %}" alt="" />
             <Button class="ml-6 mt-6 px-7 py-5 border bg-[#d20008] text-xl text-white rounded-sm hover:bg-[#b3020f] font-medium transition duration-300">Book a chat</Button>
           </div>
         </div>
@@ -132,7 +114,7 @@
           <div class="container px-20 pt-12 pb-5">
             <div class="flex justify-between">
               <div>
-                <img src="/logo2.svg" alt="logo" class="mb-5"/>
+                <img src="{% static "image/public/logo2.svg" %}" alt="logo" class="mb-5"/>
                 <p class="text-white">Komplek Green Ville, Jalan Ratu</p>
                 <p class="text-white">Kemuning Blok BL No. 1,</p>
                 <p class="text-white">RT08/RW14, DKI Jakarta</p>
@@ -156,7 +138,7 @@
                 </div>
               </div>
             </div>
-              <p class="text-white text-center mt-7">Copyright © 2022 KeDA Tech. All Rights Reserved.</p>
+              <p class="text-white text-center mt-7">Copyright © <script>document.write(/\d{4}/.exec(Date())[0])</script> KeDA Tech. All Rights Reserved.</p>
           </div>
         </div>
     {% comment %} After Footer {% endcomment %}
@@ -165,9 +147,17 @@
             <h1 class="text-5xl font-bold mb-4">Tetap Terhubung Bersama Kami</h1>
             <p class="text-2xl pr-20 mb-4">Sign up for the lat­est up­dates to our Way of Working, case stud­ies, and more.</p>
             <div>
-              <input type="email" placeholder="Email Anda di sini" class="w-80 py-1 rounded border-gray-300 shadow-sm focus:ring-[#d20008] focus:border-gray-200 transition duration-300"/>
-              <Button class="px-3 py-1 border bg-[#d20008] text-white text-md ml-3 font-bold rounded hover:bg-[#b3020f] hover:border-[#d20008] transition duration-300">Berlangganan</Button>
-            </div>
+              <form action="" method="POST">
+                {% csrf_token %}
+                {{form}}
+                <button type="submit" class="px-3 py-1 border bg-[#d20008] text-white text-md ml-3 font-bold rounded hover:bg-[#b3020f] hover:border-[#d20008] transition duration-300">Berlangganan</button>
+              </form> 
+
+              {% if message == 'berhasil' %}
+                <p style="color: rgb(16 185 129);" class="text-xs italic">Selamat, Anda telah berlangganan dengan kami!</p>
+              {% elif message == 'error' %}
+                <p style="color: rgb(220 38 38);" class="text-xs italic">Format Email yang Anda masukkan salah!</p>
+              {% endif %} </div>
           </div>
         </div>
     </div>

@@ -37,7 +37,39 @@ def solution(request):
     return render(request, 'solution.html')
 
 def aboutCareer(request):
-    return render(request, 'aboutCareer.html')
+    if request.POST:
+        form = SubscriptionForm(request.POST)
+        if form.is_valid():
+            careers = Career.objects.all()
+            form.save()
+            form = SubscriptionForm()
+            message = "berhasil"
+            context = {
+                'form' : form,
+                'message' : message,
+                'careers' : careers
+            }
+            return render(request, 'aboutCareer.html', context)
+
+        else:
+            form = SubscriptionForm()
+            message = "error"
+            careers = Career.objects.all()
+            context = {
+                'form' : form,
+                'message' : message,
+                'careers' : careers
+            }
+            return render(request, 'aboutCareer.html', context)
+
+    else:
+        form = SubscriptionForm()
+        careers = Career.objects.all()
+        context = {
+            'form' : form,
+            'careers' : careers
+        }
+        return render(request, 'aboutCareer.html', context)
 
 def blog(request):
     blogs = Blog.objects.all()
