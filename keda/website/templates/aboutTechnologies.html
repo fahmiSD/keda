@@ -1,0 +1,109 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+    <div>
+    {% comment %} Image Technologies {% endcomment %}
+        <div style="background-image: url('{% static "image/public/bannerTechnologies.svg" %}')" class="h-[329px]">
+        </div>
+    {% comment %} Technologi {% endcomment %}
+        <div class="bg-white h-[312px] ">
+            <div class="px-20 py-16">
+                <h1 class="text-8xl font-bold mb-7">Teknologi</h1>
+                <p class="text-2xl pl-12 ">Untuk kemajuan teknologi Anda, kami menggunakan semua fitur di bawah ini</p>
+            </div>
+        </div>
+    {% comment %} Programming Languege {% endcomment %}
+        <div class=" bg-[#fbfbfb] h-[155px]">
+          <div class="grid grid-cols-5 py-5  pr-2">
+              <img src="{% static "image/public/unreal.svg" %}" alt="" class="pl-16"/>
+              <img src="{% static "image/public/mysql.svg" %}" alt="" class="pl-10"/>
+              <img src="{% static "image/public/python.svg" %}" alt="" class="pl-3 pt-5"/>
+              <img src="{% static "image/public/unity.svg" %}" alt="" class="pl-7 pt-5"/>
+              <img src="{% static "image/public/mongoDB.svg" %}" alt="" class="pl-7 pt-5"/>
+          </div>
+        </div>
+    {% comment %} Unreal Engine {% endcomment %}
+        <div class="bg-white h-[720px] flex justify-around items-center px-10">
+            <div class="">
+                <h1 class="text-5xl font-bold mb-5">UNREAL ENGINE</h1>
+                <p class="mb-5">Game Engine dari Epic ini mampu menghasilkan framerate yang stabil,<br/> grafik yang bagus, shadow, depth of field, dan mendukung DX 11.</p>
+                <Link href="/detail-unreal-engine">
+                    <div class="flex items-center cursor-pointer">
+                        <img src="{% static "image/public/iconDetailTechnologies.svg" %}" alt="" />
+                        <p class="ml-2 font-semibold">Selengkapnya tentang UNREAL ENGINE</p>
+                    </div>
+                </Link>
+            </div>
+            <img src="{% static "image/public/unreal.svg" %}" alt="" class="w-[281px]"/>
+        </div>
+    {% comment %} Mysql {% endcomment %}
+        <div class="bg-[fbfbfb] h-[720px] flex justify-around items-center px-10">
+            <img src="{% static "image/public/mysql.svg" %}" alt="" class="w-[409px]"/>
+            <div class="">
+                <h1 class="text-5xl font-bold mb-5">My SQL</h1>
+                <p class="mb-5">Memiliki tingkat fleksibilitas tinggi terhadap teknologi dan bersifat cross<br/> platform. Struktur tabelnya yang cenderung mudah digunakan,<br/> menjadikan MySQL memiliki performa yang baik saat diterapkan.</p>
+                <Link href="/detail-mysql">
+                    <div class="flex items-center cursor-pointer">
+                        <img src="{% static "image/public/iconDetailTechnologies.svg" %}" alt="" />
+                        <p class="ml-2 font-semibold">Selengkapnya tentang My SQL</p>
+                    </div>
+                </Link>
+            </div>
+        </div>
+    {% comment %} Django {% endcomment %}
+        <div class="bg-white h-[720px] flex justify-around items-center px-10">
+            <div class="">
+                <h1 class="text-5xl font-bold mb-5">Django Python</h1>
+                <p class="mb-5">simply dummy text of the printing and typesetting industry. Lorem Ipsum <br/>has been the industry's standard dummy text ever since the 1500s,</p>
+                <Link href="/detail-python">
+                    <div class="flex items-center cursor-pointer">
+                        <img src="{% static "image/public/iconDetailTechnologies.svg" %}" alt="" />
+                        <p class="ml-2 font-semibold">Selengkapnya tentang Python</p>
+                    </div>
+                </Link>
+            </div>
+            <img src="{% static "image/public/python.svg" %}" alt="" class="w-[369px]"/>
+        </div>
+    {% comment %} Footer {% endcomment %}
+        <div class="bg-black  ">
+          <div class="container px-20 pt-12 pb-5">
+            <div class="flex justify-between ite">
+              <div>
+                <img src="{% static "image/public/logo2.svg" %}" alt="logo" class="mb-5"/>
+                <p class="text-white">Komplek Green Ville, Jalan Ratu</p>
+                <p class="text-white">Kemuning Blok BL No. 1,</p>
+                <p class="text-white">RT08/RW14, DKI Jakarta</p>
+                <p class="text-white">+(62-81) 398-716-212</p>
+              </div>
+              <div class="grid grid-cols-2 gap-24 pt-5">
+                <div class="grid gap-3">
+                  <h1 class="text-white text-2xl font-bold">Quick Links</h1>
+                  <p class="text-white">Home</p>
+                  <p class="text-white">About</p>
+                  <p class="text-white">Services</p>
+                  <p class="text-white">Process</p>
+                  <p class="text-white">Projects</p>
+                </div>
+                <div class="grid gap-3">
+                  <h1 class="text-white text-2xl font-bold">Find Us On</h1>
+                  <p class="text-white">Facebook</p>
+                  <p class="text-white">Instagram</p>
+                  <p class="text-white">Facebook</p>
+                  <p class="text-white">Linkedin</p>
+                </div>
+              </div>
+            </div>
+              <p class="text-white text-center mt-7">Copyright © 2022 KeDA Tech. All Rights Reserved.</p>
+          </div>
+        </div>
+    {% comment %} After Footer {% endcomment %}
+        <div style="background-image: url('{% static "image/public/bgAfterFooterPurple.svg" %}')" class="h-[720px] shadow-black">
+          <div class="container px-64 pt-72">
+            <h1 class="text-5xl font-bold mb-4">Tetap Terhubung Bersama Kami</h1>
+            <p class="text-2xl pr-20 mb-4">Sign up for the lat­est up­dates to our Way of Working, case stud­ies, and more.</p>
+            <div>
+                <input type="email" placeholder="Email Anda di sini" class="w-80 py-1 rounded border-gray-300 shadow-sm focus:ring-[#d20008] focus:border-gray-200 transition duration-300"/>
+              <button class="px-3 py-1 border bg-[#d20008] text-white text-md ml-3 font-bold rounded hover:bg-[#b3020f] hover:border-[#d20008] transition duration-300">Berlangganan</button>
+            </div>
+          </div>
+        </div>
+    </div>
+{% endblock content %}

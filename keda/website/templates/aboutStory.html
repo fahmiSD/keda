@@ -1,0 +1,145 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+    <div>
+    {% comment %} About Us  {% endcomment %}
+        <div style="background-image: url('{% static "image/public/bgAboutStory.svg" %}')" class="h-[609px] grid md:grid-cols-11">
+          <div class="md:col-span-5 md:pl-20 md:pt-16 h-44">
+            <img src="{% static "image/public/imageAboutStory.svg" %}" alt="logo" class="w-screen md:w-[435px] md:h-[460px] object-cover"/>
+          </div>
+          <div class="md:col-span-6">
+            <div class="px-5 md:pr-36 md:pt-44">
+              <h1 class="mb-5 text-5xl font-bold">About Us</h1>
+              <p>Berawal dari mimpi menjadi software house berstandar internasional, KeDA Tech hadir di tahun 2018. Selama pengembangannya, 
+                KeDA Tech percaya bahwa transformasi digital akan membawa banyak perubahan dalam segala aspek kehidupan. </p>
+              <br/>
+              <p>Terlebih lagi dalam bidang bisnis perusahaan, komunitas sampai masyarakat.</p>
+            </div>
+          </div>
+        </div>
+    {% comment %} Our Journey {% endcomment %}
+        <div class=" bg-[#f8f8f8] h-[720px]">
+          <div class="grid grid-cols-12">
+          <div class="col-span-7 container pl-20 pt-20">
+          <div class="flex flex-col">
+              <h1 class="mb-14 text-5xl font-bold">Our Jurney</h1>
+              <div class="flex justify-between mb-8">
+                <h1 class="text-2xl font-bold">2018</h1>
+                <p class="pl-10">Berawal dari satu tim yang berisi 2 programmer dan seorang designer, KeDA Tech berdiri dan mampu menyelesaikan project pertamanya yaitu, <b class="text-gray-700">Container Loader Project.</b></p>
+              </div>
+              <div class="flex justify-between mb-8">
+                <h1 class="text-2xl font-bold">2019</h1>
+                <p class="pl-10">Selang setahun KeDA Tech berdiri, kerja sama yang baru pun di mulai dengan <b class="text-gray-700">AXA</b>. Dalam project ini kami membuat <b class="text-gray-700">VR Simulator</b>, yang berhasil diselesaikan oleh 3 programmer dan seorang designer dalam waktu 2 minggu.</p>
+              </div>
+              <div class="flex justify-between mb-8">
+                <h1 class="text-2xl font-bold">2020</h1>
+                <p class="pl-10">Bekerja sama dengan salah satu perusahaan properti terbesar 
+                di Jakarta, KeDA Tech menyelesaikan aplikasi chatbot untuk SQM Property.</p>
+              </div>
+              <div class="flex justify-between">
+                <div>
+                  <h1 class="text-2xl font-bold">2021</h1>
+                  <h1 class="text-2xl font-bold text-center">-</h1>
+                  <h1 class="text-2xl font-bold">Now</h1>
+                </div>
+                <p class="pl-10">Dengan berbagai project yang sudah kami lakukan dengan perusahaan pengembang lainnya seperti Shinta VR, Wallex, Luceria dan 
+                PT Citra Kreasi Makmur, Kami juga ingin menjadi bagian dari kemajuan bisnis digital Anda. Dengan lebih dari 10 programmer saat ini, KeDA Tech terus berkomitmen untuk memberikan pelayanan yang terbaik bagi Anda</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-5 mt-48">
+            <img src="{% static "image/public/ourJourney.svg" %}" alt="logo" class="ml-6 w-[430px] hidden md:block"/>
+          </div>
+          </div>
+        </div>
+    {% comment %} Our Story {% endcomment %}
+        <div style="background-image: url('{% static "image/public/bgOurStory.svg" %}')" class="h-[609px] grid md:grid-cols-11">
+          <div class="md:col-span-5 md:pl-20 md:pt-20 h-44">
+            <img src="{% static "image/public/KennethNursalim.svg" %}" alt="logo" class=" md:w-[386px] md:h-[404px] mb-2"/>
+            <h1 class="text-center pr-28 text-xl font-bold">Kenneth Nursalim</h1>
+            <p class="text-center pr-28">Owner & CEO of KeDA Tech</p>
+          </div>
+          <div class="md:col-span-6">
+            <div class=" md:pr-32 md:pt-44">
+              <h1 class="mb-5 text-5xl font-bold">Our Story</h1>
+              <p>Setelah menempuh pendidikan master di California-Amerika, tahun 2017 Kenneth Nursalim kembali ke Indonesia. Beberapa tahun di Amerika membuatnya menyadari perkembangan sistem informasi dan teknologi di Indonesia tertinggal cukup jauh. </p>
+              <br/>
+              <p>Karena itu, di tahun 2018, Kenneth Nursalim mendirikan KeDA Tech dengan visi menjadi software house yang memiliki standar internasional.</p>
+            </div>
+          </div>
+        </div>
+    {% comment %} Doing The Best {% endcomment %}
+        <div class="bg-[#f3f3f3] h-[720px] grid md:grid-cols-12">
+          <div class="md:col-span-5 md:pl-20 md:pt-40 h-44">
+            <img src="{% static "image/public/digitalBusiness.svg" %}" alt="logo" class=" md:w-[386px] md:h-[404px]"/>
+          </div>
+          <div class="md:col-span-7">
+            <div class=" md:pr-26 md:pt-60">
+              <h1 class="mb-6 font ml-5 leading-snug text-5xl font-bold">Sincerely doing the best for your digital business.</h1>
+              <button class="px-6 py-2 ml-5 border bg-[#d20008] text-white rounded-sm hover:bg-[#b3020f] hover:border-[#d20008] text-sm font-medium transition duration-300">Meet the Team</button>
+            </div>
+          </div>
+        </div>
+    {% comment %} Join Our Team {% endcomment %}
+        <div class=" bg-[#f8f8f8] h-[720px]">
+          <div class="grid grid-cols-12">
+          <div class="col-span-7 container pl-24 pt-60">
+            <h1 class="mb-3 leading-snug text-5xl font-bold">Tertarik untuk bergabung dengan kami?</h1>
+            <p class="mb-10">Kami selalu terbuka dengan talenta baru</p>
+            <button class="px-6 py-2 border bg-[#d20008] text-white rounded-sm hover:bg-[#b3020f] hover:border-[#d20008] text-sm font-medium transition duration-300">Temukan posisi yang cocok</button>
+          </div>
+          <div class="col-span-5 mt-40">
+            <img src="{% static "image/public/WithMe.svg" %}" alt="logo" class=" w-[430px] hidden md:block"/>
+          </div>
+          </div>
+        </div>
+    {% comment %} Digital Transformation {% endcomment %}
+        <div style="background-image: url('{% static "image/public/backgroundDigitalTransformationPurple.svg" %}')" class="h-[283px]">
+          <div class="container px-20 py-16">
+            <img src="{% static "image/public/YourDigitalTransfoemationPartner.svg" %}" alt="" />
+            <button class="ml-6 mt-6 px-7 py-5 border bg-[#d20008] text-xl text-white rounded-sm hover:bg-[#b3020f] font-medium transition duration-300">Book a chat</button>
+          </div>
+        </div>
+    {% comment %} Footer {% endcomment %}
+        <div class="bg-black  ">
+          <div class="container px-20 pt-12 pb-5">
+            <div class="flex justify-between ite">
+              <div>
+                <img src="{% static "image/public/logo2.svg" %}" alt="logo" class="mb-5"/>
+                <p class="text-white">Komplek Green Ville, Jalan Ratu</p>
+                <p class="text-white">Kemuning Blok BL No. 1,</p>
+                <p class="text-white">RT08/RW14, DKI Jakarta</p>
+                <p class="text-white">+(62-81) 398-716-212</p>
+              </div>
+              <div class="grid grid-cols-2 gap-24 pt-5">
+                <div class="grid gap-3">
+                  <h1 class="text-white text-2xl font-bold">Quick Links</h1>
+                  <p class="text-white">Home</p>
+                  <p class="text-white">About</p>
+                  <p class="text-white">Services</p>
+                  <p class="text-white">Process</p>
+                  <p class="text-white">Projects</p>
+                </div>
+                <div class="grid gap-3">
+                  <h1 class="text-white text-2xl font-bold">Find Us On</h1>
+                  <p class="text-white">Facebook</p>
+                  <p class="text-white">Instagram</p>
+                  <p class="text-white">Facebook</p>
+                  <p class="text-white">Linkedin</p>
+                </div>
+              </div>
+            </div>
+              <p class="text-white text-center mt-7">Copyright © 2022 KeDA Tech. All Rights Reserved.</p>
+          </div>
+        </div>
+      {% comment %} After Footer {% endcomment %}
+        <div style="background-image: url('{% static "image/public/bgAfterFooterPurple.svg" %}')" class="h-[720px] shadow-black">
+          <div class="container px-64 pt-72">
+            <h1 class="text-5xl font-bold mb-4">Tetap Terhubung Bersama Kami</h1>
+            <p class="text-2xl pr-20 mb-4">Sign up for the lat­est up­dates to our Way of Working, case stud­ies, and more.</p>
+            <div>
+                <input type="email" placeholder="Email Anda di sini" class="w-80 py-1 rounded border-gray-300 shadow-sm focus:ring-[#d20008] focus:border-gray-200 transition duration-300"/>
+              <button class="px-3 py-1 border bg-[#d20008] text-white text-md ml-3 font-bold rounded hover:bg-[#b3020f] hover:border-[#d20008] transition duration-300">Berlangganan</button>
+            </div>
+          </div>
+        </div>
+    </div>
+{% endblock content %}

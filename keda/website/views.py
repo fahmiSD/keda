@@ -171,6 +171,18 @@ def detailCareer(request, id_career):
 def detailBlog(request):
     return render(request, 'detailBlog.html')
 
+def project(request):
+    return render(request, 'project.html')
+
+def aboutStory(request):
+    return render(request, 'aboutStory.html')
+
+def aboutTeam(request):
+    return render(request, 'aboutTeam.html')
+
+def aboutTechnologies(request):
+    return render(request, 'aboutTechnologies.html')
+
 def blog(request):
     blogs = Blog.objects.all()
     trendings = Blog.objects.all().order_by("?")[:4]

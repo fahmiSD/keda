@@ -1,5 +1,88 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
     <div>
-        
+      {% comment %} Banner Project {% endcomment %}
+        <div style="background-image: url('{% static "image/public/bgProject.svg" %}')" class="h-[641px]">
+          <div class="px-24 pt-64">
+              <img src="{% static "image/public/projects.svg" %}" alt="logo" class=""/>
+            </div>
+        </div>
+      {% comment %} Quote {% endcomment %}
+        <div style="background-image: url('{% static "image/public/bgProjectWhite.svg" %}')" class="h-[720px] shadow shadow-black">
+          <div class="container px-28 pt-64">
+            <p class="text-4xl font-bold leading-normal italic">"Kami akan membawa Anda mengenali KeDA Tech lebih dalam dengan melihat project apa saja yang sudah kami kerjakan, dan memakan waktu berapa lama untuk setiap projectnya. "</p>
+          </div>
+        </div>
+      {% comment %} Card Project {% endcomment %}
+        <div class="bg-white  ">
+          <div class=" grid grid-cols-2 px-28 gap-20">
+            <Card class="p-8 block w-full py-5 bg-white shadow-gray-500 shadow-sm hover:shadow-md hover:shadow-black transition duration-300 cursor-pointer">
+                <img src="{% static "image/public/cardWayFinder.svg" %}" alt="" class="mb-3"/>
+                <p class="text-[#555555] text-lg font-semibold mb-4">PT. Citra Kreasi Makmur</p>
+                <h2 class="font-bold text-3xl mb-4">WayFinder</h2>
+                <p>Indoor navigation integrated with custom Warehouse Management System to allow workers to insert and take items with improved efficiency.</p>
+                <button class="mt-5 py-1 w-full border bg-[#d20008] text-white rounded-sm hover:bg-[#b3020f] font-medium transition duration-300">See Project</button>
+            </Card>
+            <Card class="p-8 block w-full py-5 bg-white shadow-gray-500 shadow-sm hover:shadow-md hover:shadow-black transition duration-300 cursor-pointer">
+            <img src="{% static "image/public/cardWayFinder.svg" %}" alt="" class="mb-3"/>
+                <p class="text-[#555555] text-lg font-semibold mb-4">PT. Citra Kreasi Makmur</p>
+                <h2 class="font-bold text-3xl mb-4">WayFinder</h2>
+                <p>Indoor navigation integrated with custom Warehouse Management System to allow workers to insert and take items with improved efficiency.</p>
+                <button class="mt-5 py-1 w-full border bg-[#d20008] text-white rounded-sm hover:bg-[#b3020f] font-medium transition duration-300">See Project</button>
+            </Card>
+          </div>
+          <div class="flex justify-center items-center py-8">
+                <button class="mt-5 rounded py-1 w-[128px] border bg-[#555555] text-white hover:bg-[#444444] font-medium transition duration-300">Load more</button>
+          </div>
+        </div>
+     {% comment %} Digital Transformation {% endcomment %}
+        <div style="background-image: url('{% static "image/public/backgroundDigitalTransformationPink.svg" %}')" class="h-[283px]">
+          <div class="container px-20 py-16">
+            <img src="{% static "image/public/YourDigitalTransfoemationPartner.svg" %}" alt="" />
+            <button class="ml-6 mt-6 px-7 py-5 border bg-[#d20008] text-xl text-white rounded-sm hover:bg-[#b3020f] font-medium transition duration-300">Book a chat</button>
+          </div>
+        </div>
+     {% comment %} Footer {% endcomment %}
+        <div class="bg-black  ">
+          <div class="container px-20 pt-12 pb-5">
+            <div class="flex justify-between ite">
+              <div>
+                <img src="{% static "image/public/logo2.svg" %}" alt="logo" class="mb-5"/>
+                <p class="text-white">Komplek Green Ville, Jalan Ratu</p>
+                <p class="text-white">Kemuning Blok BL No. 1,</p>
+                <p class="text-white">RT08/RW14, DKI Jakarta</p>
+                <p class="text-white">+(62-81) 398-716-212</p>
+              </div>
+              <div class="grid grid-cols-2 gap-24 pt-5">
+                <div class="grid gap-3">
+                  <h1 class="text-white text-2xl font-bold">Quick Links</h1>
+                  <p class="text-white">Home</p>
+                  <p class="text-white">About</p>
+                  <p class="text-white">Services</p>
+                  <p class="text-white">Process</p>
+                  <p class="text-white">Projects</p>
+                </div>
+                <div class="grid gap-3">
+                  <h1 class="text-white text-2xl font-bold">Find Us On</h1>
+                  <p class="text-white">Facebook</p>
+                  <p class="text-white">Instagram</p>
+                  <p class="text-white">Facebook</p>
+                  <p class="text-white">Linkedin</p>
+                </div>
+              </div>
+            </div>
+              <p class="text-white text-center mt-7">Copyright © 2022 KeDA Tech. All Rights Reserved.</p>
+          </div>
+        </div>
+     {% comment %} After Footer {% endcomment %}
+        <div style="background-image: url('{% static "image/public/bgAfterFooterPink.svg" %}')" class="h-[720px] shadow-black">
+          <div class="container px-64 pt-72">
+            <h1 class="text-5xl font-bold mb-4">Tetap Terhubung Bersama Kami</h1>
+            <p class="text-2xl pr-20 mb-4">Sign up for the lat­est up­dates to our Way of Working, case stud­ies, and more.</p>
+            <div>
+              <input type="email" placeholder="Email Anda di sini" class="w-80 py-1 rounded border-gray-300 shadow-sm focus:ring-[#d20008] focus:border-gray-200 transition duration-300"/>
+              <button class="px-3 py-1 border bg-[#d20008] text-white text-md ml-3 font-bold rounded hover:bg-[#b3020f] hover:border-[#d20008] transition duration-300">Berlangganan</button>
+            </div>
+          </div>
+        </div>
     </div>
 {% endblock content %}
