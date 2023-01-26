@@ -71,8 +71,14 @@ def aboutCareer(request):
         }
         return render(request, 'aboutCareer.html', context)
 
-def detailCareer(request):
-    return render(request, 'detailCareer.html')
+def detailCareer(request, id_career):
+    career = Career.objects.get(id=id_career)
+    form = CandidateForm()
+    context = {
+        'career' : career,
+        'form' : form,
+    }
+    return render(request, 'detailCareer.html', context)
 
 def blog(request):
     blogs = Blog.objects.all()
