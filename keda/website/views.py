@@ -72,13 +72,50 @@ def aboutCareer(request):
         return render(request, 'aboutCareer.html', context)
 
 def detailCareer(request, id_career):
-    career = Career.objects.get(id=id_career)
-    form = CandidateForm()
-    context = {
-        'career' : career,
-        'form' : form,
-    }
-    return render(request, 'detailCareer.html', context)
+    if request.method == 'POST':
+        if request.POST.get("form_type") == 'formOne':
+            #Handle Elements from first Form
+            pass
+        
+        elif request.POST.get("form_type") == 'form_subs':
+            form = SubscriptionForm(request.POST)
+            if form.is_valid():
+                form.save()
+                career = Career.objects.get(id=id_career)
+                form = CandidateForm()
+                form_subs = SubscriptionForm()
+                message = "berhasil"
+                context = {
+                    'form' : form,
+                    'form_subs' : form_subs,
+                    'message' : message,
+                    'career' : career,
+                }
+                return render(request, 'detailCareer.html', context)
+
+            else:
+                career = Career.objects.get(id=id_career)
+                form = CandidateForm()
+                form_subs = SubscriptionForm()
+                message = "error"
+                context = {
+                    'form' : form,
+                    'form_subs' : form_subs,
+                    'message' : message,
+                    'career' : career,
+                }
+                return render(request, 'detailCareer.html', context)
+        
+    else:
+        career = Career.objects.get(id=id_career)
+        form = CandidateForm()
+        form_subs = SubscriptionForm()
+        context = {
+            'career' : career,
+            'form' : form,
+            'form_subs' : form_subs,
+        }
+        return render(request, 'detailCareer.html', context)
 
 def blog(request):
     blogs = Blog.objects.all()
