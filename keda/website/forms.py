@@ -13,7 +13,7 @@ class SubscriptionForm(ModelForm):
         fields = "__all__"
 
         widgets = {
-            'email' : forms.EmailInput(attrs={'class':'form-control', 'placeholder':'example@email.com'}),
+            'email' : forms.EmailInput(attrs={'class':'w-80 py-1 rounded border-gray-300 shadow-sm focus:ring-[#d20008] focus:border-gray-200 transition duration-300', 'placeholder':'Email Anda disini'}),
         }
 
 class ConsultForm(ModelForm):

@@ -4,7 +4,34 @@ from website.forms import *
 
 # Create your views here.
 def index(request):
-    return render(request, 'index.html')
+    if request.POST:
+        form = SubscriptionForm(request.POST)
+        if form.is_valid():
+            form.save()
+            form = SubscriptionForm()
+            message = "berhasil"
+            context = {
+                'form' : form,
+                'message' : message,
+            }
+            return render(request, 'index.html', context)
+
+        else:
+            form = SubscriptionForm()
+            message = "error"
+            context = {
+                'form' : form,
+                'message' : message,
+            }
+            return render(request, 'index.html', context)
+
+    else:
+        form = SubscriptionForm()
+        context = {
+            'form' : form,
+        }
+        return render(request, 'index.html', context)
+    
 
 def solution(request):
     return render(request, 'solution.html')
