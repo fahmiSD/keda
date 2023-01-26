@@ -99,20 +99,45 @@ def aboutCareer(request):
 
 def detailCareer(request, id_career):
     if request.method == 'POST':
-        if request.POST.get("form_type") == 'formOne':
-            #Handle Elements from first Form
-            pass
+        if request.POST.get("form_type") == 'form_candidate':
+            form_candidate = CandidateForm(request.POST, request.FILES)
+            if form_candidate.is_valid():
+                form_candidate.save()
+                career = Career.objects.get(id=id_career)
+                form_candidate = CandidateForm()
+                form_subs = SubscriptionForm()
+                context = {
+                    'form_candidate' : form_candidate,
+                    'form_subs' : form_subs,
+                    'career' : career,
+                    'success' : 'Lamaran Anda telah terkirim!'
+                }
+                return render(request, 'detailCareer.html', context)
+
+            else:
+                career = Career.objects.get(id=id_career)
+                form_candidate = CandidateForm(request.POST)
+                form_subs = SubscriptionForm()
+                context = {
+                    'form_candidate' : form_candidate,
+                    'form_subs' : form_subs,
+                    'career' : career,
+                    'errors' : form_candidate.errors,
+                }
+                
+                return render(request, 'detailCareer.html', context)
+            
         
         elif request.POST.get("form_type") == 'form_subs':
-            form = SubscriptionForm(request.POST)
-            if form.is_valid():
-                form.save()
+            form_subs = SubscriptionForm(request.POST)
+            if form_subs.is_valid():
+                form_subs.save()
                 career = Career.objects.get(id=id_career)
-                form = CandidateForm()
+                form_candidate = CandidateForm()
                 form_subs = SubscriptionForm()
                 message = "berhasil"
                 context = {
-                    'form' : form,
+                    'form_candidate' : form_candidate,
                     'form_subs' : form_subs,
                     'message' : message,
                     'career' : career,
@@ -121,11 +146,11 @@ def detailCareer(request, id_career):
 
             else:
                 career = Career.objects.get(id=id_career)
-                form = CandidateForm()
+                form_candidate = CandidateForm()
                 form_subs = SubscriptionForm()
                 message = "error"
                 context = {
-                    'form' : form,
+                    'form_candidate' : form_candidate,
                     'form_subs' : form_subs,
                     'message' : message,
                     'career' : career,
@@ -134,11 +159,11 @@ def detailCareer(request, id_career):
         
     else:
         career = Career.objects.get(id=id_career)
-        form = CandidateForm()
+        form_candidate = CandidateForm()
         form_subs = SubscriptionForm()
         context = {
             'career' : career,
-            'form' : form,
+            'form_candidate' : form_candidate,
             'form_subs' : form_subs,
         }
         return render(request, 'detailCareer.html', context)

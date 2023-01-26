@@ -2,6 +2,7 @@ from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
 from django.contrib import admin
 from ckeditor_uploader.fields import RichTextUploadingField
+import os
 
 class AuthorAdmin(admin.ModelAdmin):
     list_display = ('Subscription', 'Categories', 'Position')

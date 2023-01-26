@@ -47,10 +47,10 @@ class CandidateForm(ModelForm):
             'cv': ('CV')
         }
         widgets = {
-            'candidate_name' : forms.TextInput(attrs={'class':'form-control','placeholder':'John Doe'}),
-            'career_tag_id' : forms.Select(attrs={"class":'form-control'}),
-            'whatsapp_number' : PhoneNumberPrefixWidget(initial="ID",attrs={'class':'form-control','id':'phone_number', 'placeholder':'82388400299'}),
-            'email' : forms.EmailInput(attrs={'class':'form-control', 'placeholder':'example@email.com'}),
-            'cv' : forms.FileInput(attrs={'class':'form-control','accept':'application/pdf'})
+            'candidate_name' : forms.TextInput(attrs={'id':'name','class':'w-[557px] py-1 rounded border-gray-300 shadow-sm focus:ring-[#d20008] focus:border-gray-200 transition duration-300', 'onkeydown':'return /[a-zA-Z.-]/i.test(event.key)'}),
+            'career_tag_id' : forms.Select(attrs={"class":'w-[557px] py-1 rounded border-gray-300 shadow-sm focus:ring-[#d20008] focus:border-gray-200 transition duration-300'}),
+            'whatsapp_number' : PhoneNumberPrefixWidget(initial="ID",attrs={'class':'w-[557px] py-1 rounded border-gray-300 shadow-sm focus:ring-[#d20008] focus:border-gray-200 transition duration-300"','id':'phone', 'placeholder':'82388400299'}),
+            'email' : forms.EmailInput(attrs={'id':'email','class':'w-[557px] py-1 rounded border-gray-300 shadow-sm focus:ring-[#d20008] focus:border-gray-200 transition duration-300'}),
+            'cv' : forms.FileInput(attrs={'id':'cv','class':'hidden','accept':'application/pdf', 'aria-describedby':'file_input_help'})
         }
 
