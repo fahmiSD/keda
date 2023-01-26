@@ -34,7 +34,33 @@ def index(request):
     
 
 def solution(request):
-    return render(request, 'solution.html')
+    if request.POST:
+        form = SubscriptionForm(request.POST)
+        if form.is_valid():
+            form.save()
+            form = SubscriptionForm()
+            message = "berhasil"
+            context = {
+                'form' : form,
+                'message' : message,
+            }
+            return render(request, 'solution.html', context)
+
+        else:
+            form = SubscriptionForm()
+            message = "error"
+            context = {
+                'form' : form,
+                'message' : message,
+            }
+            return render(request, 'solution.html', context)
+
+    else:
+        form = SubscriptionForm()
+        context = {
+            'form' : form,
+        }
+        return render(request, 'solution.html', context)
 
 def aboutCareer(request):
     if request.POST:
