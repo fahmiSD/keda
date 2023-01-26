@@ -12,6 +12,9 @@ def solution(request):
 def aboutCareer(request):
     return render(request, 'aboutCareer.html')
 
+def detailCareer(request):
+    return render(request, 'detailCareer.html')
+
 def blog(request):
     blogs = Blog.objects.all()
     context = {

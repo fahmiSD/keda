@@ -1,0 +1,140 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+    <div>
+      {% comment %} Banner Careers  {% endcomment %}
+        <div class="bg-white px-14 py-10">
+           <div>
+              <div class="mb-10">
+                <h1 class="text-4xl font-bold mb-4">Senior Backend Engineer</h1>
+                <p class="bg-[#022889] text-lg w-[132px] pt-1 pb-1.5 text-center rounded-full text-white mb-5">Programmer</p>
+                <p class="leading-relaxed mb-2">We are looking for a highly motivated individual who are looking for a position as a backend Developer in KeDA Tech. As a senior programmer for 4 months, your main task is to architect software structures, deciding on tech stacks, and guide junior programmers to write performant and maintainable codes for the various applications according to the needs of our clients.</p>
+                <p class="text-sm font-semibold">Apply Before 30 July 2022</p>
+              </div>
+              <div class="mb-10">
+                <h1 class="text-2xl font-semibold mb-4">Role & Responsibility</h1>
+                <ul class="list-disc marker:text-[#fe2e36] list-inside pl-6">
+                  <li class="mb-4">Analyze and propose a tech design document on various programming projects</li>
+                  <li class="mb-4">Analyze and make a tech design decision on which third-party/open-sourced solutions to integrate to the project</li>
+                  <li class="mb-4">Develop robust applications suiting to the needs of the company and clients</li>
+                  <li class="mb-4">Guide the junior and middle level engineers to tackle new and challenging tech problems</li>
+                </ul>
+              </div>
+              <div class="mb-10">
+                <h1 class="text-2xl font-semibold mb-4">Requirement</h1>
+                <ul class="list-disc marker:text-[#fe2e36] list-inside pl-6">
+                  <li class="mb-4">At least 3 years of programming experience</li>
+                  <li class="mb-4">Strong programming skills – Being able to analyze and debug problems as well as architeching solutions</li>
+                  <li class="mb-4">Strong knowledge of computer fundamentals, including but not limited to algorithms, data structures, and design patterns.</li>
+                  <li class="mb-4">Able to code review others’ code.</li>
+                  <li class="mb-4">Comprehensive knowledge on different coding languages and when is best to use them.</li>
+                  <li class="mb-4">Being able to quickly learn new coding language or frameworks</li>
+                  <li class="mb-4">Comfortable with developing on Windows and Unix-based systems </li>
+                  <li class="mb-4">Comfortable working in teams as well as cross-departmental teamwork </li>
+                  <li class="mb-4">Good communication and interpersonal skill to cooperate with the team </li>
+                </ul>
+              </div>
+              <div class="mb-10">
+                <h1 class="text-2xl font-semibold mb-4">Plus</h1>
+                <ul class="list-disc marker:text-[#fe2e36] list-inside pl-6">
+                  <li class="mb-4">Able to write programs that are scalable, reliable, maintainable, and testable</li>
+                  <li class="mb-4">Experience developing programs in multiple programming languages, web frameworks, containers, and datastores</li>
+                  <li class="mb-4">Experience in working with AGILE/SCRUM methodology</li>
+                  <li class="mb-4">Through understanding of web-related security technologies </li>
+                </ul>
+              </div>
+              <div class="pb-10 border-b-2 border-[#696969]">
+                <h1 class="text-2xl font-semibold mb-4">Benefits</h1>
+                <ul class="list-disc marker:text-[#fe2e36] list-inside pl-6">
+                  <li class="mb-4">Analyze and propose a tech design document on various programming projects</li>
+                  <li class="mb-4">Analyze and make a tech design decision on which third-party/open-sourced solutions to integrate to the project</li>
+                  <li class="mb-4">Develop robust applications suiting to the needs of the company and clients</li>
+                  <li class="mb-4">Guide the junior and middle level engineers to tackle new and challenging tech problems</li>
+                </ul>
+              </div>
+           </div>
+        </div>
+      {% comment %} Form Registration {% endcomment %}
+        <div class="bg-white py-16 px-14">
+            <div>
+              <form action="">
+                <div class="grid grid-rows-2 mb-10">
+                  <label htmlFor="name" class="font-semibold">Nama</label>
+                  <Input type="text" id="name" class="w-[557px] py-1 rounded border-gray-300 shadow-sm focus:ring-[#d20008] focus:border-gray-200 transition duration-300"/>
+                </div>
+                <div class="grid grid-rows-2 mb-10">
+                  <label htmlFor="phone" class="font-semibold">No Whatsapp</label>
+                  <Input type="number" id="phone" class="w-[557px] py-1 rounded border-gray-300 shadow-sm focus:ring-[#d20008] focus:border-gray-200 transition duration-300"/>
+                </div>
+                <div class="grid grid-rows-2 mb-10">
+                  <label htmlFor="email" class="font-semibold">Email</label>
+                  <Input type="email" id="email" class="w-[557px] py-1 rounded border-gray-300 shadow-sm focus:ring-[#d20008] focus:border-gray-200 transition duration-300"/>
+                </div>
+                <div class="grid gap-2 mb-10">
+                  <label htmlFor="cv" class="font-semibold">Upload your CV here</label>
+                  <label htmlFor="cv" class="">
+                    <div class="flex justify-between w-[280px] border rounded-lg border-gray-300 shadow-sm">
+                      <div class="py-2 px-3">
+                        <p class="text-gray-400 text-sm">
+                          Select or drag file
+                        </p>
+                      </div>
+                      <div class="py-2 px-3 border-l rounded-lg border-gray-300 shadow-sm">
+                        <p class="text-gray-400 text-sm">
+                          Select file
+                        </p>
+                      </div>
+                    </div>
+                  </label>
+                  <Input class="hidden" type="file" id="cv"/>
+                  <p class="font-semibold italic">Apply Before 23 July 2022</p>
+                </div>
+                <div>
+                  <Button class="w-[557px] px-4 py-2 border bg-[#d20008] border-white text-white rounded hover:bg-[#b3020f] hover:border-[#d20008] text-sm font-medium transition duration-300"><span class="flex justify-center items-center"><p class="mr-3">Join Now</p> <img src="{% static "image/public/lebihDari.svg" %}" alt="" class="mt-1"/></span></Button>
+                </div>
+              </form>
+            </div>
+        </div>
+      {% comment %} Footer {% endcomment %}
+        <div class="bg-black  ">
+          <div class="container px-20 pt-12 pb-5">
+            <div class="flex justify-between">
+              <div>
+                <img src="{% static "image/public/logo2.svg" %}" alt="logo" class="mb-5"/>
+                <p class="text-white">Komplek Green Ville, Jalan Ratu</p>
+                <p class="text-white">Kemuning Blok BL No. 1,</p>
+                <p class="text-white">RT08/RW14, DKI Jakarta</p>
+                <p class="text-white">+(62-81) 398-716-212</p>
+              </div>
+              <div class="grid grid-cols-2 gap-24 pt-5">
+                <div class="grid gap-3">
+                  <h1 class="text-white text-2xl font-bold">Quick Links</h1>
+                  <p class="text-white">Home</p>
+                  <p class="text-white">About</p>
+                  <p class="text-white">Services</p>
+                  <p class="text-white">Process</p>
+                  <p class="text-white">Projects</p>
+                </div>
+                <div class="grid gap-3">
+                  <h1 class="text-white text-2xl font-bold">Find Us On</h1>
+                  <p class="text-white">Facebook</p>
+                  <p class="text-white">Instagram</p>
+                  <p class="text-white">Facebook</p>
+                  <p class="text-white">Linkedin</p>
+                </div>
+              </div>
+            </div>
+              <p class="text-white text-center mt-7">Copyright © 2022 KeDA Tech. All Rights Reserved.</p>
+          </div>
+        </div>
+      {% comment %} After Footer {% endcomment %}
+        <div style="background-image: url('{% static "image/public/bgAfterFooterGreens.svg" %}')" class="h-[720px] shadow-black">
+          <div class="container px-64 pt-72">
+            <h1 class="text-5xl font-bold mb-4">Tetap Terhubung Bersama Kami</h1>
+            <p class="text-2xl pr-20 mb-4">Sign up for the lat­est up­dates to our Way of Working, case stud­ies, and more.</p>
+            <div>
+              <input type="email" placeholder="Email Anda di sini" class="w-80 py-1 rounded border-gray-300 shadow-sm focus:ring-[#d20008] focus:border-gray-200 transition duration-300"/>
+              <Button class="px-3 py-1 border bg-[#d20008] text-white text-md ml-3 font-bold rounded hover:bg-[#b3020f] hover:border-[#d20008] transition duration-300">Berlangganan</Button>
+            </div>
+          </div>
+        </div>
+    </div>
+{% endblock content %}
