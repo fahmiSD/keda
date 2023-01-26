@@ -737,6 +737,10 @@ select {
   grid-column: span 3 / span 3;
 }
 
+.col-span-9 {
+  grid-column: span 9 / span 9;
+}
+
 .col-span-1 {
   grid-column: span 1 / span 1;
 }
@@ -807,20 +811,20 @@ select {
   margin-bottom: 0.5rem;
 }
 
-.mt-3 {
-  margin-top: 0.75rem;
-}
-
-.mb-10 {
-  margin-bottom: 2.5rem;
-}
-
 .mr-3 {
   margin-right: 0.75rem;
 }
 
 .mt-1 {
   margin-top: 0.25rem;
+}
+
+.mt-3 {
+  margin-top: 0.75rem;
+}
+
+.mb-10 {
+  margin-bottom: 2.5rem;
 }
 
 .mb-6 {
@@ -911,6 +915,15 @@ select {
   width: 20rem;
 }
 
+.w-fit {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.w-\[128px\] {
+  width: 128px;
+}
+
 .w-\[557px\] {
   width: 557px;
 }
@@ -949,6 +962,10 @@ select {
 
 .grid-cols-2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid-cols-12 {
+  grid-template-columns: repeat(12, minmax(0, 1fr));
 }
 
 .grid-cols-3 {
@@ -997,6 +1014,10 @@ select {
 
 .gap-24 {
   gap: 6rem;
+}
+
+.gap-5 {
+  gap: 1.25rem;
 }
 
 .gap-2 {
@@ -1102,13 +1123,24 @@ select {
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
+.bg-\[\#587f58\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(88 127 88 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#555555\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(85 85 85 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#f9f9f9\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 249 249 / var(--tw-bg-opacity));
+}
+
 .bg-\[\#fbfbfb\] {
   --tw-bg-opacity: 1;
   background-color: rgb(251 251 251 / var(--tw-bg-opacity));
-}
-
-.bg-\[url\(\'\/bgAfterFooterGreens\.svg\'\)\] {
-  background-image: url('/bgAfterFooterGreens.svg');
 }
 
 .p-3 {
@@ -1121,6 +1153,10 @@ select {
 
 .p-8 {
   padding: 2rem;
+}
+
+.p-5 {
+  padding: 1.25rem;
 }
 
 .px-1 {
@@ -1218,14 +1254,24 @@ select {
   padding-right: 0.75rem;
 }
 
-.px-14 {
-  padding-left: 3.5rem;
-  padding-right: 3.5rem;
-}
-
 .px-12 {
   padding-left: 3rem;
   padding-right: 3rem;
+}
+
+.py-6 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.px-14 {
+  padding-left: 3.5rem;
+  padding-right: 3.5rem;
 }
 
 .py-4 {
@@ -1236,11 +1282,6 @@ select {
 .px-28 {
   padding-left: 7rem;
   padding-right: 7rem;
-}
-
-.py-8 {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
 }
 
 .px-6 {
@@ -1324,6 +1365,10 @@ select {
   padding-right: 5rem;
 }
 
+.pt-64 {
+  padding-top: 16rem;
+}
+
 .pt-1 {
   padding-top: 0.25rem;
 }
@@ -1346,10 +1391,6 @@ select {
 
 .pt-32 {
   padding-top: 8rem;
-}
-
-.pt-64 {
-  padding-top: 16rem;
 }
 
 .text-center {
@@ -1498,6 +1539,11 @@ select {
 .hover\:bg-\[\#b3020f\]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(179 2 15 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-\[\#444444\]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(68 68 68 / var(--tw-bg-opacity));
 }
 
 .hover\:bg-\[\#f3f3f3\]:hover {

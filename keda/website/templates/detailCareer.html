@@ -57,34 +57,36 @@
             <div>
               <form action="">
                 <div class="grid grid-rows-2 mb-10">
-                  <label htmlFor="name" class="font-semibold">Nama</label>
-                  <Input type="text" id="name" class="w-[557px] py-1 rounded border-gray-300 shadow-sm focus:ring-[#d20008] focus:border-gray-200 transition duration-300"/>
+                  <label for="name" class="font-semibold">Nama</label>
+                  <input type="text" id="name" class="w-[557px] py-1 rounded border-gray-300 shadow-sm focus:ring-[#d20008] focus:border-gray-200 transition duration-300"/>
                 </div>
                 <div class="grid grid-rows-2 mb-10">
-                  <label htmlFor="phone" class="font-semibold">No Whatsapp</label>
-                  <Input type="number" id="phone" class="w-[557px] py-1 rounded border-gray-300 shadow-sm focus:ring-[#d20008] focus:border-gray-200 transition duration-300"/>
+                  <label for="phone" class="font-semibold">No Whatsapp</label>
+                  <input type="number" id="phone" class="w-[557px] py-1 rounded border-gray-300 shadow-sm focus:ring-[#d20008] focus:border-gray-200 transition duration-300"/>
                 </div>
                 <div class="grid grid-rows-2 mb-10">
-                  <label htmlFor="email" class="font-semibold">Email</label>
-                  <Input type="email" id="email" class="w-[557px] py-1 rounded border-gray-300 shadow-sm focus:ring-[#d20008] focus:border-gray-200 transition duration-300"/>
+                  <label for="email" class="font-semibold">Email</label>
+                  <input type="email" id="email" class="w-[557px] py-1 rounded border-gray-300 shadow-sm focus:ring-[#d20008] focus:border-gray-200 transition duration-300"/>
                 </div>
                 <div class="grid gap-2 mb-10">
-                  <label htmlFor="cv" class="font-semibold">Upload your CV here</label>
-                  <label htmlFor="cv" class="">
-                    <div class="flex justify-between w-[280px] border rounded-lg border-gray-300 shadow-sm">
-                      <div class="py-2 px-3">
-                        <p class="text-gray-400 text-sm">
-                          Select or drag file
-                        </p>
-                      </div>
-                      <div class="py-2 px-3 border-l rounded-lg border-gray-300 shadow-sm">
+                  <label for="cv" class="font-semibold">Upload your CV here</label>
+                    <div class="flex justify-between w-[280px] border rounded-lg border-gray-300 shadow-sm cursor-pointer">
+                      <label for="cv">
+                        <div class="py-2 px-3">
+                          <p class="text-gray-400 text-sm">
+                            Select or drag file
+                          </p>
+                        </div>
+                      </label>
+                      <label for="cv">
+                      <div class="py-2 px-3 border-l rounded-lg border-gray-300 shadow-sm cursor-pointer">
                         <p class="text-gray-400 text-sm">
                           Select file
                         </p>
                       </div>
+                    </label>
                     </div>
-                  </label>
-                  <Input class="hidden" type="file" id="cv"/>
+                  <input class="hidden" type="file" id="cv"/>
                   <p class="font-semibold italic">Apply Before 23 July 2022</p>
                 </div>
                 <div>

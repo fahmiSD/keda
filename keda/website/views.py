@@ -15,6 +15,9 @@ def aboutCareer(request):
 def detailCareer(request):
     return render(request, 'detailCareer.html')
 
+def detailBlog(request):
+    return render(request, 'detailBlog.html')
+
 def blog(request):
     blogs = Blog.objects.all()
     context = {

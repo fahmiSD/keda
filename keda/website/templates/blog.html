@@ -1,27 +1,135 @@
-{% extends 'base.html' %} {% block content %}
-
-<div class="container">
-  <div class="col-lg-10" style="float: none; margin: auto">
-    <div class="row justify-content-evenly mt-5">
-      {% for blog in blogs %}
-
-      <div class="col-sm-5 mb-4">
-        <div class="card" style="">
-          <div class="card text-center">
-            <div class="card-body">
-              <h5 class="card-title">{{ blog.blog_header }}</h5>
-              <span class="badge bg-primary">{{ blog.blog_tag }}</span>
-              <hr />
-              <p class="card-text text-start">{{ blog.description|truncatechars:100|safe }}</p>
+{% extends 'base.html' %} {% load static %} {% block content %}
+    <div>
+     {% comment %} Banner Blog  {% endcomment %}
+        <div style="background-image: url('{% static "image/public/bgKeDABlog.svg" %}')" class="h-[641px]">
+          <div class="px-24 pt-64">
+              <img src="{% static "image/public/KeDABlog.svg" %}" alt="logo" class=""/>
             </div>
-            <a href="{% url 'blog_detail' blog.id %}" class="btn btn-primary">Baca selengkapnya</a>
+        </div>
+    {% comment %} Main Blog {% endcomment %}
+        <div class="bg-[white]">
+            <div class=" grid grid-cols-2 place-content-between py-10 px-10">
+                <input type="search" placeholder="⌕ Search" class="w-[559px] py-2 rounded-sm border-gray-300 shadow-sm focus:ring-[#d20008] focus:border-gray-200 transition duration-300"/>
+                <div class="grid grid-cols-4 pl-10 items-center gap-4">
+                    <div class="flex bg-[#d20008] justify-center items-center py-2 rounded-lg gap-3">
+                        <p class="text-white">Programmer</p>
+                        <p class="text-white">x</p>
+                    </div>
+                    <div class="flex bg-[#d20008] justify-center items-center py-2 rounded-lg gap-3">
+                        <p class="text-white">Programmer</p>
+                        <p class="text-white">x</p>
+                    </div>
+                    <div class="flex bg-[#d20008] justify-center items-center py-2 rounded-lg gap-3">
+                        <p class="text-white">Programmer</p>
+                        <p class="text-white">x</p>
+                    </div>
+                    <div class="flex bg-[#d20008] justify-center items-center py-2 rounded-lg gap-3">
+                        <p class="text-white">Programmer</p>
+                        <p class="text-white">x</p>
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-12 gap-10 px-12 py-6">
+                <div class="col-span-9">
+                    <div class=" grid grid-cols-2 gap-10 py-5">
+                        <div class="grid gap-5">
+                            <img src="{% static "image/public/imgBlog1.svg" %}" alt="" class="w-full"/>
+                            <p class="text-white bg-[#587f58] rounded-full py-1 px-4 w-fit">Plant</p>
+                            <h3 class="text-xl font-bold">Tumbuhan hijau menyegarkan udara 
+                            di setiap ruangan</h3>
+                            <p>simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s simply dummy text of the printing and typesetting industry. </p>
+                            <Button class="w-full px-4 py-2 border bg-[#d20008] border-white text-white rounded hover:bg-[#b3020f] hover:border-[#d20008] text-sm font-medium transition duration-300"><span class="flex justify-center items-center"><p class="mr-3">Baca Selengkapnya</p> <img src="{% static "image/public/lebihDari.svg" %}" alt="" class="mt-1"/></span></Button>
+                        </div>
+                        <div class="grid gap-5">
+                            <img src="{% static "image/public/imgBlog1.svg" %}" alt="" class="w-full"/>
+                            <p class="text-white bg-[#587f58] rounded-full py-1 px-4 w-fit">Plant</p>
+                            <h3 class="text-xl font-bold">Tumbuhan hijau menyegarkan udara 
+                            di setiap ruangan</h3>
+                            <p>simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s simply dummy text of the printing and typesetting industry. </p>
+                            <Button class="w-full px-4 py-2 border bg-[#d20008] border-white text-white rounded hover:bg-[#b3020f] hover:border-[#d20008] text-sm font-medium transition duration-300"><span class="flex justify-center items-center"><p class="mr-3">Baca Selengkapnya</p> <img src="{% static "image/public/lebihDari.svg" %}" alt="" class="mt-1"/></span></Button>
+                        </div>
+                        <div class="grid gap-5">
+                            <img src="{% static "image/public/imgBlog1.svg" %}" alt="" class="w-full"/>
+                            <p class="text-white bg-[#587f58] rounded-full py-1 px-4 w-fit">Plant</p>
+                            <h3 class="text-xl font-bold">Tumbuhan hijau menyegarkan udara 
+                            di setiap ruangan</h3>
+                            <p>simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s simply dummy text of the printing and typesetting industry. </p>
+                            <Button class="w-full px-4 py-2 border bg-[#d20008] border-white text-white rounded hover:bg-[#b3020f] hover:border-[#d20008] text-sm font-medium transition duration-300"><span class="flex justify-center items-center"><p class="mr-3">Baca Selengkapnya</p> <img src="{% static "image/public/lebihDari.svg" %}" alt="" class="mt-1"/></span></Button>
+                        </div>
+                        <div class="grid gap-5">
+                            <img src="{% static "image/public/imgBlog1.svg" %}" alt="" class="w-full"/>
+                            <p class="text-white bg-[#587f58] rounded-full py-1 px-4 w-fit">Plant</p>
+                            <h3 class="text-xl font-bold">Tumbuhan hijau menyegarkan udara 
+                            di setiap ruangan</h3>
+                            <p>simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s simply dummy text of the printing and typesetting industry. </p>
+                            <Button class="w-full px-4 py-2 border bg-[#d20008] border-white text-white rounded hover:bg-[#b3020f] hover:border-[#d20008] text-sm font-medium transition duration-300"><span class="flex justify-center items-center"><p class="mr-3">Baca Selengkapnya</p> <img src="{% static "image/public/lebihDari.svg" %}" alt="" class="mt-1"/></span></Button>
+                        </div>
+                    </div>
+                    <div class="flex justify-center items-center py-8">
+                        <Button class="mt-5 rounded py-1 w-[128px] border bg-[#555555] text-white hover:bg-[#444444] font-medium transition duration-300">Load more</Button>
+                    </div>
+                </div>
+                <div class="col-span-3 bg-[#f8f8f8] p-5">
+                    <h1 class="text-2xl text-center font-semibold mb-4">Trending Article</h1>
+                    <div class="grid gap-2">
+                        <img src="{% static "image/public/imgBlog1.svg" %}" alt="" class="w-full"/>
+                        <p class="text-white bg-[#587f58] rounded-full py-1 px-4 w-fit">Plant</p>
+                        <h3 class="text-xl font-bold">Tumbuhan hijau menyegarkan udara 
+                        di setiap ruangan</h3>
+                        <p>simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s simply dummy text of the printing and typesetting industry. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% comment %} Digital Transformation {% endcomment %}
+        <div style="background-image: url('{% static "image/public/backgroundDigitalTransformationGreen.svg" %}')" class="h-[283px]">
+          <div class="container px-20 py-16">
+            <img src="{% static "image/public/YourDigitalTransfoemationPartner.svg" %}" alt="" />
+            <Button class="ml-6 mt-6 px-7 py-5 border bg-[#d20008] text-xl text-white rounded-sm hover:bg-[#b3020f] font-medium transition duration-300">Book a chat</Button>
           </div>
         </div>
-      </div>
-
-      {% endfor %}
+    {% comment %} Footer {% endcomment %}
+        <div class="bg-black  ">
+          <div class="container px-20 pt-12 pb-5">
+            <div class="flex justify-between ite">
+              <div>
+                <img src="{% static "image/public/logo2.svg" %}" alt="logo" class="mb-5"/>
+                <p class="text-white">Komplek Green Ville, Jalan Ratu</p>
+                <p class="text-white">Kemuning Blok BL No. 1,</p>
+                <p class="text-white">RT08/RW14, DKI Jakarta</p>
+                <p class="text-white">+(62-81) 398-716-212</p>
+              </div>
+              <div class="grid grid-cols-2 gap-24 pt-5">
+                <div class="grid gap-3">
+                  <h1 class="text-white text-2xl font-bold">Quick Links</h1>
+                  <p class="text-white">Home</p>
+                  <p class="text-white">About</p>
+                  <p class="text-white">Services</p>
+                  <p class="text-white">Process</p>
+                  <p class="text-white">Projects</p>
+                </div>
+                <div class="grid gap-3">
+                  <h1 class="text-white text-2xl font-bold">Find Us On</h1>
+                  <p class="text-white">Facebook</p>
+                  <p class="text-white">Instagram</p>
+                  <p class="text-white">Facebook</p>
+                  <p class="text-white">Linkedin</p>
+                </div>
+              </div>
+            </div>
+              <p class="text-white text-center mt-7">Copyright © 2022 KeDA Tech. All Rights Reserved.</p>
+          </div>
+        </div>
+    {% comment %} After Footer {% endcomment %}
+        <div style="background-image: url('{% static "image/public/bgAfterFooterGreen.svg" %}')" class="h-[720px] shadow-black">
+          <div class="container px-64 pt-72">
+            <h1 class="text-5xl font-bold mb-4">Tetap Terhubung Bersama Kami</h1>
+            <p class="text-2xl pr-20 mb-4">Sign up for the lat­est up­dates to our Way of Working, case stud­ies, and more.</p>
+            <div>
+              <input type="email" placeholder="Email Anda di sini" class="w-80 py-1 rounded border-gray-300 shadow-sm focus:ring-[#d20008] focus:border-gray-200 transition duration-300"/>
+              <Button class="px-3 py-1 border bg-[#d20008] text-white text-md ml-3 font-bold rounded hover:bg-[#b3020f] hover:border-[#d20008] transition duration-300">Berlangganan</Button>
+            </div>
+          </div>
+        </div>
     </div>
-  </div>
-</div>
-
-{% endblock %}
+{% endblock content %}
