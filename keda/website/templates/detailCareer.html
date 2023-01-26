@@ -38,31 +38,46 @@
       {% comment %} Form Registration {% endcomment %}
         <div class="bg-white py-16 px-14">
             <div>
-
-              {{ success }}
+              <p style="color: rgb(16 185 129);" class="text-xs italic">
+                {{ success }}
+              </p>
               
               <form action=""  method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 <input type="hidden" name="form_type" value="form_candidate">
                 <div class="grid grid-rows-2 mb-10">
                   <label for="name" class="font-semibold">Nama</label>
-                  {{form_candidate.candidate_name}} {{ form_candidate.candidate_name.errors }}
+                  {{form_candidate.candidate_name}} 
+                  
+                  <p style="color: rgb(220 38 38);" class="text-xs italic"> 
+                    {{ form_candidate.candidate_name.errors }}
+                  </p>
+
                 </div>
                 <div class="grid grid-rows-2 mb-10">
                   <label for="career_tag_id" class="font-semibold">Posisi yang dilamar</label>
                   
-                  {{form_candidate.career_tag_id}} {{ form_candidate.candidate_career_tag_id.errors }}
+                  {{form_candidate.career_tag_id}} 
+                  
+                  <p style="color: rgb(220 38 38);" class="text-xs italic">
+                    {{ form_candidate.candidate_career_tag_id.errors }}
+                  </p>
                  
                  </div>
                 <div class="grid grid-rows-2 mb-10">
                   <label for="phone" class="font-semibold">No Whatsapp</label>
                   
-                  {{form_candidate.whatsapp_number}} {{ form_candidate.whatsapp_number.errors }}
-                 
+                  {{form_candidate.whatsapp_number}} 
+                  <p style="color: rgb(220 38 38);" class="text-xs italic">
+                    {{ form_candidate.whatsapp_number.errors }}
+                    <p style="color: rgb(220 38 38);" class="text-xs italic">
                  </div>
                 <div class="grid grid-rows-2 mb-10">
                   <label for="email" class="font-semibold">Email</label>
-                  {{form_candidate.email}} {{ form_candidate.email.errors }}
+                  {{form_candidate.email}} 
+                  <p style="color: rgb(220 38 38);" class="text-xs italic">
+                  {{ form_candidate.email.errors }}
+                  </p>
                 </div>
                 <div class="grid gap-2 mb-10">
                   <label for="cv" class="font-semibold">Upload your CV here</label>
@@ -86,7 +101,10 @@
                   
                   {{form_candidate.cv}}
                   <p class="text-sm text-gray-600 dark:text-gray-600 italic" id="file_input_help">File type: PDF</p>
+                 
+                  <p style="color: rgb(220 38 38);" class="text-xs italic">
                   {{ form_candidate.cv.errors }}
+                  </p>
                   <p class="font-semibold italic">Apply Before: {{ career.deadline|date:"j F Y" }}</p>
                 </div>
 

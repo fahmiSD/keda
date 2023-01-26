@@ -173,8 +173,10 @@ def detailBlog(request):
 
 def blog(request):
     blogs = Blog.objects.all()
+    trendings = Blog.objects.all().order_by("?")[:4]
     context = {
         'blogs' : blogs,
+        'trendings' : trendings,
     }
     return render(request, 'blog.html', context)
 

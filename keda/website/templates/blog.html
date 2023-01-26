@@ -11,7 +11,7 @@
             <div class=" grid grid-cols-2 place-content-between py-10 px-10">
                 <input type="search" placeholder="⌕ Search" class="w-[559px] py-2 rounded-sm border-gray-300 shadow-sm focus:ring-[#d20008] focus:border-gray-200 transition duration-300"/>
                 <div class="grid grid-cols-4 pl-10 items-center gap-4">
-                    <div class="flex bg-[#d20008] justify-center items-center py-2 rounded-lg gap-3">
+                    <div class="flex bg-purple-600 justify-center items-center py-2 rounded-lg gap-3">
                         <p class="text-white">Programmer</p>
                         <p class="text-white">x</p>
                     </div>
@@ -32,38 +32,15 @@
             <div class="grid grid-cols-12 gap-10 px-12 py-6">
                 <div class="col-span-9">
                     <div class=" grid grid-cols-2 gap-10 py-5">
+                      {% for blog in blogs %}
                         <div class="grid gap-5">
-                            <img src="{% static "image/public/imgBlog1.svg" %}" alt="" class="w-full"/>
-                            <p class="text-white bg-[#587f58] rounded-full py-1 px-4 w-fit">Plant</p>
-                            <h3 class="text-xl font-bold">Tumbuhan hijau menyegarkan udara 
-                            di setiap ruangan</h3>
-                            <p>simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s simply dummy text of the printing and typesetting industry. </p>
+                            <img src="{{ blog.image_blog.url }}" alt="" class="w-full"/>
+                            <p class="text-white bg-[#587f58] rounded-full py-1 px-4 w-fit">{{ blog.blog_tag}}</p>
+                            <h3 class="text-xl font-bold">{{ blog.blog_header }}</h3>
+                            <p>{{ blog.description|safe|truncatechars:200 }}</p>
                             <Button class="w-full px-4 py-2 border bg-[#d20008] border-white text-white rounded hover:bg-[#b3020f] hover:border-[#d20008] text-sm font-medium transition duration-300"><span class="flex justify-center items-center"><p class="mr-3">Baca Selengkapnya</p> <img src="{% static "image/public/lebihDari.svg" %}" alt="" class="mt-1"/></span></Button>
                         </div>
-                        <div class="grid gap-5">
-                            <img src="{% static "image/public/imgBlog1.svg" %}" alt="" class="w-full"/>
-                            <p class="text-white bg-[#587f58] rounded-full py-1 px-4 w-fit">Plant</p>
-                            <h3 class="text-xl font-bold">Tumbuhan hijau menyegarkan udara 
-                            di setiap ruangan</h3>
-                            <p>simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s simply dummy text of the printing and typesetting industry. </p>
-                            <Button class="w-full px-4 py-2 border bg-[#d20008] border-white text-white rounded hover:bg-[#b3020f] hover:border-[#d20008] text-sm font-medium transition duration-300"><span class="flex justify-center items-center"><p class="mr-3">Baca Selengkapnya</p> <img src="{% static "image/public/lebihDari.svg" %}" alt="" class="mt-1"/></span></Button>
-                        </div>
-                        <div class="grid gap-5">
-                            <img src="{% static "image/public/imgBlog1.svg" %}" alt="" class="w-full"/>
-                            <p class="text-white bg-[#587f58] rounded-full py-1 px-4 w-fit">Plant</p>
-                            <h3 class="text-xl font-bold">Tumbuhan hijau menyegarkan udara 
-                            di setiap ruangan</h3>
-                            <p>simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s simply dummy text of the printing and typesetting industry. </p>
-                            <Button class="w-full px-4 py-2 border bg-[#d20008] border-white text-white rounded hover:bg-[#b3020f] hover:border-[#d20008] text-sm font-medium transition duration-300"><span class="flex justify-center items-center"><p class="mr-3">Baca Selengkapnya</p> <img src="{% static "image/public/lebihDari.svg" %}" alt="" class="mt-1"/></span></Button>
-                        </div>
-                        <div class="grid gap-5">
-                            <img src="{% static "image/public/imgBlog1.svg" %}" alt="" class="w-full"/>
-                            <p class="text-white bg-[#587f58] rounded-full py-1 px-4 w-fit">Plant</p>
-                            <h3 class="text-xl font-bold">Tumbuhan hijau menyegarkan udara 
-                            di setiap ruangan</h3>
-                            <p>simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s simply dummy text of the printing and typesetting industry. </p>
-                            <Button class="w-full px-4 py-2 border bg-[#d20008] border-white text-white rounded hover:bg-[#b3020f] hover:border-[#d20008] text-sm font-medium transition duration-300"><span class="flex justify-center items-center"><p class="mr-3">Baca Selengkapnya</p> <img src="{% static "image/public/lebihDari.svg" %}" alt="" class="mt-1"/></span></Button>
-                        </div>
+                      {% endfor %}
                     </div>
                     <div class="flex justify-center items-center py-8">
                         <Button class="mt-5 rounded py-1 w-[128px] border bg-[#555555] text-white hover:bg-[#444444] font-medium transition duration-300">Load more</Button>
@@ -71,13 +48,14 @@
                 </div>
                 <div class="col-span-3 bg-[#f8f8f8] p-5">
                     <h1 class="text-2xl text-center font-semibold mb-4">Trending Article</h1>
+                    {% for trending in trendings %}
                     <div class="grid gap-2">
-                        <img src="{% static "image/public/imgBlog1.svg" %}" alt="" class="w-full"/>
-                        <p class="text-white bg-[#587f58] rounded-full py-1 px-4 w-fit">Plant</p>
-                        <h3 class="text-xl font-bold">Tumbuhan hijau menyegarkan udara 
-                        di setiap ruangan</h3>
-                        <p>simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s simply dummy text of the printing and typesetting industry. </p>
+                        <img src="{{ trending.image_blog.url }}" alt="" class="w-full"/>
+                        <p class="text-white bg-[#587f58] rounded-full py-1 px-4 w-fit">{{ trending.blog_tag}}</p>
+                        <h3 class="text-xl font-bold">{{ trending.blog_header}}</h3>
+                        <p>{{ trending.description|safe|truncatechars:110 }}</p>
                     </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
