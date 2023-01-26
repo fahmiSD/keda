@@ -74,9 +74,14 @@ class Career_tag(models.Model):
 class Career(models.Model):
     career_name = models.CharField(max_length=300)
     career_tag_id = models.ForeignKey(Career_tag, on_delete=models.CASCADE)
-    description = models.TextField()
+    description = RichTextUploadingField()
     deadline = models.DateField(null=True)
     datetime= models.DateTimeField(auto_now_add=True)
+    role_responsibility = RichTextUploadingField()
+    requirement = RichTextUploadingField()
+    plus = RichTextUploadingField()
+    benefits = RichTextUploadingField()
+
 
     def __str__(self):
         return self.career_name
