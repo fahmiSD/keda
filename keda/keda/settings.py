@@ -38,7 +38,7 @@ INTERNAL_IPS = [
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-NPM_BIN_PATH = "C:/Program Files/nodejs/npm.cmd"
+# NPM_BIN_PATH = "C:/Program Files/nodejs/npm.cmd"
 
 # Application definition
 
@@ -56,7 +56,8 @@ INSTALLED_APPS = [
     'ckeditor_uploader',
     'tailwind',
     'theme',
-    'django_browser_reload'
+    'django_browser_reload',
+    'django_cleanup.apps.CleanupConfig',
 ]
 
 TAILWIND_APP_NAME = 'theme'

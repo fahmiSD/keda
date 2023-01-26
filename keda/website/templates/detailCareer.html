@@ -38,18 +38,31 @@
       {% comment %} Form Registration {% endcomment %}
         <div class="bg-white py-16 px-14">
             <div>
-              <form action="">
+
+              {{ success }}
+              
+              <form action=""  method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="hidden" name="form_type" value="form_candidate">
                 <div class="grid grid-rows-2 mb-10">
                   <label for="name" class="font-semibold">Nama</label>
-                  <input type="text" id="name" class="w-[557px] py-1 rounded border-gray-300 shadow-sm focus:ring-[#d20008] focus:border-gray-200 transition duration-300"/>
+                  {{form_candidate.candidate_name}} {{ form_candidate.candidate_name.errors }}
                 </div>
+                <div class="grid grid-rows-2 mb-10">
+                  <label for="career_tag_id" class="font-semibold">Posisi yang dilamar</label>
+                  
+                  {{form_candidate.career_tag_id}} {{ form_candidate.candidate_career_tag_id.errors }}
+                 
+                 </div>
                 <div class="grid grid-rows-2 mb-10">
                   <label for="phone" class="font-semibold">No Whatsapp</label>
-                  <input type="number" id="phone" class="w-[557px] py-1 rounded border-gray-300 shadow-sm focus:ring-[#d20008] focus:border-gray-200 transition duration-300"/>
-                </div>
+                  
+                  {{form_candidate.whatsapp_number}} {{ form_candidate.whatsapp_number.errors }}
+                 
+                 </div>
                 <div class="grid grid-rows-2 mb-10">
                   <label for="email" class="font-semibold">Email</label>
-                  <input type="email" id="email" class="w-[557px] py-1 rounded border-gray-300 shadow-sm focus:ring-[#d20008] focus:border-gray-200 transition duration-300"/>
+                  {{form_candidate.email}} {{ form_candidate.email.errors }}
                 </div>
                 <div class="grid gap-2 mb-10">
                   <label for="cv" class="font-semibold">Upload your CV here</label>
@@ -70,9 +83,13 @@
                     </label>
                     </div>
                   </label>
-                  <input class="hidden" type="file" id="cv"/>
+                  
+                  {{form_candidate.cv}}
+                  <p class="text-sm text-gray-600 dark:text-gray-600 italic" id="file_input_help">File type: PDF</p>
+                  {{ form_candidate.cv.errors }}
                   <p class="font-semibold italic">Apply Before: {{ career.deadline|date:"j F Y" }}</p>
                 </div>
+
                 <div>
                   <Button class="w-[557px] px-4 py-2 border bg-[#d20008] border-white text-white rounded hover:bg-[#b3020f] hover:border-[#d20008] text-sm font-medium transition duration-300"><span class="flex justify-center items-center"><p class="mr-3">Join Now</p> <img src="{% static "image/public/lebihDari.svg" %}" alt="" class="mt-1"/></span></Button>
                 </div>
