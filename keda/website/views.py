@@ -4,16 +4,144 @@ from website.forms import *
 
 # Create your views here.
 def index(request):
-    return render(request, 'index.html')
+    if request.POST:
+        form = SubscriptionForm(request.POST)
+        if form.is_valid():
+            form.save()
+            form = SubscriptionForm()
+            message = "berhasil"
+            context = {
+                'form' : form,
+                'message' : message,
+            }
+            return render(request, 'index.html', context)
+
+        else:
+            form = SubscriptionForm()
+            message = "error"
+            context = {
+                'form' : form,
+                'message' : message,
+            }
+            return render(request, 'index.html', context)
+
+    else:
+        form = SubscriptionForm()
+        context = {
+            'form' : form,
+        }
+        return render(request, 'index.html', context)
+    
 
 def solution(request):
-    return render(request, 'solution.html')
+    if request.POST:
+        form = SubscriptionForm(request.POST)
+        if form.is_valid():
+            form.save()
+            form = SubscriptionForm()
+            message = "berhasil"
+            context = {
+                'form' : form,
+                'message' : message,
+            }
+            return render(request, 'solution.html', context)
+
+        else:
+            form = SubscriptionForm()
+            message = "error"
+            context = {
+                'form' : form,
+                'message' : message,
+            }
+            return render(request, 'solution.html', context)
+
+    else:
+        form = SubscriptionForm()
+        context = {
+            'form' : form,
+        }
+        return render(request, 'solution.html', context)
 
 def aboutCareer(request):
-    return render(request, 'aboutCareer.html')
+    if request.POST:
+        form = SubscriptionForm(request.POST)
+        if form.is_valid():
+            careers = Career.objects.all()
+            form.save()
+            form = SubscriptionForm()
+            message = "berhasil"
+            context = {
+                'form' : form,
+                'message' : message,
+                'careers' : careers
+            }
+            return render(request, 'aboutCareer.html', context)
 
-def detailCareer(request):
-    return render(request, 'detailCareer.html')
+        else:
+            form = SubscriptionForm()
+            message = "error"
+            careers = Career.objects.all()
+            context = {
+                'form' : form,
+                'message' : message,
+                'careers' : careers
+            }
+            return render(request, 'aboutCareer.html', context)
+
+    else:
+        form = SubscriptionForm()
+        careers = Career.objects.all()
+        context = {
+            'form' : form,
+            'careers' : careers
+        }
+        return render(request, 'aboutCareer.html', context)
+
+def detailCareer(request, id_career):
+    if request.method == 'POST':
+        if request.POST.get("form_type") == 'formOne':
+            #Handle Elements from first Form
+            pass
+        
+        elif request.POST.get("form_type") == 'form_subs':
+            form = SubscriptionForm(request.POST)
+            if form.is_valid():
+                form.save()
+                career = Career.objects.get(id=id_career)
+                form = CandidateForm()
+                form_subs = SubscriptionForm()
+                message = "berhasil"
+                context = {
+                    'form' : form,
+                    'form_subs' : form_subs,
+                    'message' : message,
+                    'career' : career,
+                }
+                return render(request, 'detailCareer.html', context)
+
+            else:
+                career = Career.objects.get(id=id_career)
+                form = CandidateForm()
+                form_subs = SubscriptionForm()
+                message = "error"
+                context = {
+                    'form' : form,
+                    'form_subs' : form_subs,
+                    'message' : message,
+                    'career' : career,
+                }
+                return render(request, 'detailCareer.html', context)
+        
+    else:
+        career = Career.objects.get(id=id_career)
+        form = CandidateForm()
+        form_subs = SubscriptionForm()
+        context = {
+            'career' : career,
+            'form' : form,
+            'form_subs' : form_subs,
+        }
+        return render(request, 'detailCareer.html', context)
 
 def detailBlog(request):
     return render(request, 'detailBlog.html')

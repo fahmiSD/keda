@@ -20,6 +20,21 @@
   /* 2 */
 }
 
+
+.bullet > ul {
+  list-style-type: disc;
+  list-style-position: inside;
+  padding-left: 1.5rem
+}
+
+.bullet > ul ::marker{
+  color: rgb(254 46 54);
+}
+
+.bullet > ul > li {
+  margin-bottom: 1rem;
+}
+
 ::before,
 ::after {
   --tw-content: '';
@@ -1439,6 +1454,11 @@ select {
 .text-6xl {
   font-size: 3.75rem;
   line-height: 1;
+}
+
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
 }
 
 .text-8xl {
