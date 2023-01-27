@@ -172,8 +172,8 @@ def detailBlog(request, id_blog):
         if form.is_valid():
             form.save()
             form = SubscriptionForm()
-            blog = Blog.objects.get(id=id_blog)
-            related_blogs = Blog.objects.all().exclude(id=id_blog).order_by("?")[:4]
+            blog = Blog.objects.select_related('blog_tag', 'blog_tag__color_id').get(id=id_blog)
+            related_blogs = Blog.objects.select_related('blog_tag', 'blog_tag__color_id').exclude(id=id_blog).order_by("?")[:4]
             message = 'berhasil'
             context = {
                 'blog' : blog,
@@ -185,8 +185,8 @@ def detailBlog(request, id_blog):
 
         else:
             form = SubscriptionForm()
-            blog = Blog.objects.get(id=id_blog)
-            related_blogs = Blog.objects.all().exclude(id=id_blog).order_by("?")[:4]
+            blog = Blog.objects.select_related('blog_tag', 'blog_tag__color_id').get(id=id_blog)
+            related_blogs = Blog.objects.select_related('blog_tag', 'blog_tag__color_id').exclude(id=id_blog).order_by("?")[:4]
             message = 'error'
             context = {
                 'blog' : blog,
@@ -198,8 +198,8 @@ def detailBlog(request, id_blog):
 
     else:
         form = SubscriptionForm()
-        blog = Blog.objects.get(id=id_blog)
-        related_blogs = Blog.objects.all().exclude(id=id_blog).order_by("?")[:4]
+        blog = Blog.objects.select_related('blog_tag', 'blog_tag__color_id').get(id=id_blog)
+        related_blogs = Blog.objects.select_related('blog_tag', 'blog_tag__color_id').exclude(id=id_blog).order_by("?")[:4]
         context = {
             'blog' : blog,
             'form' : form,
