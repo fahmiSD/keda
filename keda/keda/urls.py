@@ -34,6 +34,7 @@ urlpatterns = [
     path('aboutStory/', aboutStory, name='aboutStory'),
     path('aboutTeam/', aboutTeam, name='aboutTeam'),
     path('detailCareer/<int:id_career>', detailCareer, name='detailCareer'),
+    path('processOverview/', process, name='processOverview'),
     path('blog/', blog, name="blog"),
     re_path(r'^ckeditor/', include('ckeditor_uploader.urls')),
     path("__reload__/", include("django_browser_reload.urls")),
