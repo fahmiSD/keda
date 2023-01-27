@@ -29,6 +29,7 @@ urlpatterns = [
     path('solution/', solution, name='solution'),
     path('aboutCareer/', aboutCareer, name='aboutCareer'),
     path('aboutTechnologies/', aboutTechnologies, name='aboutTechnologies'),
+    path('consultation/', consultation, name='consultation'),
     path('detailBlog/<int:id_blog>', detailBlog, name='detailBlog'),
     path('project/', project, name='project'),
     path('aboutStory/', aboutStory, name='aboutStory'),

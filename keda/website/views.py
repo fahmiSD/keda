@@ -226,6 +226,9 @@ def aboutTeam(request):
 def aboutTechnologies(request):
     return render(request, 'aboutTechnologies.html')
 
+def consultation(request):
+    return render(request, 'consultation.html')
+
 def blog(request):
     if request.POST:
         form = SubscriptionForm(request.POST)
