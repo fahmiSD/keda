@@ -1,32 +1,27 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
     <div>
       {% comment %} Banner Working Style {% endcomment %}
-        <div style="background-image: url('{% static "image/public/bgProcessOverview.svg" %}')" class="h-[202px] flex items-center justify-center">
-            <img src="{% static "image/public/KeDA'sWorkingStyle.svg" %}" alt="" />
+        <div style="background-image: url('{% static "image/public/bgProcessNextSteps.svg" %}')" class="h-[202px] flex items-center justify-center">
+            <img src="{% static "image/public/Next-Steps.svg" %}" alt="" />
         </div>
       {% comment %} Main Content {% endcomment %}
         <div class="bg-white py-16 px-14">
             <div class="grid grid-cols-12">
                 <div class="col-span-4">
-                    <div class="mb-7 border-l-2 border-[#333333] pl-4">
-                        <a href="/processOverview">
-                        <h1 class="text-3xl font-bold text-[#333333] cursor-pointer">Overview</h1>
-                        </a>
-                        <div class="border-t-4 w-[59px] rounded-full border-[#333333] mb-3"></div>
-                        <div class="pl-5">
-                            <p>Teams (Lorem ipsum)</p>
-                            <p>Activity kit (Lorem ipsum)</p>
-                        </div>
-                    </div>
                     <div class="mb-7 pl-4">
+                        <a href="/processOverview">
+                        <h1 class="text-2xl font-bold text-[#333333] cursor-pointer">Overview</h1>
+                        </a>
+                    </div>
+                    <div class="mb-7 pl-4"> 
                         <a href="/processBrief">
                         <h1 class="text-2xl font-bold text-[#333333] cursor-pointer">Brief</h1>
                         </a>
                     </div>
-                    <div class="mb-7 pl-4"> 
+                    <div class="mb-7 pl-4">
                         <a href="/processScope">
                         <h1 class="text-2xl font-bold text-[#333333] cursor-pointer">Scope</h1>
-                        <a/>
+                        </a>
                     </div>
                     <div class="mb-7 pl-4">
                         <a href="/processEstimation">
@@ -43,30 +38,33 @@
                         <h1 class="text-2xl font-bold text-[#333333] cursor-pointer">Support</h1>
                         </a>
                     </div>
-                    <div class="mb-7 pl-4">
+                    <div class="mb-7 border-l-2 border-[#333333] pl-4">
                         <a href="/processNextSteps">
-                        <h1 class="text-2xl font-bold text-[#333333] cursor-pointer">Next Steps</h1>
+                        <h1 class="text-3xl font-bold text-[#333333] cursor-pointer">Next Steps</h1>
                         </a>
+                        <div class="border-t-4 w-[59px] rounded-full border-[#333333] mb-3 mt-2"></div>
+                        <div class="pl-5">
+                            <p>Teams (Lorem ipsum)</p>
+                            <p>Activity kit (Lorem ipsum)</p>
+                        </div>
                     </div>
                     <div class="pl-4">
                         <Button class="px-4 py-2 border border-[#333333] text-[#333333] rounded hover:bg-[#333333] hover:border-white hover:text-white text-sm font-medium transition duration-300">Book a chat</Button>
                     </div>
                 </div>
                 <div class="col-span-8">
-                    <h1 class="text-4xl font-bold mb-5 text-[#333333]">Overview</h1>
-                    <img src="{% static "image/public/vidProcessOverview.svg" %}" alt="" class="mb-5"/>
-                    <p>Dalam dunia industri, kita pasti menemukan tantangan. Untuk itu, kami hadir dan siap membantu Anda mengembangkan bisnis atau industri yang Anda jalankan. 
+                    <h1 class="text-4xl font-bold mb-5 text-[#333333]">Next Steps</h1>
+                    <img src="{% static "image/public/vidProcessNextSteps.svg" %}" alt="" class="mb-5"/>
+                    <p>
+                    Langkah selanjutnya setelah melihat cara bekerja Keda Tech ada 2 cara. Yang pertama, harus dimulai dari dalam diri Anda atau management. Cobalah untuk mengimplementasikan cara kerja yang sudah dijelaskan KeDA Tech. Prosesnya tentu tidak semudah teori yang ada. Karena itu, Anda bisa langsung menghubungi kami untuk keterangan lebih lanjut. 
                     <br /><br />
-                    Dalam setiap proses pengerjaannya, KeDA Tech akan membantu Anda menganalisa setiap masalah dalam bisnis Anda, kemudian memberikan solusi berupa teknologi yang tepat.
+                    Langkah kedua adalah mengimplementasikan semua proses dan produk yang dihasilkan proses bekerja KeDA pada perusahaan Anda. Penerapan produk pasti akan lebih sulit lagi, karena kali ini kami akan bicara mengenai software dan sistem yang akan dipakai dalam bisnis Anda. Butuh pelatihan dan butuh waktu ekstra. 
+                    <br /><br />
+                    Untuk itu Anda juga bisa langsung menghubungi kami mengenai hal tersebut. Karena tim KeDA Tech tidak akan meninggalkan Anda kebingungan sendirian tentang teknologi. Kami pastikan support selalu ada untuk tim Anda. 
                     </p>
-                    <div class="pt-20">
+                    <div class="pt-16">
                         <div class="flex justify-center items-center">
-                            <img src="{% static "image/public/Brief1.svg" %}" alt="" />
-                        </div>
-                        <div class="flex justify-end pt-9 cursor-pointer">
-                            <a href="/processBrief">
-                            <img src="{% static "image/public/nextBrief.svg" %}" alt="" />
-                            </a>
+                            <img src="{% static "image/public/Brief6.svg" %}" alt="" />
                         </div>
                     </div>
                 </div>

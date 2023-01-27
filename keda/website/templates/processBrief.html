@@ -1,17 +1,21 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
     <div>
       {% comment %} Banner Working Style {% endcomment %}
-        <div style="background-image: url('{% static "image/public/bgProcessOverview.svg" %}')" class="h-[202px] flex items-center justify-center">
-            <img src="{% static "image/public/KeDA'sWorkingStyle.svg" %}" alt="" />
+        <div style="background-image: url('{% static "image/public/bgProcessBrief.svg" %}')" class="h-[202px] flex items-center justify-center">
+            <img src="{% static "image/public/brief.svg" %}" alt="" />
         </div>
       {% comment %} Main Content {% endcomment %}
         <div class="bg-white py-16 px-14">
             <div class="grid grid-cols-12">
                 <div class="col-span-4">
-                    <div class="mb-7 border-l-2 border-[#333333] pl-4">
+                    <div class="mb-7 pl-4">
                         <a href="/processOverview">
-                        <h1 class="text-3xl font-bold text-[#333333] cursor-pointer">Overview</h1>
+                        <h1 class="text-2xl font-bold text-[#333333] cursor-pointer">Overview</h1>
                         </a>
+                    </div>
+                    <div class="mb-7 border-l-2 border-[#333333] pl-4">
+                        <a href="/processBrief">
+                        <h1 class="text-3xl font-bold text-[#333333] cursor-pointer">Brief</h1>
                         <div class="border-t-4 w-[59px] rounded-full border-[#333333] mb-3"></div>
                         <div class="pl-5">
                             <p>Teams (Lorem ipsum)</p>
@@ -19,14 +23,9 @@
                         </div>
                     </div>
                     <div class="mb-7 pl-4">
-                        <a href="/processBrief">
-                        <h1 class="text-2xl font-bold text-[#333333] cursor-pointer">Brief</h1>
-                        </a>
-                    </div>
-                    <div class="mb-7 pl-4"> 
-                        <a href="/processScope">
+                        <a href="/processScope"> 
                         <h1 class="text-2xl font-bold text-[#333333] cursor-pointer">Scope</h1>
-                        <a/>
+                        </a>
                     </div>
                     <div class="mb-7 pl-4">
                         <a href="/processEstimation">
@@ -39,7 +38,7 @@
                         </a>
                     </div>
                     <div class="mb-7 pl-4">
-                        <a href="/processSupport">
+                        <a href="processSupport">
                         <h1 class="text-2xl font-bold text-[#333333] cursor-pointer">Support</h1>
                         </a>
                     </div>
@@ -53,19 +52,17 @@
                     </div>
                 </div>
                 <div class="col-span-8">
-                    <h1 class="text-4xl font-bold mb-5 text-[#333333]">Overview</h1>
-                    <img src="{% static "image/public/vidProcessOverview.svg" %}" alt="" class="mb-5"/>
-                    <p>Dalam dunia industri, kita pasti menemukan tantangan. Untuk itu, kami hadir dan siap membantu Anda mengembangkan bisnis atau industri yang Anda jalankan. 
-                    <br /><br />
-                    Dalam setiap proses pengerjaannya, KeDA Tech akan membantu Anda menganalisa setiap masalah dalam bisnis Anda, kemudian memberikan solusi berupa teknologi yang tepat.
+                    <h1 class="text-4xl font-bold mb-5 text-[#333333]">Brief</h1>
+                    <img src="{% static "image/public/vidProcessBrief.svg" %}" alt="" class="mb-5"/>
+                    <p>Sebagai titik awal dimulainya kerja sama, Brief adalah satu hal yang harus dibuat terlebih dahulu. Dalam pembuatan brief, kami harus mengerti sepenuhnya tentang apa yang Anda inginkan dalam bisnis digital ini. Anda bisa langsung menjelaskannya kepada kami, mulai dari profil usaha Anda sampai dengan goals yang ingin dicapai. Dengan komunikasi yang baik, pemahaman antara Anda dengan tim kami dapat terbentuk dan menghasilkan produk yang berkelanjutan.
                     </p>
                     <div class="pt-20">
                         <div class="flex justify-center items-center">
                             <img src="{% static "image/public/Brief1.svg" %}" alt="" />
                         </div>
                         <div class="flex justify-end pt-9 cursor-pointer">
-                            <a href="/processBrief">
-                            <img src="{% static "image/public/nextBrief.svg" %}" alt="" />
+                            <a href="/processScope">
+                            <img src="{% static "image/public/nextScope.svg" %}" alt="" />
                             </a>
                         </div>
                     </div>

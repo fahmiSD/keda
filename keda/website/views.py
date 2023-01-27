@@ -399,6 +399,35 @@ def consultation(request):
                 }
                 return render(request, 'consultation.html', context)
 
+<<<<<<< HEAD
+def processOverview(request):
+    return render(request, 'processOverview.html')
+
+def processBrief(request):
+    return render(request, 'processBrief.html')
+
+def processScope(request):
+    return render(request, 'processScope.html')
+
+def processEstimation(request):
+    return render(request, 'processEstimation.html')
+
+def processDevelopment(request):
+    return render(request, 'processDevelopment.html')
+
+def processSupport(request):
+    return render(request, 'processSupport.html')
+
+def processNextSteps(request):
+    return render(request, 'processNextSteps.html')
+
+def consult(request):
+    if request.POST:
+        form = ConsultForm(request.POST)
+        if form.is_valid():
+            form.save()
+            form = ConsultForm()
+=======
             else:
                 form_consult = ConsultForm(request.POST)
                 form_subs = SubscriptionForm()
@@ -408,6 +437,7 @@ def consultation(request):
                     'errors' : form_consult.errors,
                 }
                 return render(request, 'consultation.html', context)
+>>>>>>> 8c1754b01f5d58a3a484a54370d836b75ee11028
 
         elif request.POST.get('form_type') == 'form_subs':
             form_subs = SubscriptionForm(request.POST)
