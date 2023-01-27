@@ -5,7 +5,7 @@
         <div class="col-span-9">
             <div class="gap-10 py-5">
                 <div class="grid gap-5">
-                    <p class="text-white bg-[#587f58] rounded-full py-1 px-4 w-fit">{{blog.blog_tag}}</p>
+                    <p style="background-color : {{ blog.blog_tag.color_id.hex_code }}" class="text-white rounded-full py-1 px-4 w-fit">{{blog.blog_tag}}</p>
                     <h3 class="text-xl font-bold">{{blog.blog_header}}</h3>
                     <img src="{{ blog.image_blog.url }}" alt="" class="w-full"/>
                     <p>{{blog.description|safe}}</p>
@@ -17,7 +17,7 @@
             {% for related_blog in related_blogs %}
             <div class="grid gap-2">
                 <img src="{{ related_blog.image_blog.url }}" alt="" class="w-full"/>
-                <p class="text-white bg-[#587f58] rounded-full py-1 px-4 w-fit">{{related_blog.blog_tag}}</p>
+                <p style="background-color : {{ related_blog.blog_tag.color_id.hex_code }}" class="text-white rounded-full py-1 px-4 w-fit">{{related_blog.blog_tag}}</p>
                 <h3 class="text-xl font-bold">{{related_blog.blog_header}}</h3>
                 <p>{{related_blog.description|safe|truncatechars:100}}</p>
             </div>
@@ -27,8 +27,8 @@
     {% comment %} Digital Transformation  {% endcomment %}
     <div style="background-image: url('{% static "image/public/backgroundDigitalTransformationOrange.svg" %}')" class="h-[283px]">
           <div class="container px-20 py-16">
-            <img src=src="{% static "image/public/YourDigitalTransfoemationPartner.svg" %}" alt="" />
-            <Button class="ml-6 mt-6 px-7 py-5 border bg-[#d20008] text-xl text-white rounded-sm hover:bg-[#b3020f] font-medium transition duration-300">Book a chat</Button>
+            <img src="{% static "image/public/YourDigitalTransfoemationPartner.svg" %}" alt="" />
+            <Button onclick="window.location.href = '{% url "consultation" %}';" class="ml-6 mt-6 px-7 py-5 border bg-[#d20008] text-xl text-white rounded-sm hover:bg-[#b3020f] font-medium transition duration-300">Book a chat</Button>
           </div>
     </div>
     {% comment %} Footer {% endcomment %}
