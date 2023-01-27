@@ -926,8 +926,8 @@ select {
   height: 202px;
 }
 
-.w-4 {
-  width: 1rem;
+.w-40 {
+  width: 10rem;
 }
 
 .w-\[409px\] {
