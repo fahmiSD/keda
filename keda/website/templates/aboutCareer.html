@@ -84,14 +84,15 @@
             <div class="grid grid-cols-2 gap-10">
 
               {% for career in careers %}
-
+              
+              
              <Card class="p-8 block w-full py-5 rounded-xl bg-white shadow-md">
                 <div>
                   <div class="flex justify-between mb-3">
                     <h1 class="text-2xl font-bold">{{ career.career_name }}</h1>
                     <img src="{% static "image/public/3dot.svg" %}" alt="" />
                   </div>
-                  <p style="background-color: {{career.hex_code}};" class=" w-[132px] py-1 text-center rounded-full text-white mb-3">{{ career.career_tag_id}}</p>
+                  <p style="background-color: {{ career.career_tag_id.color_id.hex_code }};" class=" w-[132px] py-1 text-center rounded-full text-white mb-3">{{ career.career_tag_id.career_tag_name }}</p>
                   <p class="text-lg">{{ career.description|safe|truncatechars:140 }}</p>
                   <p class="text-lg font-semibold">Apply before: {{career.deadline}}</p>
                   <Button onclick="window.location.href = '{% url "detailCareer" career.id %}';" href="" class="mt-5 py-2 w-full border bg-[#d20008] text-white rounded-md hover:bg-[#b3020f] font-medium transition duration-300">Apply Now </Button>

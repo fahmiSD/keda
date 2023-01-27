@@ -35,7 +35,7 @@
                       {% for blog in blogs %}
                         <div class="grid gap-5">
                             <img src="{{ blog.image_blog.url }}" alt="" class="w-full"/>
-                            <p class="text-white bg-[#587f58] rounded-full py-1 px-4 w-fit">{{ blog.blog_tag}}</p>
+                            <p style="background-color : {{ blog.blog_tag.color_id.hex_code }}" class="text-white rounded-full py-1 px-4 w-fit">{{ blog.blog_tag}}</p>
                             <h3 class="text-xl font-bold">{{ blog.blog_header }}</h3>
                             <p>{{ blog.description|safe|truncatechars:200 }}</p>
                        
@@ -52,7 +52,7 @@
                     {% for trending in trendings %}
                     <div class="grid gap-2">
                         <img src="{{ trending.image_blog.url }}" alt="" class="w-full"/>
-                        <p class="text-white bg-[#587f58] rounded-full py-1 px-4 w-fit">{{ trending.blog_tag}}</p>
+                        <p style="background-color : {{ trending.blog_tag.color_id.hex_code }}" class="text-white rounded-full py-1 px-4 w-fit">{{ trending.blog_tag}}</p>
                         <h3 class="text-xl font-bold">{{ trending.blog_header}}</h3>
                         <p>{{ trending.description|safe|truncatechars:110 }}</p>
                     </div>
