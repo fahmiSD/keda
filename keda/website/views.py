@@ -32,7 +32,6 @@ def index(request):
         }
         return render(request, 'index.html', context)
     
-
 def solution(request):
     if request.POST:
         form = SubscriptionForm(request.POST)
@@ -66,7 +65,10 @@ def aboutCareer(request):
     if request.POST:
         form = SubscriptionForm(request.POST)
         if form.is_valid():
-            careers = Career.objects.all()
+            # careers = Career.objects.all()
+            careers = Career.objects.raw('''SELECT website_career_tag.career_tag_name,website_color.hex_code, website_career.* 
+from website_career INNER JOIN website_career_tag on website_career_tag.id = website_career.career_tag_id_id 
+LEFT JOIN website_color on  website_career_tag.color_id_id = website_color.ID''')
             form.save()
             form = SubscriptionForm()
             message = "berhasil"
@@ -80,7 +82,10 @@ def aboutCareer(request):
         else:
             form = SubscriptionForm()
             message = "error"
-            careers = Career.objects.all()
+            # careers = Career.objects.all()
+            careers = Career.objects.raw('''SELECT website_career_tag.career_tag_name,website_color.hex_code, website_career.* 
+from website_career INNER JOIN website_career_tag on website_career_tag.id = website_career.career_tag_id_id 
+LEFT JOIN website_color on  website_career_tag.color_id_id = website_color.ID''')
             context = {
                 'form' : form,
                 'message' : message,
@@ -215,16 +220,120 @@ def detailBlog(request, id_blog):
         return render(request, 'detailBlog.html', context)
 
 def project(request):
-    return render(request, 'project.html')
+    if request.POST:
+        form = SubscriptionForm(request.POST)
+        if form.is_valid():
+            form.save()
+            form = SubscriptionForm()
+            message = "berhasil"
+            context = {
+                'form' : form,
+                'message' : message,
+            }
+            return render(request, 'project.html', context)
+
+        else:
+            form = SubscriptionForm()
+            message = "error"
+            context = {
+                'form' : form,
+                'message' : message,
+            }
+            return render(request, 'project.html', context)
+
+    else:
+        form = SubscriptionForm()
+        context = {
+            'form' : form,
+        }
+        return render(request, 'project.html', context)
 
 def aboutStory(request):
-    return render(request, 'aboutStory.html')
+    if request.POST:
+        form = SubscriptionForm(request.POST)
+        if form.is_valid():
+            form.save()
+            form = SubscriptionForm()
+            message = "berhasil"
+            context = {
+                'form' : form,
+                'message' : message,
+            }
+            return render(request, 'aboutStory.html', context)
+
+        else:
+            form = SubscriptionForm()
+            message = "error"
+            context = {
+                'form' : form,
+                'message' : message,
+            }
+            return render(request, 'aboutStory.html', context)
+
+    else:
+        form = SubscriptionForm()
+        context = {
+            'form' : form,
+        }
+        return render(request, 'aboutStory.html', context)
 
 def aboutTeam(request):
-    return render(request, 'aboutTeam.html')
+    if request.POST:
+        form = SubscriptionForm(request.POST)
+        if form.is_valid():
+            form.save()
+            form = SubscriptionForm()
+            message = "berhasil"
+            context = {
+                'form' : form,
+                'message' : message,
+            }
+            return render(request, 'aboutTeam.html', context)
+
+        else:
+            form = SubscriptionForm()
+            message = "error"
+            context = {
+                'form' : form,
+                'message' : message,
+            }
+            return render(request, 'aboutTeam.html', context)
+
+    else:
+        form = SubscriptionForm()
+        context = {
+            'form' : form,
+        }
+        return render(request, 'aboutTeam.html', context)
 
 def aboutTechnologies(request):
-    return render(request, 'aboutTechnologies.html')
+    if request.POST:
+        form = SubscriptionForm(request.POST)
+        if form.is_valid():
+            form.save()
+            form = SubscriptionForm()
+            message = "berhasil"
+            context = {
+                'form' : form,
+                'message' : message,
+            }
+            return render(request, 'aboutTechnologies.html', context)
+
+        else:
+            form = SubscriptionForm()
+            message = "error"
+            context = {
+                'form' : form,
+                'message' : message,
+            }
+            return render(request, 'aboutTechnologies.html', context)
+
+    else:
+        form = SubscriptionForm()
+        context = {
+            'form' : form,
+        }
+        return render(request, 'aboutTechnologies.html', context)
 
 def blog(request):
     if request.POST:
@@ -267,43 +376,6 @@ def blog(request):
         }
         return render(request, 'blog.html', context)
 
-
-def blog_detail(request, id_blog):
-
-    if request.POST:
-        form = SubscriptionForm(request.POST)
-        if form.is_valid():
-            form.save()
-            form = SubscriptionForm()
-            blog = Blog.objects.get(id=id_blog)
-            message = "berhasil"
-            context = {
-                'form' : form,
-                'blog' : blog,
-                'message' : message,
-            }
-            return render(request, 'blog_detail.html', context)
-
-        else:
-            form = SubscriptionForm()
-            blog = Blog.objects.get(id=id_blog)
-            message = "error"
-            context = {
-                'form' : form,
-                'blog' : blog,
-                'message' : message,
-            }
-            return render(request, 'blog_detail.html', context)
-
-    else:
-        form = SubscriptionForm()
-        blog = Blog.objects.get(id=id_blog)
-        context = {
-            'form' : form,
-            'blog' : blog,
-        }
-        return render(request, 'blog_detail.html', context)
-
 def team(request):
     Category = Categories.objects.all()
     Teams = Team.objects.all()
@@ -320,46 +392,6 @@ def team(request):
         'productDesigns' : ProductDesigns,
     }
     return render(request, 'team.html', context)
-
-def career(request):
-    careers = Career.objects.all()
-    context = {
-        'careers' : careers,
-    }
-    return render(request, 'career.html', context)
-
-def career_detail(request, id_career ):
-    if request.POST:
-        form = CandidateForm(request.POST, request.FILES)
-        if form.is_valid():
-            form.save()
-            career = Career.objects.get(id=id_career)
-            form = CandidateForm()
-            messages.success(request, "Lamaran Anda telah terkirim!")
-            context = {
-                'career' : career,
-                'form' : form,
-            }
-            return render(request, 'career_detail.html', context)
-
-        else:
-            career = Career.objects.get(id=id_career)
-            form = CandidateForm()
-            messages.error(request, "Tolong isi kolom dengan benar!")
-            context = {
-                'career' : career,
-                'form' : form,
-            }
-            return render(request, 'career_detail.html', context)
-
-    else:
-        career = Career.objects.get(id=id_career)
-        form = CandidateForm()
-        context = {
-            'career' : career,
-            'form' : form,
-        }
-        return render(request, 'career_detail.html', context)
 
 def consult(request):
     if request.POST:
@@ -393,8 +425,6 @@ def consult(request):
         return render(request, 'consult.html', context)
 
 
-
-def subs(request):
     if request.POST:
         form = SubscriptionForm(request.POST)
         if form.is_valid():
