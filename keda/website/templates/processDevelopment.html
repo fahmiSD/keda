@@ -1,42 +1,42 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
     <div>
-      {% comment %} Banner Working Style {% endcomment %}
-        <div style="background-image: url('{% static "image/public/bgProcessOverview.svg" %}')" class="h-[202px] flex items-center justify-center">
-            <img src="{% static "image/public/KeDA'sWorkingStyle.svg" %}" alt="" />
+     {% comment %} Banner Working Style {% endcomment %}
+        <div style="background-image: url('{% static "image/public/bgProcessDevelopment.svg" %}')" class="h-[202px] flex items-center justify-center">
+            <img src="{% static "image/public/development.svg" %}" alt="" />
         </div>
-      {% comment %} Main Content {% endcomment %}
+     {% comment %} Main Content {% endcomment %}
         <div class="bg-white py-16 px-14">
             <div class="grid grid-cols-12">
                 <div class="col-span-4">
-                    <div class="mb-7 border-l-2 border-[#333333] pl-4">
-                        <a href="/processOverview">
-                        <h1 class="text-3xl font-bold text-[#333333] cursor-pointer">Overview</h1>
-                        </a>
-                        <div class="border-t-4 w-[59px] rounded-full border-[#333333] mb-3"></div>
-                        <div class="pl-5">
-                            <p>Teams (Lorem ipsum)</p>
-                            <p>Activity kit (Lorem ipsum)</p>
-                        </div>
-                    </div>
                     <div class="mb-7 pl-4">
+                        <a href="/processOverview">
+                        <h1 class="text-2xl font-bold text-[#333333] cursor-pointer">Overview</h1>
+                        </a>
+                    </div>
+                    <div class="mb-7 pl-4"> 
                         <a href="/processBrief">
                         <h1 class="text-2xl font-bold text-[#333333] cursor-pointer">Brief</h1>
                         </a>
                     </div>
-                    <div class="mb-7 pl-4"> 
+                    <div class="mb-7 pl-4">
                         <a href="/processScope">
                         <h1 class="text-2xl font-bold text-[#333333] cursor-pointer">Scope</h1>
-                        <a/>
+                        </a>
                     </div>
                     <div class="mb-7 pl-4">
                         <a href="/processEstimation">
                         <h1 class="text-2xl font-bold text-[#333333] cursor-pointer">Estimation</h1>
                         </a>
                     </div>
-                    <div class="mb-7 pl-4">
+                    <div class="mb-7 border-l-2 border-[#333333] pl-4">
                         <a href="/processDevelopment">
-                        <h1 class="text-2xl font-bold text-[#333333] cursor-pointer">Development</h1>
+                            <h1 class="text-3xl font-bold text-[#333333] cursor-pointer">Development</h1>
                         </a>
+                        <div class="border-t-4 w-[59px] rounded-full border-[#333333] mb-3 mt-2"></div>
+                        <div class="pl-5">
+                            <p>Teams (Lorem ipsum)</p>
+                            <p>Activity kit (Lorem ipsum)</p>
+                        </div>
                     </div>
                     <div class="mb-7 pl-4">
                         <a href="/processSupport">
@@ -53,19 +53,18 @@
                     </div>
                 </div>
                 <div class="col-span-8">
-                    <h1 class="text-4xl font-bold mb-5 text-[#333333]">Overview</h1>
-                    <img src="{% static "image/public/vidProcessOverview.svg" %}" alt="" class="mb-5"/>
-                    <p>Dalam dunia industri, kita pasti menemukan tantangan. Untuk itu, kami hadir dan siap membantu Anda mengembangkan bisnis atau industri yang Anda jalankan. 
-                    <br /><br />
-                    Dalam setiap proses pengerjaannya, KeDA Tech akan membantu Anda menganalisa setiap masalah dalam bisnis Anda, kemudian memberikan solusi berupa teknologi yang tepat.
+                    <h1 class="text-4xl font-bold mb-5 text-[#333333]">Development</h1>
+                    <img src="{% static "image/public/vidProcessDevelopment.svg" %}" alt="" class="mb-5"/>
+                    <p>
+                    Dengan proyek yang berhasil disiapkan, pengembangan untuk produk bisnis digital Anda dapat dimulai. Kami menggunakan metodologi scrum untuk memastikan produk digital Anda bisa berfungsi dengan baik. Karena metode scrum dinilai dapat menghasilkan kualitas perangkat lunak yang baik dan sesuai dengan keinginan Anda. Metode ini juga bisa memastikan software bisa dipakai dalam proyek besar atau kecil, dan mudah untuk mengadopsi perubahan. 
                     </p>
-                    <div class="pt-20">
+                    <div class="pt-16">
                         <div class="flex justify-center items-center">
-                            <img src="{% static "image/public/Brief1.svg" %}" alt="" />
+                            <img src="{% static "image/public/Brief4.svg" %}" alt="" />
                         </div>
                         <div class="flex justify-end pt-9 cursor-pointer">
-                            <a href="/processBrief">
-                            <img src="{% static "image/public/nextBrief.svg" %}" alt="" />
+                            <a href="/processSupport">
+                            <img src="{% static "image/public/nextSupport.svg" %}" alt="" />
                             </a>
                         </div>
                     </div>
