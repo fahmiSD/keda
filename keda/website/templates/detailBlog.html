@@ -5,23 +5,23 @@
         <div class="col-span-9">
             <div class="gap-10 py-5">
                 <div class="grid gap-5">
-                    <p class="text-white bg-[#587f58] rounded-full py-1 px-4 w-fit">Plant</p>
-                    <h3 class="text-xl font-bold">Tumbuhan hijau menyegarkan udara 
-                    di setiap ruangan</h3>
-                    <img src="{% static "image/public/imgBlog1.svg" %}" alt="" class="w-full"/>
-                    <p>simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s simply dummy text of the printing and typesetting industry. </p>
+                    <p class="text-white bg-[#587f58] rounded-full py-1 px-4 w-fit">{{blog.blog_tag}}</p>
+                    <h3 class="text-xl font-bold">{{blog.blog_header}}</h3>
+                    <img src="{{ blog.image_blog.url }}" alt="" class="w-full"/>
+                    <p>{{blog.description|safe}}</p>
                 </div>
             </div>
         </div>
         <div class="col-span-3 bg-[#f9f9f9] p-5">
             <h1 class="text-2xl text-center font-semibold mb-4">Trending Article</h1>
+            {% for related_blog in related_blogs %}
             <div class="grid gap-2">
-                <img src=src="{% static "image/public/imgBlog1.svg" %}" alt="" class="w-full"/>
-                <p class="text-white bg-[#587f58] rounded-full py-1 px-4 w-fit">Plant</p>
-                <h3 class="text-xl font-bold">Tumbuhan hijau menyegarkan udara 
-                di setiap ruangan</h3>
-                <p>simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s simply dummy text of the printing and typesetting industry. </p>
+                <img src="{{ related_blog.image_blog.url }}" alt="" class="w-full"/>
+                <p class="text-white bg-[#587f58] rounded-full py-1 px-4 w-fit">{{related_blog.blog_tag}}</p>
+                <h3 class="text-xl font-bold">{{related_blog.blog_header}}</h3>
+                <p>{{related_blog.description|safe|truncatechars:100}}</p>
             </div>
+            {% endfor %}
         </div>
     </div>
     {% comment %} Digital Transformation  {% endcomment %}
@@ -60,7 +60,7 @@
                 </div>
               </div>
             </div>
-              <p class="text-white text-center mt-7">Copyright © 2022 KeDA Tech. All Rights Reserved.</p>
+              <p class="text-white text-center mt-7">Copyright © <script>document.write(/\d{4}/.exec(Date())[0])</script> KeDA Tech. All Rights Reserved.</p>
           </div>
     </div>
     {% comment %} After Footer {% endcomment %}
@@ -69,9 +69,17 @@
             <h1 class="text-5xl font-bold mb-4">Tetap Terhubung Bersama Kami</h1>
             <p class="text-2xl pr-20 mb-4">Sign up for the lat­est up­dates to our Way of Working, case stud­ies, and more.</p>
             <div>
-                <input type="email" placeholder="Email Anda di sini" class="w-80 py-1 rounded border-gray-300 shadow-sm focus:ring-[#d20008] focus:border-gray-200 transition duration-300"/>
-              <Button class="px-3 py-1 border bg-[#d20008] text-white text-md ml-3 font-bold rounded hover:bg-[#b3020f] hover:border-[#d20008] transition duration-300">Berlangganan</Button>
-            </div>
+              <form action="" method="POST">
+                {% csrf_token %}
+                {{form}}
+                <button type="submit" class="px-3 py-1 border bg-[#d20008] text-white text-md ml-3 font-bold rounded hover:bg-[#b3020f] hover:border-[#d20008] transition duration-300">Berlangganan</button>
+              </form> 
+
+              {% if message == 'berhasil' %}
+                <p style="color: rgb(16 185 129);" class="text-xs italic">Selamat, Anda telah berlangganan dengan kami!</p>
+              {% elif message == 'error' %}
+                <p style="color: rgb(220 38 38);" class="text-xs italic">Format Email yang Anda masukkan salah!</p>
+              {% endif %}</div>
           </div>
     </div>
 </div>

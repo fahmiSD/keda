@@ -90,10 +90,15 @@ def aboutCareer(request):
 
     else:
         form = SubscriptionForm()
-        careers = Career.objects.all()
+        careers = Career.objects.raw('''SELECT website_career_tag.career_tag_name,website_color.hex_code, website_career.* 
+from website_career INNER JOIN website_career_tag on website_career_tag.id = website_career.career_tag_id_id 
+LEFT JOIN website_color on  website_career_tag.color_id_id = website_color.ID''')
+        # tag_colors = Career_tag.objects.all()
+        # careers = Career.objects.all()
         context = {
             'form' : form,
-            'careers' : careers
+            'careers' : careers,
+            # 'tag_colors' : tag_colors,
         }
         return render(request, 'aboutCareer.html', context)
 
@@ -168,8 +173,46 @@ def detailCareer(request, id_career):
         }
         return render(request, 'detailCareer.html', context)
 
-def detailBlog(request):
-    return render(request, 'detailBlog.html')
+def detailBlog(request, id_blog):
+    if request.POST:
+        form = SubscriptionForm(request.POST)
+        if form.is_valid():
+            form.save()
+            form = SubscriptionForm()
+            blog = Blog.objects.get(id=id_blog)
+            related_blogs = Blog.objects.all().exclude(id=id_blog).order_by("?")[:4]
+            message = 'berhasil'
+            context = {
+                'blog' : blog,
+                'form' : form,
+                'message' : message,
+                'related_blogs' : related_blogs,
+            }
+            return render(request, 'detailBlog.html', context)
+
+        else:
+            form = SubscriptionForm()
+            blog = Blog.objects.get(id=id_blog)
+            related_blogs = Blog.objects.all().exclude(id=id_blog).order_by("?")[:4]
+            message = 'error'
+            context = {
+                'blog' : blog,
+                'form' : form,
+                'message' : message,
+                'related_blogs' : related_blogs,
+            }
+            return render(request, 'detailBlog.html', context)
+
+    else:
+        form = SubscriptionForm()
+        blog = Blog.objects.get(id=id_blog)
+        related_blogs = Blog.objects.all().exclude(id=id_blog).order_by("?")[:4]
+        context = {
+            'blog' : blog,
+            'form' : form,
+            'related_blogs' : related_blogs,
+        }
+        return render(request, 'detailBlog.html', context)
 
 def project(request):
     return render(request, 'project.html')
@@ -184,20 +227,82 @@ def aboutTechnologies(request):
     return render(request, 'aboutTechnologies.html')
 
 def blog(request):
-    blogs = Blog.objects.all()
-    trendings = Blog.objects.all().order_by("?")[:4]
-    context = {
-        'blogs' : blogs,
-        'trendings' : trendings,
-    }
-    return render(request, 'blog.html', context)
+    if request.POST:
+        form = SubscriptionForm(request.POST)
+        if form.is_valid():
+            form.save()
+            form = SubscriptionForm()
+            blogs = Blog.objects.all()
+            trendings = Blog.objects.all().order_by("?")[:4]
+            message = 'berhasil'
+            context = {
+                'blogs' : blogs,
+                'form' : form,
+                'trendings' : trendings,
+                'message' : message,
+            }
+            return render(request, 'blog.html', context)
+
+        else:
+            form = SubscriptionForm()
+            blogs = Blog.objects.all()
+            trendings = Blog.objects.all().order_by("?")[:4]
+            message = 'error'
+            context = {
+                'blogs' : blogs,
+                'form' : form,
+                'trendings' : trendings,
+                'message' : message,
+            }
+            return render(request, 'blog.html', context)
+
+    else:
+        form = SubscriptionForm()
+        blogs = Blog.objects.all()
+        trendings = Blog.objects.all().order_by("?")[:4]
+        context = {
+            'blogs' : blogs,
+            'trendings' : trendings,
+            'form' : form,
+        }
+        return render(request, 'blog.html', context)
+
 
 def blog_detail(request, id_blog):
-    blog = Blog.objects.get(id=id_blog)
-    context = {
-        'blog' : blog,
-    }
-    return render(request, 'blog_detail.html', context)
+
+    if request.POST:
+        form = SubscriptionForm(request.POST)
+        if form.is_valid():
+            form.save()
+            form = SubscriptionForm()
+            blog = Blog.objects.get(id=id_blog)
+            message = "berhasil"
+            context = {
+                'form' : form,
+                'blog' : blog,
+                'message' : message,
+            }
+            return render(request, 'blog_detail.html', context)
+
+        else:
+            form = SubscriptionForm()
+            blog = Blog.objects.get(id=id_blog)
+            message = "error"
+            context = {
+                'form' : form,
+                'blog' : blog,
+                'message' : message,
+            }
+            return render(request, 'blog_detail.html', context)
+
+    else:
+        form = SubscriptionForm()
+        blog = Blog.objects.get(id=id_blog)
+        context = {
+            'form' : form,
+            'blog' : blog,
+        }
+        return render(request, 'blog_detail.html', context)
 
 def team(request):
     Category = Categories.objects.all()
