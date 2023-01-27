@@ -385,21 +385,60 @@ def process(request):
      return render(request, 'processOverview.html')
 
 def consultation(request):
-    if request.method == 'POST':
-        if request.POST.get('form_type') == 'form_consult':
+    if request.method == "POST":
+        if request.POST.get("form_type") == "form_consult":
             form_consult = ConsultForm(request.POST)
             if form_consult.is_valid():
                 form_consult.save()
                 form_consult = ConsultForm()
                 form_subs = SubscriptionForm()
                 context = {
-                    'form_consult' : form_consult,
-                    'form_subs' : form_subs,
-                    'success' : 'Pertanyaan Anda telah terkirim!'
+                    "form_consult" : form_consult,
+                    "form_subs" : form_subs,
+                    "success" : "Pertanyaan Anda telah terkirim!"
                 }
-                return render(request, 'consultation.html', context)
+                return render(request, "consultation.html", context)
+            else:
+                form_consult = ConsultForm(request.POST)
+                form_subs = SubscriptionForm()
+                context = {
+                    "form_consult" : form_consult,
+                    "form_subs" : form_subs,
+                    "errors" : form_consult.errors,
+                }
+                return render(request, "consultation.html", context)
+        elif request.POST.get("form_type") == "form_subs":
+            form_subs = SubscriptionForm(request.POST)
+            if form_subs.is_valid():
+                form_subs.save()
+                form_consult = ConsultForm()
+                form_subs = SubscriptionForm()
+                message = "berhasil"
+                context = {
+                    "form_consult" : form_consult,
+                    "form_subs" : form_subs,
+                    "message" : message,
+                }
+                return render(request, "consultation.html", context)
+            else:
+                form_consult = ConsultForm()
+                form_subs = SubscriptionForm()
+                message = "error"
+                context = {
+                    "form_consult" : form_consult,
+                    "form_subs" : form_subs,
+                    "message" : message,
+                }
+                return render(request, "consultation.html", context)
+    else:
+        form_consult = ConsultForm()
+        form_subs = SubscriptionForm()
+        context = {
+            "form_consult" : form_consult,
+            "form_subs" : form_subs,
+        }
+        return render(request, "consultation.html", context)
 
-<<<<<<< HEAD
 def processOverview(request):
     return render(request, 'processOverview.html')
 
@@ -420,55 +459,3 @@ def processSupport(request):
 
 def processNextSteps(request):
     return render(request, 'processNextSteps.html')
-
-def consult(request):
-    if request.POST:
-        form = ConsultForm(request.POST)
-        if form.is_valid():
-            form.save()
-            form = ConsultForm()
-=======
-            else:
-                form_consult = ConsultForm(request.POST)
-                form_subs = SubscriptionForm()
-                context = {
-                    'form_consult' : form_consult,
-                    'form_subs' : form_subs,
-                    'errors' : form_consult.errors,
-                }
-                return render(request, 'consultation.html', context)
->>>>>>> 8c1754b01f5d58a3a484a54370d836b75ee11028
-
-        elif request.POST.get('form_type') == 'form_subs':
-            form_subs = SubscriptionForm(request.POST)
-            if form_subs.is_valid():
-                form_subs.save()
-                form_consult = ConsultForm()
-                form_subs = SubscriptionForm()
-                message = "berhasil"
-                context = {
-                    'form_consult' : form_consult,
-                    'form_subs' : form_subs,
-                    'message' : message,
-                }
-                return render(request, 'consultation.html', context)
-
-            else:
-                form_consult = ConsultForm()
-                form_subs = SubscriptionForm()
-                message = "error"
-                context = {
-                    'form_consult' : form_consult,
-                    'form_subs' : form_subs,
-                    'message' : message,
-                }
-                return render(request, 'consultation.html', context)
-    
-    else:
-        form_consult = ConsultForm()
-        form_subs = SubscriptionForm()
-        context = {
-            'form_consult' : form_consult,
-            'form_subs' : form_subs,
-        }
-        return render(request, 'consultation.html', context)
