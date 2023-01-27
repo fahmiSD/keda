@@ -26,6 +26,7 @@ urlpatterns = [
     path('', index, name='index'),
     path('index/', index, name='index'),
     path('solution/', solution, name='solution'),
+    path('consultation/', consultation, name='consultation'),
     path('aboutCareer/', aboutCareer, name='aboutCareer'),
     path('aboutTechnologies/', aboutTechnologies, name='aboutTechnologies'),
     path('detailBlog/<int:id_blog>', detailBlog, name='detailBlog'),
