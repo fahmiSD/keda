@@ -335,9 +335,6 @@ def aboutTechnologies(request):
         }
         return render(request, 'aboutTechnologies.html', context)
 
-def consultation(request):
-    return render(request, 'consultation.html')
-
 def blog(request):
     if request.POST:
         form = SubscriptionForm(request.POST)
@@ -395,6 +392,9 @@ def team(request):
         'productDesigns' : ProductDesigns,
     }
     return render(request, 'team.html', context)
+
+def consultation(request):
+    return render(request, 'consultation.html')
 
 def consult(request):
     if request.POST:
