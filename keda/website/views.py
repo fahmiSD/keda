@@ -65,10 +65,7 @@ def aboutCareer(request):
     if request.POST:
         form = SubscriptionForm(request.POST)
         if form.is_valid():
-            # careers = Career.objects.all()
-            careers = Career.objects.raw('''SELECT website_career_tag.career_tag_name,website_color.hex_code, website_career.* 
-from website_career INNER JOIN website_career_tag on website_career_tag.id = website_career.career_tag_id_id 
-LEFT JOIN website_color on  website_career_tag.color_id_id = website_color.ID''')
+            careers = Career.objects.select_related('career_tag_id', 'career_tag_id__color_id')
             form.save()
             form = SubscriptionForm()
             message = "berhasil"
@@ -82,10 +79,7 @@ LEFT JOIN website_color on  website_career_tag.color_id_id = website_color.ID'''
         else:
             form = SubscriptionForm()
             message = "error"
-            # careers = Career.objects.all()
-            careers = Career.objects.raw('''SELECT website_career_tag.career_tag_name,website_color.hex_code, website_career.* 
-from website_career INNER JOIN website_career_tag on website_career_tag.id = website_career.career_tag_id_id 
-LEFT JOIN website_color on  website_career_tag.color_id_id = website_color.ID''')
+            careers = Career.objects.select_related('career_tag_id', 'career_tag_id__color_id')
             context = {
                 'form' : form,
                 'message' : message,
@@ -95,15 +89,10 @@ LEFT JOIN website_color on  website_career_tag.color_id_id = website_color.ID'''
 
     else:
         form = SubscriptionForm()
-        careers = Career.objects.raw('''SELECT website_career_tag.career_tag_name,website_color.hex_code, website_career.* 
-from website_career INNER JOIN website_career_tag on website_career_tag.id = website_career.career_tag_id_id 
-LEFT JOIN website_color on  website_career_tag.color_id_id = website_color.ID''')
-        # tag_colors = Career_tag.objects.all()
-        # careers = Career.objects.all()
+        careers = Career.objects.select_related('career_tag_id', 'career_tag_id__color_id')
         context = {
             'form' : form,
             'careers' : careers,
-            # 'tag_colors' : tag_colors,
         }
         return render(request, 'aboutCareer.html', context)
 
@@ -113,7 +102,7 @@ def detailCareer(request, id_career):
             form_candidate = CandidateForm(request.POST, request.FILES)
             if form_candidate.is_valid():
                 form_candidate.save()
-                career = Career.objects.get(id=id_career)
+                career = Career.objects.select_related('career_tag_id', 'career_tag_id__color_id').get(id=id_career)
                 form_candidate = CandidateForm()
                 form_subs = SubscriptionForm()
                 context = {
@@ -125,7 +114,7 @@ def detailCareer(request, id_career):
                 return render(request, 'detailCareer.html', context)
 
             else:
-                career = Career.objects.get(id=id_career)
+                career = Career.objects.select_related('career_tag_id', 'career_tag_id__color_id').get(id=id_career)
                 form_candidate = CandidateForm(request.POST)
                 form_subs = SubscriptionForm()
                 context = {
@@ -134,7 +123,6 @@ def detailCareer(request, id_career):
                     'career' : career,
                     'errors' : form_candidate.errors,
                 }
-                
                 return render(request, 'detailCareer.html', context)
             
         
@@ -142,7 +130,7 @@ def detailCareer(request, id_career):
             form_subs = SubscriptionForm(request.POST)
             if form_subs.is_valid():
                 form_subs.save()
-                career = Career.objects.get(id=id_career)
+                career = Career.objects.select_related('career_tag_id', 'career_tag_id__color_id').get(id=id_career)
                 form_candidate = CandidateForm()
                 form_subs = SubscriptionForm()
                 message = "berhasil"
@@ -155,7 +143,7 @@ def detailCareer(request, id_career):
                 return render(request, 'detailCareer.html', context)
 
             else:
-                career = Career.objects.get(id=id_career)
+                career = Career.objects.select_related('career_tag_id', 'career_tag_id__color_id').get(id=id_career)
                 form_candidate = CandidateForm()
                 form_subs = SubscriptionForm()
                 message = "error"
@@ -168,7 +156,7 @@ def detailCareer(request, id_career):
                 return render(request, 'detailCareer.html', context)
         
     else:
-        career = Career.objects.get(id=id_career)
+        career = Career.objects.select_related('career_tag_id', 'career_tag_id__color_id').get(id=id_career)
         form_candidate = CandidateForm()
         form_subs = SubscriptionForm()
         context = {
@@ -184,8 +172,8 @@ def detailBlog(request, id_blog):
         if form.is_valid():
             form.save()
             form = SubscriptionForm()
-            blog = Blog.objects.get(id=id_blog)
-            related_blogs = Blog.objects.all().exclude(id=id_blog).order_by("?")[:4]
+            blog = Blog.objects.select_related('blog_tag', 'blog_tag__color_id').get(id=id_blog)
+            related_blogs = Blog.objects.select_related('blog_tag', 'blog_tag__color_id').exclude(id=id_blog).order_by("?")[:4]
             message = 'berhasil'
             context = {
                 'blog' : blog,
@@ -197,8 +185,8 @@ def detailBlog(request, id_blog):
 
         else:
             form = SubscriptionForm()
-            blog = Blog.objects.get(id=id_blog)
-            related_blogs = Blog.objects.all().exclude(id=id_blog).order_by("?")[:4]
+            blog = Blog.objects.select_related('blog_tag', 'blog_tag__color_id').get(id=id_blog)
+            related_blogs = Blog.objects.select_related('blog_tag', 'blog_tag__color_id').exclude(id=id_blog).order_by("?")[:4]
             message = 'error'
             context = {
                 'blog' : blog,
@@ -210,8 +198,8 @@ def detailBlog(request, id_blog):
 
     else:
         form = SubscriptionForm()
-        blog = Blog.objects.get(id=id_blog)
-        related_blogs = Blog.objects.all().exclude(id=id_blog).order_by("?")[:4]
+        blog = Blog.objects.select_related('blog_tag', 'blog_tag__color_id').get(id=id_blog)
+        related_blogs = Blog.objects.select_related('blog_tag', 'blog_tag__color_id').exclude(id=id_blog).order_by("?")[:4]
         context = {
             'blog' : blog,
             'form' : form,
@@ -341,8 +329,8 @@ def blog(request):
         if form.is_valid():
             form.save()
             form = SubscriptionForm()
-            blogs = Blog.objects.all()
-            trendings = Blog.objects.all().order_by("?")[:4]
+            blogs = Blog.objects.select_related('blog_tag', 'blog_tag__color_id')
+            trendings = Blog.objects.select_related('blog_tag', 'blog_tag__color_id').order_by("?")[:4]
             message = 'berhasil'
             context = {
                 'blogs' : blogs,
@@ -354,8 +342,8 @@ def blog(request):
 
         else:
             form = SubscriptionForm()
-            blogs = Blog.objects.all()
-            trendings = Blog.objects.all().order_by("?")[:4]
+            blogs = Blog.objects.select_related('blog_tag', 'blog_tag__color_id')
+            trendings = Blog.objects.select_related('blog_tag', 'blog_tag__color_id').order_by("?")[:4]
             message = 'error'
             context = {
                 'blogs' : blogs,
@@ -367,8 +355,8 @@ def blog(request):
 
     else:
         form = SubscriptionForm()
-        blogs = Blog.objects.all()
-        trendings = Blog.objects.all().order_by("?")[:4]
+        blogs = Blog.objects.select_related('blog_tag', 'blog_tag__color_id')
+        trendings = Blog.objects.select_related('blog_tag', 'blog_tag__color_id').order_by("?")[:4]
         context = {
             'blogs' : blogs,
             'trendings' : trendings,
@@ -393,9 +381,25 @@ def team(request):
     }
     return render(request, 'team.html', context)
 
-def consultation(request):
-    return render(request, 'consultation.html')
+def process(request):
+     return render(request, 'processOverview.html')
 
+def consultation(request):
+    if request.method == 'POST':
+        if request.POST.get('form_type') == 'form_consult':
+            form_consult = ConsultForm(request.POST)
+            if form_consult.is_valid():
+                form_consult.save()
+                form_consult = ConsultForm()
+                form_subs = SubscriptionForm()
+                context = {
+                    'form_consult' : form_consult,
+                    'form_subs' : form_subs,
+                    'success' : 'Pertanyaan Anda telah terkirim!'
+                }
+                return render(request, 'consultation.html', context)
+
+<<<<<<< HEAD
 def processOverview(request):
     return render(request, 'processOverview.html')
 
@@ -423,57 +427,48 @@ def consult(request):
         if form.is_valid():
             form.save()
             form = ConsultForm()
+=======
+            else:
+                form_consult = ConsultForm(request.POST)
+                form_subs = SubscriptionForm()
+                context = {
+                    'form_consult' : form_consult,
+                    'form_subs' : form_subs,
+                    'errors' : form_consult.errors,
+                }
+                return render(request, 'consultation.html', context)
+>>>>>>> 8c1754b01f5d58a3a484a54370d836b75ee11028
 
-            messages.success(request, "Pertanyaan anda telah terkirim!")
+        elif request.POST.get('form_type') == 'form_subs':
+            form_subs = SubscriptionForm(request.POST)
+            if form_subs.is_valid():
+                form_subs.save()
+                form_consult = ConsultForm()
+                form_subs = SubscriptionForm()
+                message = "berhasil"
+                context = {
+                    'form_consult' : form_consult,
+                    'form_subs' : form_subs,
+                    'message' : message,
+                }
+                return render(request, 'consultation.html', context)
 
-            context = {
-                'form': form,
-            }
-            return render(request, 'consult.html', context)
-
-        else:
-            form = ConsultForm()
-
-            messages.error(request, "Tolong isi kolom dengan benar!")
-
-            context = {
-                'form': form,
-            }
-            return render(request, 'consult.html', context)
-
+            else:
+                form_consult = ConsultForm()
+                form_subs = SubscriptionForm()
+                message = "error"
+                context = {
+                    'form_consult' : form_consult,
+                    'form_subs' : form_subs,
+                    'message' : message,
+                }
+                return render(request, 'consultation.html', context)
+    
     else:
-        form = ConsultForm()
+        form_consult = ConsultForm()
+        form_subs = SubscriptionForm()
         context = {
-            'form': form,
+            'form_consult' : form_consult,
+            'form_subs' : form_subs,
         }
-        return render(request, 'consult.html', context)
-
-
-    if request.POST:
-        form = SubscriptionForm(request.POST)
-        if form.is_valid():
-            form.save()
-            form = SubscriptionForm()
-
-            messages.success(request, "Anda Berhasil Berlangganan!")
-
-            context = {
-                'form': form,
-            }
-            return render(request, 'subs.html', context)
-
-        else:
-            messages.error(request, "Format Email yang anda masukkan salah!")
-            form = SubscriptionForm()
-            context = {
-                'form': form,
-            }
-            return render(request, 'subs.html', context)
-
-
-    else:
-        form = SubscriptionForm()
-        context = {
-            'form': form,
-        }
-        return render(request, 'subs.html', context)
+        return render(request, 'consultation.html', context)

@@ -13,29 +13,50 @@
         <div class="bg-white px-14 py-10">
             <div class="grid grid-cols-2 gap-5">
               <div>
-                <form action="">
+                <p style="color: rgb(16 185 129);" class="text-xs italic">
+                  {{ success }}
+                </p>
+                <form action="" method="POST">
+                  {% csrf_token %}
+                  <input type="hidden" name="form_type" value="form_consult">
                   <div class="grid grid-rows-2 mb-10">
-                    <label htmlFor="name" class="font-semibold">Nama</label>
-                    <Input type="text" id="name" class="w-[557px] py-1 rounded border-gray-300 shadow-sm focus:ring-[#d20008] focus:border-gray-200 transition duration-300"/>
+                    <label for="name" class="font-semibold">Nama</label>
+                    {{form_consult.name}} 
+                    <p style="color: rgb(220 38 38);" class="text-xs italic"> 
+                      {{ form_consult.name.errors }}
+                    </p>
+                   </div>
+
+                  <div class="grid grid-rows-2 mb-10">
+                    <label for="business_sector" class="font-semibold">Sektor usaha anda</label>
+                    {{form_consult.business_sector}} 
+                    <p style="color: rgb(220 38 38);" class="text-xs italic"> 
+                      {{ form_consult.business_sector.errors }}
+                    </p>
+                   </div>
+                  <div class="grid grid-rows-2 mb-10">
+                    <label for="phone_number" class="font-semibold">No Whatsapp</label>
+                    {{form_consult.phone_number}}
+                    <p style="color: rgb(220 38 38);" class="text-xs italic"> 
+                      {{ form_consult.phone_number.errors }}
+                    </p>
                   </div>
                   <div class="grid grid-rows-2 mb-10">
-                    <label htmlFor="sektor" class="font-semibold">Sektor usaha anda</label>
-                    <Input type="text" id="sektor" class="w-[557px] py-1 rounded border-gray-300 shadow-sm focus:ring-[#d20008] focus:border-gray-200 transition duration-300"/>
-                  </div>
-                  <div class="grid grid-rows-2 mb-10">
-                    <label htmlFor="phone" class="font-semibold">No Whatsapp</label>
-                    <Input type="number" id="phone" class="w-[557px] py-1 rounded border-gray-300 shadow-sm focus:ring-[#d20008] focus:border-gray-200 transition duration-300"/>
-                  </div>
-                  <div class="grid grid-rows-2 mb-10">
-                    <label htmlFor="email" class="font-semibold">Email</label>
-                    <Input type="email" id="email" class="w-[557px] py-1 rounded border-gray-300 shadow-sm focus:ring-[#d20008] focus:border-gray-200 transition duration-300"/>
-                  </div>
+                    <label for="email" class="font-semibold">Email</label>
+                    {{form_consult.email}} 
+                    <p style="color: rgb(220 38 38);" class="text-xs italic"> 
+                      {{ form_consult.email.errors }}
+                    </p>
+                   </div>
                   <div class="flex flex-col mb-8">
-                    <label htmlFor="question" class="font-semibold mb-4">Pertanyaan Anda</label>
-                    <textarea id="question" class="w-[557px] h-[232px] py-1 rounded border-gray-300 shadow-sm focus:ring-[#d20008] focus:border-gray-200 transition duration-300"></textarea>
-                  </div>
+                    <label for="question" class="font-semibold mb-4">Pertanyaan Anda</label>
+                    {{form_consult.question}} 
+                    <p style="color: rgb(220 38 38);" class="text-xs italic"> 
+                      {{ form_consult.question.errors }}
+                    </p>
+                     </div>
                   <div>
-                    <Button class="px-10 py-1 border bg-[#d20008] border-white text-white rounded hover:bg-[#b3020f] hover:border-[#d20008] text-sm font-medium transition duration-300">Kirim</Button>
+                    <Button type="submit" class="px-10 py-1 border bg-[#d20008] border-white text-white rounded hover:bg-[#b3020f] hover:border-[#d20008] text-sm font-medium transition duration-300">Kirim</Button>
                   </div>
                 </form>
               </div>
@@ -129,7 +150,7 @@
       <div style="background-image: url('{% static "image/public/backgroundDigitalTransformationLime.svg" %}')" class="h-[283px]">
           <div class="container px-20 py-16">
             <img src="{% static "image/public/YourDigitalTransfoemationPartner.svg" %}" alt="" />
-            <Button class="ml-6 mt-6 px-7 py-5 border bg-[#d20008] text-xl text-white rounded-sm hover:bg-[#b3020f] font-medium transition duration-300">Book a chat</Button>
+            <Button onclick="window.location.href = '{% url "consultation" %}';" class="ml-6 mt-6 px-7 py-5 border bg-[#d20008] text-xl text-white rounded-sm hover:bg-[#b3020f] font-medium transition duration-300">Book a chat</Button>
           </div>
         </div>
     {% comment %} Footer {% endcomment %}
@@ -161,7 +182,7 @@
                 </div>
               </div>
             </div>
-              <p class="text-white text-center mt-7">Copyright © 2022 KeDA Tech. All Rights Reserved.</p>
+              <p class="text-white text-center mt-7">Copyright © <script>document.write(/\d{4}/.exec(Date())[0])</script> KeDA Tech. All Rights Reserved.</p>
           </div>
         </div>
     {% comment %} After Footer {% endcomment %}
@@ -170,9 +191,19 @@
             <h1 class="text-5xl font-bold mb-4">Tetap Terhubung Bersama Kami</h1>
             <p class="text-2xl pr-20 mb-4">Sign up for the lat­est up­dates to our Way of Working, case stud­ies, and more.</p>
             <div>
-                <input type="email" placeholder="Email Anda di sini" class="w-80 py-1 rounded border-gray-300 shadow-sm focus:ring-[#d20008] focus:border-gray-200 transition duration-300"/>
-              <Button class="px-3 py-1 border bg-[#d20008] text-white text-md ml-3 font-bold rounded hover:bg-[#b3020f] hover:border-[#d20008] transition duration-300">Berlangganan</Button>
-            </div>
+              <form action="" method="POST" id="subs">
+                {% csrf_token %}
+                <input type="hidden" name="form_type" value="form_subs">
+                {{form_subs}}
+                <button type="submit" class="px-3 py-1 border bg-[#d20008] text-white text-md ml-3 font-bold rounded hover:bg-[#b3020f] hover:border-[#d20008] transition duration-300">Berlangganan</button>
+              </form> 
+
+              {% if message == 'berhasil' %}
+                <p style="color: rgb(16 185 129);" class="text-xs italic">Selamat, Anda telah berlangganan dengan kami!</p>
+              {% elif message == 'error' %}
+                <p style="color: rgb(220 38 38);" class="text-xs italic">Format Email yang Anda masukkan salah!</p>
+              {% endif %}
+             </div>
           </div>
         </div>
     </div>

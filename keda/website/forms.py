@@ -28,11 +28,11 @@ class ConsultForm(ModelForm):
         }
 
         widgets = {
-            'name' : forms.TextInput(attrs={'class':'form-control','id':'name', 'placeholder':'John Doe'}),
-            'business_sector' : forms.TextInput(attrs={'class':'form-control','id':'business_sector','placeholder':'Digital Marketing'}),
-            'phone_number': PhoneNumberPrefixWidget(initial="ID",attrs={'class':'form-control','id':'phone_number', 'placeholder':'82388400299'}),
-            'email' : forms.EmailInput(attrs={'class':'form-control', 'placeholder':'example@email.com'}),
-            'question' : forms.Textarea(attrs={'class':'form-control'})
+            'name' : forms.TextInput(attrs={'class':'w-[557px] py-1 rounded border-gray-300 shadow-sm focus:ring-[#d20008] focus:border-gray-200 transition duration-300','id':'name', 'placeholder':''}),
+            'business_sector' : forms.TextInput(attrs={'class':'w-[557px] py-1 rounded border-gray-300 shadow-sm focus:ring-[#d20008] focus:border-gray-200 transition duration-300','id':'business_sector','placeholder':''}),
+            'phone_number': PhoneNumberPrefixWidget(initial="ID",attrs={'class':'w-[557px] py-1 rounded border-gray-300 shadow-sm focus:ring-[#d20008] focus:border-gray-200 transition duration-300','id':'phone_number', 'placeholder':'82388400299'}),
+            'email' : forms.EmailInput(attrs={'class':'w-[557px] py-1 rounded border-gray-300 shadow-sm focus:ring-[#d20008] focus:border-gray-200 transition duration-300', 'id':'email' , 'placeholder':'example@email.com'}),
+            'question' : forms.Textarea(attrs={'class':'w-[557px] h-[232px] py-1 rounded border-gray-300 shadow-sm focus:ring-[#d20008] focus:border-gray-200 transition duration-300','id':'question'})
         }
 
 class CandidateForm(ModelForm):
