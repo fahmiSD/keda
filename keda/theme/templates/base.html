@@ -22,6 +22,25 @@
       .bullet > ul > li {
         margin-bottom: 1rem;
       }
+
+      @media only screen and (min-width: 768px) {
+        .test {
+          background-image: url('{% static "image/public/BackgroundHomeLight.svg" %}');
+        }
+      }
+      
+    
+      .test2 {
+        background-image: url('{% static "image/public/backgroundDigitalTransformationGreen.svg" %}');
+      }
+      
+      @media only screen and (max-width: 768px) {
+        .test2{
+          height: 656px;
+          background-image: url('{% static "image/public/backgroundDigitalTransformationGreenSmall.svg" %}');
+        }
+      }
+
     </style>
   </head>
   <nav class="bg-[#d20008] sticky top-0">
