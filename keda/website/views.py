@@ -134,7 +134,6 @@ def detailCareer(request, id_career):
                     'career' : career,
                     'errors' : form_candidate.errors,
                 }
-                
                 return render(request, 'detailCareer.html', context)
             
         
@@ -394,7 +393,63 @@ def team(request):
     return render(request, 'team.html', context)
 
 def consultation(request):
-    return render(request, 'consultation.html')
+    if request.method == 'POST':
+        if request.POST.get('form_type') == 'form_consult':
+            form_consult = ConsultForm(request.POST)
+            if form_consult.is_valid():
+                form_consult.save()
+                form_consult = ConsultForm()
+                form_subs = SubscriptionForm()
+                context = {
+                    'form_consult' : form_consult,
+                    'form_subs' : form_subs,
+                    'success' : 'Pertanyaan Anda telah terkirim!'
+                }
+                return render(request, 'consultation.html', context)
+
+            else:
+                form_consult = ConsultForm(request.POST)
+                form_subs = SubscriptionForm()
+                context = {
+                    'form_consult' : form_consult,
+                    'form_subs' : form_subs,
+                    'errors' : form_consult.errors,
+                }
+                return render(request, 'consultation.html', context)
+
+        elif request.POST.get('form_type') == 'form_subs':
+            form_subs = SubscriptionForm(request.POST)
+            if form_subs.is_valid():
+                form_subs.save()
+                form_consult = ConsultForm()
+                form_subs = SubscriptionForm()
+                message = "berhasil"
+                context = {
+                    'form_consult' : form_consult,
+                    'form_subs' : form_subs,
+                    'message' : message,
+                }
+                return render(request, 'consultation.html', context)
+
+            else:
+                form_consult = ConsultForm()
+                form_subs = SubscriptionForm()
+                message = "error"
+                context = {
+                    'form_consult' : form_consult,
+                    'form_subs' : form_subs,
+                    'message' : message,
+                }
+                return render(request, 'consultation.html', context)
+    
+    else:
+        form_consult = ConsultForm()
+        form_subs = SubscriptionForm()
+        context = {
+            'form_consult' : form_consult,
+            'form_subs' : form_subs,
+        }
+        return render(request, 'consultation.html', context)
 
 def consult(request):
     if request.POST:
