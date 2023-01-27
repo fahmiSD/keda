@@ -1,0 +1,60 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+    <div>
+      {% comment %} Banner Working Style {% endcomment %}
+        <div class="bg-[url('/bgProcessOverview.svg')] h-[202px] flex items-center justify-center">
+            <img src="/KeDA'sWorkingStyle.svg" alt="" />
+        </div>
+      {% comment %} Main Content {% endcomment %}
+        <div class="bg-white py-16 px-14">
+            <div class="grid grid-cols-12">
+                <div class="col-span-4">
+                    <div class="mb-7 border-l-2 border-[#333333] pl-4">
+                        <h1 class="text-3xl font-bold text-[#333333] cursor-pointer" onClick={()=> router.push('/process-overview')}>Overview</h1>
+                        <div class="border-t-4 w-[59px] rounded-full border-[#333333] mb-3"></div>
+                        <div class="pl-5">
+                            <p>Teams (Lorem ipsum)</p>
+                            <p>Activity kit (Lorem ipsum)</p>
+                        </div>
+                    </div>
+                    <div class="mb-7 pl-4">
+                        <h1 class="text-2xl font-bold text-[#333333] cursor-pointer" onClick={()=> router.push('/process-brief')}>Brief</h1>
+                    </div>
+                    <div class="mb-7 pl-4"> 
+                        <h1 class="text-2xl font-bold text-[#333333] cursor-pointer" onClick={()=> router.push('/process-scope')}>Scope</h1>
+                    </div>
+                    <div class="mb-7 pl-4">
+                        <h1 class="text-2xl font-bold text-[#333333] cursor-pointer" onClick={()=> router.push('/process-estimation')}>Estimation</h1>
+                    </div>
+                    <div class="mb-7 pl-4">
+                        <h1 class="text-2xl font-bold text-[#333333] cursor-pointer" onClick={()=> router.push('/process-development')}>Development</h1>
+                    </div>
+                    <div class="mb-7 pl-4">
+                        <h1 class="text-2xl font-bold text-[#333333] cursor-pointer" onClick={()=> router.push('/process-support')}>Support</h1>
+                    </div>
+                    <div class="mb-7 pl-4">
+                        <h1 class="text-2xl font-bold text-[#333333] cursor-pointer" onClick={()=> router.push('/process-next-steps')}>Next Steps</h1>
+                    </div>
+                    <div class="pl-4">
+                        <Button class="px-4 py-2 border border-[#333333] text-[#333333] rounded hover:bg-[#333333] hover:border-white hover:text-white text-sm font-medium transition duration-300">Book a chat</Button>
+                    </div>
+                </div>
+                <div class="col-span-8">
+                    <h1 class="text-4xl font-bold mb-5 text-[#333333]">Overview</h1>
+                    <img src="/vidProcessOverview.svg" alt="" class="mb-5"/>
+                    <p>Dalam dunia industri, kita pasti menemukan tantangan. Untuk itu, kami hadir dan siap membantu Anda mengembangkan bisnis atau industri yang Anda jalankan. 
+                    <br /><br />
+                    Dalam setiap proses pengerjaannya, KeDA Tech akan membantu Anda menganalisa setiap masalah dalam bisnis Anda, kemudian memberikan solusi berupa teknologi yang tepat.
+                    </p>
+                    <div class="pt-20">
+                        <div class="flex justify-center items-center">
+                            <img src="/Brief1.svg" alt="" />
+                        </div>
+                        <div class="flex justify-end pt-9 cursor-pointer" onClick={()=> router.push('/process-brief')}>
+                            <img src="/nextBrief.svg" alt="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

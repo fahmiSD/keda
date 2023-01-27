@@ -394,7 +394,7 @@ def team(request):
     return render(request, 'team.html', context)
 
 def consultation(request):
-    return render(request, 'consult.html')
+    return render(request, 'consultation.html')
 
 def consult(request):
     if request.POST:
