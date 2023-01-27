@@ -23,7 +23,6 @@ from django.urls import path, include, re_path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('subs/', subs, name='subs'),
     path('', index, name='index'),
     path('index/', index, name='index'),
     path('solution/', solution, name='solution'),
@@ -36,11 +35,7 @@ urlpatterns = [
     path('aboutTeam/', aboutTeam, name='aboutTeam'),
     path('detailCareer/<int:id_career>', detailCareer, name='detailCareer'),
     path('consult/', consult, name='consult'),
-    path('career/', career, name="career"),
-    path('career_detail/<int:id_career>', career_detail, name="career_detail"),
     path('blog/', blog, name="blog"),
-    path('blog/<int:id_blog>', blog_detail, name="blog_detail"),
-    path('team/', team, name="team"),
     re_path(r'^ckeditor/', include('ckeditor_uploader.urls')),
     path("__reload__/", include("django_browser_reload.urls")),
 
