@@ -248,7 +248,10 @@ def project(request):
         }
         return render(request, 'project.html', context)
 
-def aboutStory(request):
+def consultation(request):
+    return render(request, 'consultation.html')
+
+def blog(request):
     if request.POST:
         form = SubscriptionForm(request.POST)
         if form.is_valid():
