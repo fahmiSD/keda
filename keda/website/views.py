@@ -392,6 +392,9 @@ def team(request):
     }
     return render(request, 'team.html', context)
 
+def process(request):
+     return render(request, 'processOverview.html')
+
 def consultation(request):
     if request.method == 'POST':
         if request.POST.get('form_type') == 'form_consult':
@@ -450,64 +453,3 @@ def consultation(request):
             'form_subs' : form_subs,
         }
         return render(request, 'consultation.html', context)
-
-def consult(request):
-    if request.POST:
-        form = ConsultForm(request.POST)
-        if form.is_valid():
-            form.save()
-            form = ConsultForm()
-
-            messages.success(request, "Pertanyaan anda telah terkirim!")
-
-            context = {
-                'form': form,
-            }
-            return render(request, 'consult.html', context)
-
-        else:
-            form = ConsultForm()
-
-            messages.error(request, "Tolong isi kolom dengan benar!")
-
-            context = {
-                'form': form,
-            }
-            return render(request, 'consult.html', context)
-
-    else:
-        form = ConsultForm()
-        context = {
-            'form': form,
-        }
-        return render(request, 'consult.html', context)
-
-
-    if request.POST:
-        form = SubscriptionForm(request.POST)
-        if form.is_valid():
-            form.save()
-            form = SubscriptionForm()
-
-            messages.success(request, "Anda Berhasil Berlangganan!")
-
-            context = {
-                'form': form,
-            }
-            return render(request, 'subs.html', context)
-
-        else:
-            messages.error(request, "Format Email yang anda masukkan salah!")
-            form = SubscriptionForm()
-            context = {
-                'form': form,
-            }
-            return render(request, 'subs.html', context)
-
-
-    else:
-        form = SubscriptionForm()
-        context = {
-            'form': form,
-        }
-        return render(request, 'subs.html', context)
