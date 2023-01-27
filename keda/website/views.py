@@ -102,7 +102,7 @@ def detailCareer(request, id_career):
             form_candidate = CandidateForm(request.POST, request.FILES)
             if form_candidate.is_valid():
                 form_candidate.save()
-                career = Career.objects.get(id=id_career)
+                career = Career.objects.select_related('career_tag_id', 'career_tag_id__color_id').get(id=id_career)
                 form_candidate = CandidateForm()
                 form_subs = SubscriptionForm()
                 context = {
@@ -114,7 +114,7 @@ def detailCareer(request, id_career):
                 return render(request, 'detailCareer.html', context)
 
             else:
-                career = Career.objects.get(id=id_career)
+                career = Career.objects.select_related('career_tag_id', 'career_tag_id__color_id').get(id=id_career)
                 form_candidate = CandidateForm(request.POST)
                 form_subs = SubscriptionForm()
                 context = {
@@ -130,7 +130,7 @@ def detailCareer(request, id_career):
             form_subs = SubscriptionForm(request.POST)
             if form_subs.is_valid():
                 form_subs.save()
-                career = Career.objects.get(id=id_career)
+                career = Career.objects.select_related('career_tag_id', 'career_tag_id__color_id').get(id=id_career)
                 form_candidate = CandidateForm()
                 form_subs = SubscriptionForm()
                 message = "berhasil"
@@ -143,7 +143,7 @@ def detailCareer(request, id_career):
                 return render(request, 'detailCareer.html', context)
 
             else:
-                career = Career.objects.get(id=id_career)
+                career = Career.objects.select_related('career_tag_id', 'career_tag_id__color_id').get(id=id_career)
                 form_candidate = CandidateForm()
                 form_subs = SubscriptionForm()
                 message = "error"
@@ -156,7 +156,7 @@ def detailCareer(request, id_career):
                 return render(request, 'detailCareer.html', context)
         
     else:
-        career = Career.objects.get(id=id_career)
+        career = Career.objects.select_related('career_tag_id', 'career_tag_id__color_id').get(id=id_career)
         form_candidate = CandidateForm()
         form_subs = SubscriptionForm()
         context = {
