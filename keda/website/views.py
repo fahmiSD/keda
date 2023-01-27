@@ -65,10 +65,7 @@ def aboutCareer(request):
     if request.POST:
         form = SubscriptionForm(request.POST)
         if form.is_valid():
-            # careers = Career.objects.all()
-            careers = Career.objects.raw('''SELECT website_career_tag.career_tag_name,website_color.hex_code, website_career.* 
-from website_career INNER JOIN website_career_tag on website_career_tag.id = website_career.career_tag_id_id 
-LEFT JOIN website_color on  website_career_tag.color_id_id = website_color.ID''')
+            careers = Career.objects.select_related('career_tag_id', 'career_tag_id__color_id')
             form.save()
             form = SubscriptionForm()
             message = "berhasil"
@@ -82,10 +79,7 @@ LEFT JOIN website_color on  website_career_tag.color_id_id = website_color.ID'''
         else:
             form = SubscriptionForm()
             message = "error"
-            # careers = Career.objects.all()
-            careers = Career.objects.raw('''SELECT website_career_tag.career_tag_name,website_color.hex_code, website_career.* 
-from website_career INNER JOIN website_career_tag on website_career_tag.id = website_career.career_tag_id_id 
-LEFT JOIN website_color on  website_career_tag.color_id_id = website_color.ID''')
+            careers = Career.objects.select_related('career_tag_id', 'career_tag_id__color_id')
             context = {
                 'form' : form,
                 'message' : message,
@@ -95,15 +89,10 @@ LEFT JOIN website_color on  website_career_tag.color_id_id = website_color.ID'''
 
     else:
         form = SubscriptionForm()
-        careers = Career.objects.raw('''SELECT website_career_tag.career_tag_name,website_color.hex_code, website_career.* 
-from website_career INNER JOIN website_career_tag on website_career_tag.id = website_career.career_tag_id_id 
-LEFT JOIN website_color on  website_career_tag.color_id_id = website_color.ID''')
-        # tag_colors = Career_tag.objects.all()
-        # careers = Career.objects.all()
+        careers = Career.objects.select_related('career_tag_id', 'career_tag_id__color_id')
         context = {
             'form' : form,
             'careers' : careers,
-            # 'tag_colors' : tag_colors,
         }
         return render(request, 'aboutCareer.html', context)
 
@@ -340,8 +329,8 @@ def blog(request):
         if form.is_valid():
             form.save()
             form = SubscriptionForm()
-            blogs = Blog.objects.all()
-            trendings = Blog.objects.all().order_by("?")[:4]
+            blogs = Blog.objects.select_related('blog_tag', 'blog_tag__color_id')
+            trendings = Blog.objects.select_related('blog_tag', 'blog_tag__color_id').order_by("?")[:4]
             message = 'berhasil'
             context = {
                 'blogs' : blogs,
@@ -353,8 +342,8 @@ def blog(request):
 
         else:
             form = SubscriptionForm()
-            blogs = Blog.objects.all()
-            trendings = Blog.objects.all().order_by("?")[:4]
+            blogs = Blog.objects.select_related('blog_tag', 'blog_tag__color_id')
+            trendings = Blog.objects.select_related('blog_tag', 'blog_tag__color_id').order_by("?")[:4]
             message = 'error'
             context = {
                 'blogs' : blogs,
@@ -366,8 +355,8 @@ def blog(request):
 
     else:
         form = SubscriptionForm()
-        blogs = Blog.objects.all()
-        trendings = Blog.objects.all().order_by("?")[:4]
+        blogs = Blog.objects.select_related('blog_tag', 'blog_tag__color_id')
+        trendings = Blog.objects.select_related('blog_tag', 'blog_tag__color_id').order_by("?")[:4]
         context = {
             'blogs' : blogs,
             'trendings' : trendings,
