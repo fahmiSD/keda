@@ -55,7 +55,7 @@
         <div style="background-image: url('{% static "image/public/backgroundDigitalTransformationPurples.svg" %}')" class="h-[283px]">
           <div class="container px-20 py-16">
             <img src="{% static "image/public/YourDigitalTransfoemationPartner.svg" %}" alt="" />
-            <Button class="ml-6 mt-6 px-7 py-5 border bg-[#d20008] text-xl text-white rounded-sm hover:bg-[#b3020f] font-medium transition duration-300">Book a chat</Button>
+            <Button onclick="window.location.href = '{% url "consultation" %}';"  class="ml-6 mt-6 px-7 py-5 border bg-[#d20008] text-xl text-white rounded-sm hover:bg-[#b3020f] font-medium transition duration-300">Book a chat</Button>
           </div>
         </div>
        {% comment %} footer {% endcomment %}

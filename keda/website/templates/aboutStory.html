@@ -74,7 +74,7 @@
           <div class="md:col-span-7">
             <div class=" md:pr-26 md:pt-60">
               <h1 class="mb-6 font ml-5 leading-snug text-5xl font-bold">Sincerely doing the best for your digital business.</h1>
-              <button class="px-6 py-2 ml-5 border bg-[#d20008] text-white rounded-sm hover:bg-[#b3020f] hover:border-[#d20008] text-sm font-medium transition duration-300">Meet the Team</button>
+              <button onclick="window.location.href = '{% url "aboutTeam" %}';" class="px-6 py-2 ml-5 border bg-[#d20008] text-white rounded-sm hover:bg-[#b3020f] hover:border-[#d20008] text-sm font-medium transition duration-300">Meet the Team</button>
             </div>
           </div>
         </div>
@@ -84,7 +84,7 @@
           <div class="col-span-7 container pl-24 pt-60">
             <h1 class="mb-3 leading-snug text-5xl font-bold">Tertarik untuk bergabung dengan kami?</h1>
             <p class="mb-10">Kami selalu terbuka dengan talenta baru</p>
-            <button class="px-6 py-2 border bg-[#d20008] text-white rounded-sm hover:bg-[#b3020f] hover:border-[#d20008] text-sm font-medium transition duration-300">Temukan posisi yang cocok</button>
+            <button onclick="window.location.href = '{% url "aboutCareer" %}';" class="px-6 py-2 border bg-[#d20008] text-white rounded-sm hover:bg-[#b3020f] hover:border-[#d20008] text-sm font-medium transition duration-300">Temukan posisi yang cocok</button>
           </div>
           <div class="col-span-5 mt-40">
             <img src="{% static "image/public/WithMe.svg" %}" alt="logo" class=" w-[430px] hidden md:block"/>
@@ -95,7 +95,7 @@
         <div style="background-image: url('{% static "image/public/backgroundDigitalTransformationPurple.svg" %}')" class="h-[283px]">
           <div class="container px-20 py-16">
             <img src="{% static "image/public/YourDigitalTransfoemationPartner.svg" %}" alt="" />
-            <button class="ml-6 mt-6 px-7 py-5 border bg-[#d20008] text-xl text-white rounded-sm hover:bg-[#b3020f] font-medium transition duration-300">Book a chat</button>
+            <button onclick="window.location.href = '{% url "consultation" %}';" class="ml-6 mt-6 px-7 py-5 border bg-[#d20008] text-xl text-white rounded-sm hover:bg-[#b3020f] font-medium transition duration-300">Book a chat</button>
           </div>
         </div>
     {% comment %} Footer {% endcomment %}
@@ -127,7 +127,7 @@
                 </div>
               </div>
             </div>
-              <p class="text-white text-center mt-7">Copyright © 2022 KeDA Tech. All Rights Reserved.</p>
+              <p class="text-white text-center mt-7">Copyright © <script>document.write(/\d{4}/.exec(Date())[0])</script> KeDA Tech. All Rights Reserved.</p>
           </div>
         </div>
       {% comment %} After Footer {% endcomment %}
