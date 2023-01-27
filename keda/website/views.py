@@ -396,6 +396,27 @@ def team(request):
 def consultation(request):
     return render(request, 'consultation.html')
 
+def processOverview(request):
+    return render(request, 'processOverview.html')
+
+def processBrief(request):
+    return render(request, 'processBrief.html')
+
+def processScope(request):
+    return render(request, 'processScope.html')
+
+def processEstimation(request):
+    return render(request, 'processEstimation.html')
+
+def processDevelopment(request):
+    return render(request, 'processDevelopment.html')
+
+def processSupport(request):
+    return render(request, 'processSupport.html')
+
+def processNextSteps(request):
+    return render(request, 'processNextSteps.html')
+
 def consult(request):
     if request.POST:
         form = ConsultForm(request.POST)

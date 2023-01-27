@@ -27,6 +27,13 @@ urlpatterns = [
     path('index/', index, name='index'),
     path('solution/', solution, name='solution'),
     path('consultation/', consultation, name='consultation'),
+    path('processOverview/', processOverview, name='processOverview'),
+    path('processBrief/', processBrief, name='processBrief'),
+    path('processScope/', processScope, name='processScope'),
+    path('processSEstimation/', processEstimation, name='processEstimation'),
+    path('processDevelopment/', processDevelopment, name='processDevelopment'),
+    path('processSupport/', processSupport, name='processSupport'),
+    path('processNextSteps/', processNextSteps, name='processNextSteps'),
     path('aboutCareer/', aboutCareer, name='aboutCareer'),
     path('aboutTechnologies/', aboutTechnologies, name='aboutTechnologies'),
     path('detailBlog/<int:id_blog>', detailBlog, name='detailBlog'),
@@ -34,10 +41,6 @@ urlpatterns = [
     path('aboutStory/', aboutStory, name='aboutStory'),
     path('aboutTeam/', aboutTeam, name='aboutTeam'),
     path('detailCareer/<int:id_career>', detailCareer, name='detailCareer'),
-<<<<<<< HEAD
-    path('consult/', consult, name='consult'),
-=======
->>>>>>> b5398e15cd928206beac17fe4f75d464b90f057b
     path('blog/', blog, name="blog"),
     re_path(r'^ckeditor/', include('ckeditor_uploader.urls')),
     path("__reload__/", include("django_browser_reload.urls")),

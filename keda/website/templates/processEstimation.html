@@ -1,37 +1,37 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
     <div>
-      {% comment %} Banner Working Style {% endcomment %}
-        <div style="background-image: url('{% static "image/public/bgProcessOverview.svg" %}')" class="h-[202px] flex items-center justify-center">
-            <img src="{% static "image/public/KeDA'sWorkingStyle.svg" %}" alt="" />
+     {% comment %} Banner Working Style  {% endcomment %}
+        <div style="background-image: url('{% static "image/public/bgProcessEstimation.svg" %}')" class="h-[202px] flex items-center justify-center">
+            <img src="{% static "image/public/estimation.svg" %}" alt="" />
         </div>
-      {% comment %} Main Content {% endcomment %}
+     {% comment %} Main Content {% endcomment %}
         <div class="bg-white py-16 px-14">
             <div class="grid grid-cols-12">
                 <div class="col-span-4">
-                    <div class="mb-7 border-l-2 border-[#333333] pl-4">
+                    <div class="mb-7 pl-4">
                         <a href="/processOverview">
-                        <h1 class="text-3xl font-bold text-[#333333] cursor-pointer">Overview</h1>
+                        <h1 class="text-2xl font-bold text-[#333333] cursor-pointer">Overview</h1>
                         </a>
-                        <div class="border-t-4 w-[59px] rounded-full border-[#333333] mb-3"></div>
+                    </div>
+                    <div class="mb-7 pl-4">
+                        <a href="/processBrief"> 
+                        <h1 class="text-2xl font-bold text-[#333333] cursor-pointer">Brief</h1>
+                        </a>
+                    </div>
+                    <div class="mb-7 pl-4">
+                        <a href="/processScope">
+                        <h1 class="text-2xl font-bold text-[#333333] cursor-pointer">Scope</h1>
+                        </a>
+                    </div>
+                    <div class="mb-7 border-l-2 border-[#333333] pl-4">
+                        <a href="/processEstimation">
+                        <h1 class="text-3xl font-bold text-[#333333] cursor-pointer">Estimation</h1>
+                        </a>
+                        <div class="border-t-4 w-[59px] rounded-full border-[#333333] mb-3 mt-2"></div>
                         <div class="pl-5">
                             <p>Teams (Lorem ipsum)</p>
                             <p>Activity kit (Lorem ipsum)</p>
                         </div>
-                    </div>
-                    <div class="mb-7 pl-4">
-                        <a href="/processBrief">
-                        <h1 class="text-2xl font-bold text-[#333333] cursor-pointer">Brief</h1>
-                        </a>
-                    </div>
-                    <div class="mb-7 pl-4"> 
-                        <a href="/processScope">
-                        <h1 class="text-2xl font-bold text-[#333333] cursor-pointer">Scope</h1>
-                        <a/>
-                    </div>
-                    <div class="mb-7 pl-4">
-                        <a href="/processEstimation">
-                        <h1 class="text-2xl font-bold text-[#333333] cursor-pointer">Estimation</h1>
-                        </a>
                     </div>
                     <div class="mb-7 pl-4">
                         <a href="/processDevelopment">
@@ -53,19 +53,18 @@
                     </div>
                 </div>
                 <div class="col-span-8">
-                    <h1 class="text-4xl font-bold mb-5 text-[#333333]">Overview</h1>
-                    <img src="{% static "image/public/vidProcessOverview.svg" %}" alt="" class="mb-5"/>
-                    <p>Dalam dunia industri, kita pasti menemukan tantangan. Untuk itu, kami hadir dan siap membantu Anda mengembangkan bisnis atau industri yang Anda jalankan. 
-                    <br /><br />
-                    Dalam setiap proses pengerjaannya, KeDA Tech akan membantu Anda menganalisa setiap masalah dalam bisnis Anda, kemudian memberikan solusi berupa teknologi yang tepat.
+                    <h1 class="text-4xl font-bold mb-5 text-[#333333]">Estimation</h1>
+                    <img src="{% static "image/public/vidProcessEstimation.svg" %}" alt="" class="mb-5"/>
+                    <p>
+                    Teknik estimasi ini bisa membantu memperkirakan secara akurat setiap elemen dalam pengembangan produk bisnis Anda. Estimasi setiap project kami berdasarkan pada ruang lingkup yang sudah ditemukan dan beberapa faktor lainnya. Seperti tunjangan penemuan, pengiriman, sampai faktor alokasi. Ketiga faktor ini juga dapat menentukan waktu dan resiko tiap pengerjaan yang dilakukan oleh tim. 
                     </p>
-                    <div class="pt-20">
+                    <div class="pt-16">
                         <div class="flex justify-center items-center">
-                            <img src="{% static "image/public/Brief1.svg" %}" alt="" />
+                            <img src="{% static "image/public/Brief3.svg" %}" alt="" />
                         </div>
                         <div class="flex justify-end pt-9 cursor-pointer">
-                            <a href="/processBrief">
-                            <img src="{% static "image/public/nextBrief.svg" %}" alt="" />
+                            <a href="/processDevelopment">
+                            <img src="{% static "image/public/nextDevelopment.svg" %}" alt="" />
                             </a>
                         </div>
                     </div>
