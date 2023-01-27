@@ -5,7 +5,7 @@
            <div>
               <div class="mb-10">
                 <h1 class="text-4xl font-bold mb-4">{{ career.career_name }}</h1>
-                <p class="bg-[#022889] text-lg w-[132px] pt-1 pb-1.5 text-center rounded-full text-white mb-5">{{career.career_tag_id}}</p>
+                <p style="background-color: {{ career.career_tag_id.color_id.hex_code }};" class="text-lg w-[132px] pt-1 pb-1.5 text-center rounded-full text-white mb-5">{{career.career_tag_id}}</p>
                 <p class="leading-relaxed mb-2">{{career.description |safe}}</p>
                 <p class="text-sm font-semibold">Apply Before: {{ career.deadline|date:"j F Y" }}</p>
               </div>
