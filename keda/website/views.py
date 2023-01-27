@@ -248,10 +248,7 @@ def project(request):
         }
         return render(request, 'project.html', context)
 
-def consultation(request):
-    return render(request, 'consultation.html')
-
-def blog(request):
+def aboutStory(request):
     if request.POST:
         form = SubscriptionForm(request.POST)
         if form.is_valid():
@@ -395,6 +392,9 @@ def team(request):
         'productDesigns' : ProductDesigns,
     }
     return render(request, 'team.html', context)
+
+def consultation(request):
+    return render(request, 'consult.html', context)
 
 def consult(request):
     if request.POST:
