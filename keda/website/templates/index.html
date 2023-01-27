@@ -10,30 +10,31 @@
         </div>
     {% comment %} quote {% endcomment %}
         <div style="background-image: url('{% static "image/public/BackgroundHomeLight.svg" %}')" class=" h-[763px] shadow-black">
-          <div class="container md:px-28 md:pt-64 px-5 pt-20">
-            <p class="md:text-4xl text-2xl font-bold leading-normal italic">"Diawali dengan perkumpulan programmer yang ahli dari Amerika, <span class="text-[#d20008]">KeDA Tech</span> berkomitmen untuk membantu revolusi bisnis Anda dan mempersiapkan teknologi yang pas untuk Anda menghadapi tantangan bisnis di era digital"</p>
+          <div class="container md:px-28 md:pt-64 px-5 pt-24">
+            <p class="md:text-4xl text-3xl font-bold leading-normal italic">"Diawali dengan perkumpulan programmer yang ahli dari Amerika, <span class="text-[#d20008]">KeDA Tech</span> berkomitmen untuk membantu revolusi bisnis Anda dan mempersiapkan teknologi yang pas untuk Anda menghadapi tantangan bisnis di era digital"</p>
           </div>
         </div>
     {% comment %} prosess  {% endcomment %}
-        <div class="bg-white  ">
+        <div class="bg-[#fbfbfb]">
           <div class="container px-10 py-14">
-            <div class="grid grid-cols-2 gap-14">
-              <div class="col-span-1"><img src="{% static "image/public/prosesHomePage.svg" %}" alt="" width={607} height={582}/></div>
-              <div class="mt-36 pl-5 col-span-1">
-                <p class="text-3xl font-semibold mb-7">Proses yang Kami Lakukan</p>
-                <p class="text-4xl font-bold mb-5">Kami mandengar dan paham kebutuhan bisnis Anda</p>
-                <button class="px-24 py-2 border text-lg font-bold bg-[#d20008] border-[#d20008] text-white rounded hover:bg-[#b3020f] hover:border-[#d20008] transition duration-300">Detail</button>
+            <div class="grid md:grid-cols-2 md:gap-14">
+              <div class="col-span-1"><img src="{% static "image/public/prosesHomePage.svg" %}" alt="" className="md:w-[607px] md:h-[582px] w-[303px] h-[200px] object-cover"/></div>
+              <div class="md:mt-36 md:pl-5 col-span-1">
+                <p class="md:text-3xl text-xl font-semibold mb-7">Proses yang Kami Lakukan</p>
+                <p class="md:text-4xl text-2xl font-bold mb-5">Kami mandengar dan paham kebutuhan bisnis Anda</p>
+                <button class="md:px-24 px-10 py-2 border text-lg font-bold bg-[#d20008] border-[#d20008] text-white rounded hover:bg-[#b3020f] hover:border-[#d20008] transition duration-300">Detail</button>
               </div>
             </div>
           </div>
         </div>
     {% comment %} solution  {% endcomment %}
-        <div class="bg-white  ">
-          <div class="py-14">
-            <h1 class="text-center text-6xl font-bold mb-14">Solusi yang Kami Berikan</h1>
+        <div class="bg-white">
+          <div class="bg-[#fbfbfb] shadow-xl h-[1px]"></div>
+          <div class="py-14 bg-white">
+            <h1 class="text-center text-3xl md:text-6xl font-bold mb-14">Solusi yang Kami Berikan</h1>
             <div class="flex items-center px-28 py-8 hover:bg-[#f3f3f3] active:bg-[#d20008] transition duration-300 cursor-pointer">
               <img src="{% static "image/public/solusi.svg" %}" alt="" />
-              <div class="ml-6">
+              <div class="md:ml-6">
                 <h2 class="font-bold text-2xl mb-4">Pengembangan Website</h2>
                 <p>User Interface yang baik dan tepat bisa meningkatkan conversion rates website sampai 200%. Jadi sudah seharusnya website bisnis Anda menjadi efektif dengan desain yang menarik, fitur yang lengkap dan mudah diatur.</p>
               </div>

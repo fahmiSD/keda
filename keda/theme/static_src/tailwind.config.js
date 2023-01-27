@@ -39,7 +39,7 @@ module.exports = {
          * Python: If you use Tailwind CSS classes in Python, uncomment the following line
          * and make sure the pattern below matches your project structure.
          */
-        // '../../**/*.py'
+        // '../../**/*.py''
     ],
     theme: {
         extend: {},
@@ -53,6 +53,6 @@ module.exports = {
         require('@tailwindcss/forms'),
         require('@tailwindcss/typography'),
         require('@tailwindcss/line-clamp'),
-        require('@tailwindcss/aspect-ratio'),
+        require('@tailwindcss/aspect-ratio')
     ],
 }
