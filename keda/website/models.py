@@ -7,6 +7,15 @@ import os
 class AuthorAdmin(admin.ModelAdmin):
     list_display = ('Subscription', 'Categories', 'Position')
 
+
+class Color(models.Model):
+    color = models.CharField(max_length=200)
+    hex_code = models.CharField(max_length=50, null=True)
+    
+    def __str__(self):
+        return self.color
+
+
 # Create your models here.
 class Subscription(models.Model):
     email = models.EmailField(max_length=200)
@@ -53,6 +62,8 @@ class Consult(models.Model):
 
 class Blog_tag(models.Model):
     blog_tag_name = models.CharField(max_length=100)
+    color_id = models.ForeignKey(Color, on_delete=models.DO_NOTHING, null=True)
+
     def __str__(self):
         return self.blog_tag_name
 
@@ -68,6 +79,7 @@ class Blog(models.Model):
 
 class Career_tag(models.Model):
     career_tag_name = models.CharField(max_length=100)
+    color_id = models.ForeignKey(Color, on_delete=models.DO_NOTHING, null=True)
 
     def __str__(self):
         return self.career_tag_name
@@ -78,10 +90,10 @@ class Career(models.Model):
     description = RichTextUploadingField()
     deadline = models.DateField(null=True)
     datetime= models.DateTimeField(auto_now_add=True)
-    role_responsibility = RichTextUploadingField()
-    requirement = RichTextUploadingField()
-    plus = RichTextUploadingField()
-    benefits = RichTextUploadingField()
+    role_responsibility = RichTextUploadingField(null=True)
+    requirement = RichTextUploadingField(null=True)
+    plus = RichTextUploadingField(null=True)
+    benefits = RichTextUploadingField(null=True)
 
 
     def __str__(self):

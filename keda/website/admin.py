@@ -1,10 +1,12 @@
 from django.contrib import admin
-from website.models import Subscription, Position, Team, Consult, Blog, Blog_tag, Career_tag, Career, Candidate, Categories
+from website.models import Subscription,Color, Position, Team, Consult, Blog, Blog_tag, Career_tag, Career, Candidate, Categories
 
 #config admin page
 class SubsAdmin(admin.ModelAdmin):
     list_display = ['email']
 admin.site.register(Subscription, SubsAdmin)
+
+admin.site.register(Color)
 
 
 class PositionAdmin(admin.ModelAdmin):
