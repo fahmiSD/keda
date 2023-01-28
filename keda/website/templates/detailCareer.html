@@ -65,9 +65,11 @@
                  
                  </div>
                 <div class="grid grid-rows-2 mb-10">
-                  <label for="phone" class="font-semibold">No Whatsapp</label>
                   
+                  <label for="phone" class="font-semibold">No Whatsapp</label>
+                  <div class="flex w-[557px]">
                   {{form_candidate.whatsapp_number}} 
+                  </div>
                   <p style="color: rgb(220 38 38);" class="text-xs italic">
                     {{ form_candidate.whatsapp_number.errors }}
                     <p style="color: rgb(220 38 38);" class="text-xs italic">
@@ -80,12 +82,13 @@
                   </p>
                 </div>
                 <div class="grid gap-2 mb-10">
+                  
                   <label for="cv" class="font-semibold">Upload your CV here</label>
-                    <div class="flex justify-between w-[280px] border rounded-lg border-gray-300 shadow-sm cursor-pointer">
+                    <div class="flex justify-between w-[557px] border rounded-lg border-gray-300 shadow-sm cursor-pointer">
                       <label for="cv">
                         <div class="py-2 px-3 cursor-pointer">
-                          <p class="text-gray-400 text-sm">
-                            Select or drag file
+                          <p class="text-gray-400 text-sm" id="wpName">
+                            Select your file
                           </p>
                         </div>
                       </label>
