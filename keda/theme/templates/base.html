@@ -41,6 +41,22 @@
         }
       }
 
+      #phone_number_0{
+        width: 200px;
+      }
+
+      #phone_number_1{
+        width: 357px;
+      }
+
+      #phone_0{
+        width: 200px;
+      }
+
+      #phone_1{
+        width: 357px;
+      }
+
     </style>
   </head>
   <nav class="bg-[#d20008] sticky top-0">
@@ -108,6 +124,14 @@
 	
 	  {% endblock content %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
+    <script>
+      function setfilename(val)
+      {
+        filename = val.split('\\').pop().split('/').pop();
+        filename = filename.substring(0, filename.lastIndexOf('.'));
+        document.getElementById('wpName').innerHTML = filename + '.pdf';
+      }
+    </script>
   </body>
   
 </html>
