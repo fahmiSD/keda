@@ -1,9 +1,13 @@
+from import_export.admin import ExportMixin
+from website.resources import *
 from django.contrib import admin
 from website.models import Subscription,Color, Position, Team, Consult, Blog, Blog_tag, Career_tag, Career, Candidate, Categories
 
 #config admin page
-class SubsAdmin(admin.ModelAdmin):
-    list_display = ['email']
+class SubsAdmin(ExportMixin,admin.ModelAdmin):
+    list_display = ['email', 'datetime']    
+    resource_class = SubsResources
+
 admin.site.register(Subscription, SubsAdmin)
 
 admin.site.register(Color)
@@ -24,8 +28,9 @@ class TeamAdmin(admin.ModelAdmin):
 admin.site.register(Team, TeamAdmin)
 
 
-class ConsultAdmin(admin.ModelAdmin):
+class ConsultAdmin(ExportMixin,admin.ModelAdmin):
     list_display = ['name', 'business_sector', 'phone_number', 'email', 'datetime']
+    resource_class = ConsultResource
 admin.site.register(Consult, ConsultAdmin)
 
 
@@ -49,6 +54,7 @@ class CareerAdmin(admin.ModelAdmin):
 admin.site.register(Career, CareerAdmin)
 
 
-class CandidateAdmin(admin.ModelAdmin):
+class CandidateAdmin(ExportMixin, admin.ModelAdmin):
     list_display = ['candidate_name', 'career_tag_id', 'email', 'datetime']
+    resource_class = CandidateResource
 admin.site.register(Candidate, CandidateAdmin)
