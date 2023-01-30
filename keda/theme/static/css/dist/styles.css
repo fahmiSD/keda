@@ -1075,6 +1075,10 @@ select {
   width: 703px;
 }
 
+.w-\[557px\] {
+  width: 557px;
+}
+
 .w-\[469px\] {
   width: 469px;
 }
@@ -1087,6 +1091,7 @@ select {
   width: 280px;
 }
 
+<<<<<<< HEAD
 .w-\[557px\] {
   width: 557px;
 }
@@ -1101,6 +1106,10 @@ select {
 
 .w-6 {
   width: 1.5rem;
+=======
+.w-\[303px\] {
+  width: 303px;
+>>>>>>> 0d75d3511183c4cf38e35d4b2bc44b93295a71ff
 }
 
 .w-\[59px\] {
@@ -1968,6 +1977,12 @@ select {
   .dark\:hover\:text-white:hover {
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
+}
+
+@media (min-width: 640px) {
+  .sm\:h-\[656px\] {
+    height: 656px;
   }
 }
 

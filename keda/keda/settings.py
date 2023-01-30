@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     'theme',
     'django_browser_reload',
     'django_cleanup.apps.CleanupConfig',
+    'import_export',
 ]
 
 TAILWIND_APP_NAME = 'theme'
@@ -146,7 +147,7 @@ STATICFILES_DIRS = [
     BASE_DIR / 'theme/static/',
 ] 
 
-
+IMPORT_EXPORT_USE_TRANSACTIONS = True
 
 MEDIA_URL = '/media/'
 

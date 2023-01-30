@@ -1,5 +1,4 @@
-from django.shortcuts import render, redirect, HttpResponse
-from django.contrib import messages
+from django.shortcuts import render
 from website.forms import *
 
 # Create your views here.
@@ -17,12 +16,14 @@ def index(request):
             return render(request, 'index.html', context)
 
         else:
+            
             form = SubscriptionForm()
             message = "error"
             context = {
                 'form' : form,
                 'message' : message,
             }
+           
             return render(request, 'index.html', context)
 
     else:
@@ -31,7 +32,7 @@ def index(request):
             'form' : form,
         }
         return render(request, 'index.html', context)
-    
+
 def solution(request):
     if request.POST:
         form = SubscriptionForm(request.POST)
