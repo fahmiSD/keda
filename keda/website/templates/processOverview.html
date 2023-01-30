@@ -1,13 +1,13 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
     <div>
       {% comment %} Banner Working Style {% endcomment %}
-        <div style="background-image: url('{% static "image/public/bgProcessOverview.svg" %}')" class="h-[202px] flex items-center justify-center">
+        <div style="background-image: url('{% static "image/public/bgProcessOverview.svg" %}')" class="h-[202px] flex items-center justify-center px-8">
             <img src="{% static "image/public/KeDA'sWorkingStyle.svg" %}" alt="" />
         </div>
       {% comment %} Main Content {% endcomment %}
-        <div class="bg-white py-16 px-14">
-            <div class="grid grid-cols-3">      
-                <div class="col-span-1">
+        <div class="bg-white py-16 md:px-14 px-5">
+            <div class="md:grid md:grid-cols-3">      
+                <div class="col-span-1 hidden md:block">
                     <div class="mb-7 border-l-2 border-[#333333] pl-4">
                         <a href="/processOverview">
                         <h1 style="color: rgb(51 51 51);" class="text-3xl font-bold text-[#333333] cursor-pointer">Overview</h1>
@@ -65,7 +65,7 @@
                         </div>
                         <div class="flex justify-end pt-9 cursor-pointer">
                             <a href="/processBrief">
-                            <img src="{% static "image/public/nextBrief.svg" %}" alt="" />
+                            <img src="{% static "image/public/nextBrief.svg" %}" alt="" class="w-[120px]" />
                             </a>
                         </div>
                     </div>

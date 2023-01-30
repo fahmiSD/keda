@@ -5,9 +5,9 @@
             <img src="{% static "image/public/estimation.svg" %}" alt="" />
         </div>
      {% comment %} Main Content {% endcomment %}
-        <div class="bg-white py-16 px-14">
-            <div class="grid grid-cols-3">
-                <div class="col-span-1">
+        <div class="bg-white py-16 md:px-14 px-5">
+            <div class="md:grid md:grid-cols-3">
+                <div class="hidden md:block col-span-1">
                     <div class="mb-7 pl-4">
                         <a href="/processOverview">
                         <h1 class="text-2xl font-bold text-[#333333] cursor-pointer">Overview</h1>
@@ -64,7 +64,7 @@
                         </div>
                         <div class="flex justify-end pt-9 cursor-pointer">
                             <a href="/processDevelopment">
-                            <img src="{% static "image/public/nextDevelopment.svg" %}" alt="" />
+                            <img src="{% static "image/public/nextDevelopment.svg" %}" alt="" class="w-[206px]"/>
                             </a>
                         </div>
                     </div>
