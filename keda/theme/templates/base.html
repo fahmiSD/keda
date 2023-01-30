@@ -59,36 +59,36 @@
 
     </style>
   </head>
-  <nav class="bg-[#d20008] sticky top-0">
+  <nav class=" bg-[#d20008] sticky top-0 md:block hidden">
     <div class="">
       <div class="flex justify-around items-center p-3">
           <div class="ml-5">
             <a href="/">
-              <img src="{% static "image/public/logo1.svg" %}" alt="logo" width={72} height={45} class='cursor-pointer'/>
+              <img src="{% static "image/public/logo1.svg" %}" alt="logo" class='cursor-pointer w-[72px] h-[45px]'/>
             </a>
           </div>
-          <div class="flex justify-around items-center">
+          <div class="md:flex justify-around items-center ">
             <div class="flex items-center bg-[#b3020f] rounded-full px-1 py-[0.4rem] mx-5">
               <a href="/">
                 <p class="text-white px-5 cursor-pointer">Beranda</p>
               </a>
-              <div class="flex cursor-pointer">
-                  <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="text-white font-medium rounded-lg text-sm px-4 py-2.5 text-center flex items-center " type="button"><p>Tentang</p>
+              <div class="flex">
+                  <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="text-white font-medium rounded-lg text-sm px-4 py-2.5 text-center flex items-center cursor-pointer" type="button"><p>Tentang</p>
                     <img src="{% static "image/public/tentang.svg" %}" alt="" class="m-0 pl-3 pt-1"/></button>
                   <!-- Dropdown menu -->
-                  <div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-40">
+                  <div id="dropdown" class="z-10 hidden bg-black divide-y divide-gray-100 rounded-lg shadow w-30">
                       <ul class="py-2 text-sm text-center text-black" aria-labelledby="dropdownDefaultButton">
                         <li>
-                          <a href="/aboutStory" class="block px-4 py-2 hover:bg-gray-100">Story</a>
+                          <a href="/aboutStory" class="block px-4 py-2 hover:bg-gray-100 cursor-pointer">Story</a>
                         </li>
                         <li>
-                          <a href="/aboutTeam" class="block px-4 py-2 hover:bg-gray-100">Tim</a>
+                          <a href="/aboutTeam" class="block px-4 py-2 hover:bg-gray-100 cursor-pointer">Tim</a>
                         </li>
                         <li>
-                          <a href="/aboutTechnologies" class="block px-4 py-2 hover:bg-gray-100">Teknologi</a>
+                          <a href="/aboutTechnologies" class="block px-4 py-2 hover:bg-gray-100 cursor-pointer">Teknologi</a>
                         </li>
                         <li>
-                          <a href="/aboutCareer" class="block px-4 py-2 hover:bg-gray-100">Karir</a>
+                          <a href="/aboutCareer" class="block px-4 py-2 hover:bg-gray-100 cursor-pointer">Karir</a>
                         </li>
                       </ul>
                   </div>
@@ -119,6 +119,79 @@
           </div>
       </div>
     </div>
+  </nav>
+  <nav class="bg-white md:hidden sticky top-0 z-30">
+    <div class="flex justify-between items-center p-5">
+      <div>
+        <a href="/">
+          <img src="{% static "image/public/logo3.svg" %}" alt="logo" class='cursor-pointer w-[95px] h-[61px]'/>
+        </a>
+      </div>
+      <div class="">
+        <button data-modal-target="extralarge-modal" data-modal-toggle="extralarge-modal" class="" type="button">
+          <img src="{% static "image/public/hamburger.svg" %}" alt="logo" class='cursor-pointer w-[24px] h-[24px]'/>
+        </button>
+        <!-- Extra Large Modal -->
+        <div id="extralarge-modal" tabindex="-1" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full">
+          <div class="relative w-full h-full max-w-7xl md:h-auto">
+              <!-- Modal content -->
+              <div class="relative bg-black rounded-lg shadow">
+                  <!-- Modal header -->
+                  <div class="flex items-center justify-between p-5 border-b rounded-t dark:border-gray-600">
+                      <img src="{% static "image/public/logo2.svg" %}" class="w-[101px] h-[65px]"/>
+                      <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="extralarge-modal">
+                          <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                          <span class="sr-only">Close modal</span>
+                      </button>
+                  </div>
+                  <!-- Modal body -->
+                  <div class="p-6 space-y-6">
+                    <a href="/" class="">
+                      <p class="text-white text-center font-bold text-2xl mb-7">
+                          Beranda
+                      </p>
+                    </a>
+                    <a href="/aboutStory">
+                      <p class="text-white text-center font-bold text-2xl mb-7">
+                          Tentang
+                      </p>
+                    </a>
+                    <a href="/processOverview">
+                      <p class="text-white text-center font-bold text-2xl mb-7">
+                          Proses
+                      </p>
+                    </a>
+                    <a href="/solution">
+                      <p class="text-white text-center font-bold text-2xl mb-7">
+                          Solusi
+                      </p>
+                    </a>
+                    <a href="/project">
+                      <p class="text-white text-center font-bold text-2xl mb-7">
+                          Proyek
+                      </p>
+                    </a>
+                    <a href="/blog">
+                      <p class="text-white text-center font-bold text-2xl mb-7">
+                         Blog
+                      </p>
+                    </a>
+                    <a href="/aboutCareer">
+                      <p class="text-white text-center font-bold text-2xl mb-7">
+                         Karir
+                      </p>
+                    </a>
+                      <div class="flex justify-center">
+                        <img src="{% static "image/public/upTech.svg" %}" alt="logo" width={72} height={45} class='cursor-pointer'/>
+                      </div>
+                    <a href="/consultation">
+                      <p class="text-white text-center font-bold text-3xl mt-5 mb-7">Book a chat</p>
+                    </a>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
   </nav>
     {% block content %}
 	
