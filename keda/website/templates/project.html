@@ -1,21 +1,22 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
     <div>
       {% comment %} Banner Project {% endcomment %}
-        <div style="background-image: url('{% static "image/public/bgProject.svg" %}')" class="h-[641px]">
+        <div style="background-image: url('{% static "image/public/bgProject.svg" %}')" class="h-[641px] hidden md:block">
           <div class="px-24 pt-64">
               <img src="{% static "image/public/projects.svg" %}" alt="logo" class=""/>
             </div>
         </div>
+        <img src="{% static "image/public/bgProjectSmall.png" %}" alt="logo" class=""/>
       {% comment %} Quote {% endcomment %}
-        <div style="background-image: url('{% static "image/public/bgProjectWhite.svg" %}')" class="h-[720px] shadow shadow-black">
-          <div class="container px-28 pt-64">
-            <p class="text-4xl font-bold leading-normal italic">"Kami akan membawa Anda mengenali KeDA Tech lebih dalam dengan melihat project apa saja yang sudah kami kerjakan, dan memakan waktu berapa lama untuk setiap projectnya. "</p>
+        <div style="background-image: url('{% static "image/public/bgProjectWhite.svg" %}')" class="md:h-[720px] shadow shadow-black">
+          <div class="px-10 py-20 md:px-28 md:pt-64">
+            <p class="md:text-4xl text-3xl font-bold leading-normal italic">"Kami akan membawa Anda mengenali KeDA Tech lebih dalam dengan melihat project apa saja yang sudah kami kerjakan, dan memakan waktu berapa lama untuk setiap projectnya. "</p>
           </div>
         </div>
       {% comment %} Card Project {% endcomment %}
-        <div class="bg-white  ">
-          <div class=" grid grid-cols-2 px-28 gap-20">
-            <Card class="p-8 block w-full py-5 bg-white shadow-gray-500 shadow-sm hover:shadow-md hover:shadow-black transition duration-300 cursor-pointer">
+        <div class="bg-white py-12 ">
+          <div class=" md:grid md:grid-cols-2 px-8 md:px-28 gap-20">
+            <Card class="p-8 block w-full py-5 bg-white shadow-gray-500 shadow-sm hover:shadow-md hover:shadow-black transition duration-300 cursor-pointer mb-8">
                 <img src="{% static "image/public/cardWayFinder.svg" %}" alt="" class="mb-3"/>
                 <p class="text-[#555555] text-lg font-semibold mb-4">PT. Citra Kreasi Makmur</p>
                 <h2 class="font-bold text-3xl mb-4">WayFinder</h2>

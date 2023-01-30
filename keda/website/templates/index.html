@@ -10,7 +10,7 @@
         </div>
     {% comment %} quote {% endcomment %}
         <div style="" class="h-[763px] shadow-black test" id="Test">
-          <div class="container md:px-28 md:pt-64 px-5 pt-24">
+          <div class="container md:px-28 md:pt-72 px-5 pt-24">
             <p class="md:text-4xl text-3xl font-bold leading-normal italic">"Diawali dengan perkumpulan programmer yang ahli dari Amerika, <span class="text-[#d20008]">KeDA Tech</span> berkomitmen untuk membantu revolusi bisnis Anda dan mempersiapkan teknologi yang pas untuk Anda menghadapi tantangan bisnis di era digital"</p>
           </div>
         </div>
@@ -19,7 +19,9 @@
           <div class=" md:px-10 px-5 py-14">
             <div class="grid md:grid-cols-2 md:gap-14">
               <p class="md:text-3xl md:hidden text-xl font-semibold mb-7">Proses yang Kami Lakukan</p>
-              <div class="md:col-span-1"><img src="{% static "image/public/prosesHomePage.svg" %}" alt="" className="hidden md:block w-[607px] h-[582px] object-cover"/></div>
+              <div class="md:col-span-1">
+                <img src="{% static "image/public/homeProcess1.svg" %}" alt="" className="hidden md:block object-cover"/>
+              </div>
               <div class="md:mt-36 md:pl-5 col-span-1">
                 <p class="md:text-3xl hidden md:block text-xl font-semibold mb-7">Proses yang Kami Lakukan</p>
                 <p class="md:text-4xl text-2xl font-bold mb-5">Kami mandengar dan paham kebutuhan bisnis Anda</p>
@@ -112,7 +114,7 @@
           <div class=" md:px-20 px-10 py-16">
             <img src="{% static "image/public/YourDigitalTransfoemationPartner.svg" %}" alt="" class="hidden md:block"/>
             <img src="{% static "image/public/YourDigitalTransfoemationPartnerSmall.svg" %}" width={312} alt="" class="md:hidden"/>
-            <button onclick="window.location.href = '{% url "consultation" %}';" class="ml-6 mt-6 px-7 py-5 border bg-[#d20008] text-xl text-white rounded-sm hover:bg-[#b3020f] font-medium transition duration-300">Book a chat</button>
+            <button onclick="window.location.href = '{% url "consultation" %}';" class="ml-6 mt-6 px-7 py-3 md:py-5 border bg-[#d20008] text-xl text-white rounded-sm hover:bg-[#b3020f] font-medium transition duration-300">Book a chat</button>
           </div>
         </div>
     {% comment %} Footer {% endcomment %}
@@ -121,7 +123,7 @@
             <div class="md:flex md:justify-between">
               <div>
                 <img src="{% static "image/public/logo2.svg" %}" alt="logo" class="mb-5"/>
-                <p class="text-white text-center w-6">Komplek Green Ville, Jalan Ratu Kemuning Blok BL No. 1, RT08/RW14, DKI Jakarta +(62-81) 398-716-212</p>
+                <p class="text-white text-center w-[292px] ml-12">Komplek Green Ville, Jalan Ratu Kemuning Blok BL No. 1, RT08/RW14, DKI Jakarta +(62-81) 398-716-212</p>
               </div>
               <div class="grid grid-cols-2 gap-24 pt-5">
                 <div class="grid gap-3">
