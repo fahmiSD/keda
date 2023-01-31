@@ -60,6 +60,9 @@
         </div>
     {% comment %} Django {% endcomment %}
         <div class="bg-white md:h-[720px] md:flex justify-around items-center md:px-10 px-5 py-16 md:py-0">
+            <div class="md:block hidden px-10">
+              <img src="{% static "image/public/python.svg" %}" alt="" class="w-[369px]"/>
+            </div>
             <div class="mb-10 md:mb-0">
                 <h1 class="md:text-5xl text-3xl font-bold mb-5">Django Python</h1>
                 <p class="mb-5">simply dummy text of the printing and typesetting industry. Lorem Ipsum <br class="hidden md:block"/>has been the industry's standard dummy text ever since the 1500s,</p>
@@ -106,7 +109,7 @@
         </div>
       </div>
     {% comment %} After Footer {% endcomment %}
-        <div style="background-image: url('{% static "image/public/bgAfterFooterPurple.svg" %}')" class="h-[720px] shadow-black">
+        <div style="background-image: url('{% static "image/public/bgAfterFooterPurple.svg" %}')" class="h-[720px] shadow-black hidden md:block">
           <div class="container px-64 pt-72">
             <h1 class="text-5xl font-bold mb-4">Tetap Terhubung Bersama Kami</h1>
             <p class="text-2xl pr-20 mb-4">Sign up for the lat­est up­dates to our Way of Working, case stud­ies, and more.</p>
@@ -126,5 +129,28 @@
             </div>
           </div>
         </div>
+    {% comment %} after footer mobile {% endcomment %}
+    <div style="background-image: url('{% static "image/public/bgAfterFooterPurpleSmall.svg" %}')" class="h-[720px] bg-center bg-cover bg-no-repeat md:hidden">
+        <div class="py-52 px-10">
+          <h1 class="text-4xl font-bold mb-4 text">Tetap Terhubung Bersama Kami</h1>
+          <p class="text-xl  mb-4">Sign up for the lat­est up­dates to our Way of Working, case stud­ies, and more.</p>
+          <div>
+            <form action="" method="POST">
+              {% csrf_token %}
+              {{form}}
+              <div class="mt-5">
+                <button type="submit" class="px-3 py-1 border bg-[#d20008] text-white text-md font-bold rounded hover:bg-[#b3020f] hover:border-[#d20008] transition duration-300">Berlangganan</button>
+              </div>
+            </form> 
+
+            {% if message == 'berhasil' %}
+              <p style="color: rgb(16 185 129);" class="text-xs italic">Selamat, Anda telah berlangganan dengan kami!</p>
+            {% elif message == 'error' %}
+              <p style="color: rgb(220 38 38);" class="text-xs italic">Format Email yang Anda masukkan salah!</p>
+            {% endif %}
+
+          </div>
+        </div>
+      </div>
     </div>
 {% endblock content %}

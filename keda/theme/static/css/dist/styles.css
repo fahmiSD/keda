@@ -1422,6 +1422,10 @@ select {
   background-color: rgb(249 249 249 / var(--tw-bg-opacity));
 }
 
+.bg-cover {
+  background-size: cover;
+}
+
 .bg-center {
   background-position: center;
 }
@@ -1551,6 +1555,11 @@ select {
 .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
+}
+
+.py-52 {
+  padding-top: 13rem;
+  padding-bottom: 13rem;
 }
 
 .px-6 {
@@ -1701,6 +1710,10 @@ select {
   padding-top: 8rem;
 }
 
+.pt-36 {
+  padding-top: 9rem;
+}
+
 .pt-24 {
   padding-top: 6rem;
 }
@@ -1715,6 +1728,18 @@ select {
 
 .pt-16 {
   padding-top: 4rem;
+}
+
+.pt-40 {
+  padding-top: 10rem;
+}
+
+.pt-44 {
+  padding-top: 11rem;
+}
+
+.pr-3 {
+  padding-right: 0.75rem;
 }
 
 .text-center {

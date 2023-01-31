@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
 <div>
     {% comment %} Main Content  {% endcomment %}
-    <div class="grid grid-cols-12 gap-10 px-12 py-6 bg-white">
+    <div class="md:grid grid-cols-12 gap-10 md:px-12 px-8 py-6 bg-white">
         <div class="col-span-9">
             <div class="gap-10 py-5">
                 <div class="grid gap-5">
@@ -12,7 +12,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-span-3 bg-[#f9f9f9] p-5">
+        <div class="col-span-3 bg-[#f9f9f9] p-5 hidden md:block">
             <h1 class="text-2xl text-center font-semibold mb-4">Trending Article</h1>
             {% for related_blog in related_blogs %}
             <div class="grid gap-2">
@@ -25,11 +25,17 @@
         </div>
     </div>
     {% comment %} Digital Transformation  {% endcomment %}
-    <div style="background-image: url('{% static "image/public/backgroundDigitalTransformationOrange.svg" %}')" class="h-[283px]">
+    <div style="background-image: url('{% static "image/public/backgroundDigitalTransformationOrange.svg" %}')" class="h-[283px] hidden md:block">
           <div class="container px-20 py-16">
             <img src="{% static "image/public/YourDigitalTransfoemationPartner.svg" %}" alt="" />
             <Button onclick="window.location.href = '{% url "consultation" %}';" class="ml-6 mt-6 px-7 py-5 border bg-[#d20008] text-xl text-white rounded-sm hover:bg-[#b3020f] font-medium transition duration-300">Book a chat</Button>
           </div>
+    </div>
+    <div style="background-image: url('{% static "image/public/backgroundDigitalTransformationOrangeSmall.svg" %}')" class="h-[656px] bg-no-repeat bg-center bg-cover md:hidden">
+      <div class="container px-10 py-16">
+        <img src="{% static "image/public/YourDigitalTransfoemationPartnerSmall.svg" %}" width={312} alt="" />
+        <button onclick="window.location.href = '{% url "consultation" %}';" class="ml-6 mt-6 px-7 py-3 md:py-5 border bg-[#d20008] text-xl text-white rounded-sm hover:bg-[#b3020f] font-medium transition duration-300">Book a chat</button>
+      </div>
     </div>
     {% comment %} Footer {% endcomment %}
     <div class="bg-black  ">
@@ -63,7 +69,7 @@
       </div>
     </div>
     {% comment %} After Footer {% endcomment %}
-    <div style="background-image: url('{% static "image/public/bgAfterFooterOrange.svg" %}')" class="h-[720px] shadow-black">
+    <div style="background-image: url('{% static "image/public/bgAfterFooterOrange.svg" %}')" class="h-[720px] shadow-black hidden md:block">
           <div class="container px-64 pt-72">
             <h1 class="text-5xl font-bold mb-4">Tetap Terhubung Bersama Kami</h1>
             <p class="text-2xl pr-20 mb-4">Sign up for the lat­est up­dates to our Way of Working, case stud­ies, and more.</p>
@@ -80,6 +86,29 @@
                 <p style="color: rgb(220 38 38);" class="text-xs italic">Format Email yang Anda masukkan salah!</p>
               {% endif %}</div>
           </div>
+    </div>
+    {% comment %} after footer mobile {% endcomment %}
+    <div style="background-image: url('{% static "image/public/bgAfterFooterOrangeSmall.svg" %}')" class="h-[720px] bg-center bg-cover bg-no-repeat md:hidden">
+      <div class="py-52 px-10">
+        <h1 class="text-4xl font-bold mb-4 text">Tetap Terhubung Bersama Kami</h1>
+        <p class="text-xl  mb-4">Sign up for the lat­est up­dates to our Way of Working, case stud­ies, and more.</p>
+        <div>
+          <form action="" method="POST">
+            {% csrf_token %}
+            {{form}}
+            <div class="mt-5">
+              <button type="submit" class="px-3 py-1 border bg-[#d20008] text-white text-md font-bold rounded hover:bg-[#b3020f] hover:border-[#d20008] transition duration-300">Berlangganan</button>
+            </div>
+          </form> 
+
+          {% if message == 'berhasil' %}
+            <p style="color: rgb(16 185 129);" class="text-xs italic">Selamat, Anda telah berlangganan dengan kami!</p>
+          {% elif message == 'error' %}
+            <p style="color: rgb(220 38 38);" class="text-xs italic">Format Email yang Anda masukkan salah!</p>
+          {% endif %}
+
+        </div>
+      </div>
     </div>
 </div>
 {% endblock content %}
