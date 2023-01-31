@@ -1,12 +1,21 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
 <div>
    {% comment %} banner  {% endcomment %}
-        <div style="background-image: url('{% static "image/public/BackgroundHomeDark.svg" %}')" class="h-[646px] ">
+        <div style="background-image: url('{% static "image/public/BackgroundHomeDark.svg" %}')" class="h-[646px] hidden md:block">
           <div class="col-span-3 container md:px-20 px-10 pt-32">
             <div class="">
               <img src="{% static "image/public/logoHomePage.svg" %}" alt="logo" class="mb-6" width={448} height={254}/>
             </div>
               <p class="text-white md:text-3xl text-xl font-semibold md:mb-14 mb-5">Your Digital Transformation Partner</p>
+              <button class="md:px-12 md:py-4 py-2 px-5 border text-2xl font-bold bg-[#d20008] border-[#d20008] text-white rounded  hover:bg-[#b3020f] hover:border-[#d20008] transition duration-300">Book a chat</button>
+            </div>
+        </div>
+        <div style="background-image: url('{% static "image/public/bgIndexSmall.svg" %}')" class="h-[646px] md:hidden bg-center bg-cover">
+          <div class="col-span-3 container md:px-20 px-10 pt-32">
+            <div class="pr-5">
+              <img src="{% static "image/public/logoHomePage.svg" %}" alt="logo" class="mb-6" width={448} height={254}/>
+            </div>
+              <p class="text-white text-lg font-semibold mb-5">Your Digital Transformation Partner</p>
               <button class="md:px-12 md:py-4 py-2 px-5 border text-2xl font-bold bg-[#d20008] border-[#d20008] text-white rounded  hover:bg-[#b3020f] hover:border-[#d20008] transition duration-300">Book a chat</button>
             </div>
         </div>
@@ -154,7 +163,7 @@
           </div>
         </div>
    {% comment %} after footer {% endcomment %}
-        <div style="background-image: url('{% static "image/public/bgAfterFooterGreen.svg" %}')" class="h-[720px] shadow-black">
+        <div style="background-image: url('{% static "image/public/bgAfterFooterGreen.svg" %}')" class="h-[720px] shadow-black hidden md:block">
           <div class="container px-64 pt-72">
             <h1 class="text-5xl font-bold mb-4">Tetap Terhubung Bersama Kami</h1>
             <p class="text-2xl pr-20 mb-4">Sign up for the lat­est up­dates to our Way of Working, case stud­ies, and more.</p>
@@ -163,6 +172,29 @@
                 {% csrf_token %}
                 {{form}}
                 <button type="submit" class="px-3 py-1 border bg-[#d20008] text-white text-md ml-3 font-bold rounded hover:bg-[#b3020f] hover:border-[#d20008] transition duration-300">Berlangganan</button>
+              </form> 
+
+              {% if message == 'berhasil' %}
+                <p style="color: rgb(16 185 129);" class="text-xs italic">Selamat, Anda telah berlangganan dengan kami!</p>
+              {% elif message == 'error' %}
+                <p style="color: rgb(220 38 38);" class="text-xs italic">Format Email yang Anda masukkan salah!</p>
+              {% endif %}
+
+            </div>
+          </div>
+        </div>
+    {% comment %} after footer mobile {% endcomment %}
+        <div style="background-image: url('{% static "image/public/bgAfterFooterGreenSmall.svg" %}')" class="h-[720px] bg-center bg-cover bg-no-repeat md:hidden">
+          <div class="py-52 px-10">
+            <h1 class="text-4xl font-bold mb-4 text">Tetap Terhubung Bersama Kami</h1>
+            <p class="text-xl  mb-4">Sign up for the lat­est up­dates to our Way of Working, case stud­ies, and more.</p>
+            <div>
+              <form action="" method="POST">
+                {% csrf_token %}
+                {{form}}
+                <div class="mt-5">
+                  <button type="submit" class="px-3 py-1 border bg-[#d20008] text-white text-md font-bold rounded hover:bg-[#b3020f] hover:border-[#d20008] transition duration-300">Berlangganan</button>
+                </div>
               </form> 
 
               {% if message == 'berhasil' %}
