@@ -1,35 +1,32 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
     <div>
       {% comment %} Profile Team {% endcomment %}
-        <div style="background-image: url('{% static "image/public/bgAboutStory.svg" %}')" class="h-[609px]">
+        <div style="background-image: url('{% static "image/public/bgAboutStory.svg" %}')" class="hidden md:block h-[609px]">
             <div class="px-20 py-48">
                 <h1 class="text-7xl font-bold mb-7">Profil Tim KeDA Tech</h1>
                 <p class="text-2xl pl-12 ">Sebagai salah satu Perusahaan Pengembang Teknologi Informasi yang berbasis di Jakarta, <br/>KeDA Tech berkomitmen untuk memenuhi semua kebutuhan sistem informasi dan solusi IT Anda. </p>
             </div>
         </div>
-      {% comment %} Digital Bisnis {% endcomment %}
-        <div class="bg-[#f3f3f3] h-[720px] grid md:grid-cols-12">
-          <div class="md:col-span-5 md:pl-20 md:pt-40 h-44">
-            <img src="{% static "image/public/digitalBusiness.svg" %}" alt="logo" class=" md:w-[386px] md:h-[404px]"/>
-          </div>
-          <div class="md:col-span-7">
-            <div class=" md:pr-26 md:pt-60">
-              <h1 class="mb-6 font ml-5 leading-snug text-5xl font-bold">Sincerely doing the best for your digital business.</h1>
-              <button class="px-6 py-2 ml-5 border bg-[#d20008] text-white rounded-sm hover:bg-[#b3020f] hover:border-[#d20008] text-sm font-medium transition duration-300">Meet the Team</button>
+        <div class="md:hidden bg-white">
+            <div class="py-20 px-5">
+                <h1 class="text-3xl font-bold mb-7">Profil Tim KeDA Tech</h1>
+                <p class="text-md ">Sebagai salah satu Perusahaan Pengembang Teknologi Informasi yang berbasis di Jakarta, <br/><br/>KeDA Tech berkomitmen untuk memenuhi semua kebutuhan sistem informasi dan solusi IT Anda. </p>
             </div>
-          </div>
         </div>
      {% comment %} Join Our Team {% endcomment %}
-        <div class=" bg-[#f8f8f8] h-[720px]">
-          <div class="grid grid-cols-12">
-          <div class="col-span-7 container pl-24 pt-60">
-            <h1 class="mb-3 leading-snug text-5xl font-bold">Tertarik untuk bergabung dengan kami?</h1>
-            <p class="mb-10">Kami selalu terbuka dengan talenta baru</p>
-            <button onclick="window.location.href = '{% url "aboutCareer" %}';"  class="px-6 py-2 border bg-[#d20008] text-white rounded-sm hover:bg-[#b3020f] hover:border-[#d20008] text-sm font-medium transition duration-300">Temukan posisi yang cocok</button>
-          </div>
-          <div class="col-span-5 mt-40">
-            <img src="{% static "image/public/WithMe.svg" %}" alt="logo" class=" w-[430px] hidden md:block"/>
-          </div>
+        <div class=" md:bg-[#f8f8f8] md:h-[720px] pb-12 bg-white">
+          <div class="md:grid md:grid-cols-12">
+            <div class="col-span-5 md:hidden px-12 py-10">
+              <img src="{% static "image/public/WithMe.svg" %}" alt="logo" class=" w-[430px]"/>
+            </div>
+            <div class="col-span-7 container md:pl-24 md:pt-60 px-7 md:px-0">
+              <h1 class="mb-3 leading-snug md:text-5xl text-2xl font-bold">Tertarik untuk bergabung dengan kami?</h1>
+              <p class="mb-10">Kami selalu terbuka dengan talenta baru</p>
+              <button onclick="window.location.href = '{% url "aboutCareer" %}';"  class="px-6 py-2 border bg-[#d20008] text-white rounded-sm hover:bg-[#b3020f] hover:border-[#d20008] font-medium transition duration-300">Temukan posisi yang cocok</button>
+            </div>
+            <div class="col-span-5 mt-40 hidden md:block">
+              <img src="{% static "image/public/WithMe.svg" %}" alt="logo" class=" w-[430px]"/>
+            </div>
           </div>
         </div>
     {% comment %} Digital Tranformation {% endcomment %}
@@ -40,37 +37,36 @@
           </div>
         </div>
     {% comment %} Footer {% endcomment %}
-        <div class="bg-black  ">
-          <div class="container px-20 pt-12 pb-5">
-            <div class="flex justify-between ite">
-              <div>
-                <img src="{% static "image/public/logo2.svg" %}" alt="logo" class="mb-5"/>
-                <p class="text-white">Komplek Green Ville, Jalan Ratu</p>
-                <p class="text-white">Kemuning Blok BL No. 1,</p>
-                <p class="text-white">RT08/RW14, DKI Jakarta</p>
-                <p class="text-white">+(62-81) 398-716-212</p>
-              </div>
-              <div class="grid grid-cols-2 gap-24 pt-5">
-                <div class="grid gap-3">
-                  <h1 class="text-white text-2xl font-bold">Quick Links</h1>
-                  <p class="text-white">Home</p>
-                  <p class="text-white">About</p>
-                  <p class="text-white">Services</p>
-                  <p class="text-white">Process</p>
-                  <p class="text-white">Projects</p>
-                </div>
-                <div class="grid gap-3">
-                  <h1 class="text-white text-2xl font-bold">Find Us On</h1>
-                  <p class="text-white">Facebook</p>
-                  <p class="text-white">Instagram</p>
-                  <p class="text-white">Facebook</p>
-                  <p class="text-white">Linkedin</p>
-                </div>
-              </div>
+    <div class="bg-black  ">
+      <div class="px-7 md:px-20 md:pt-12 md:pb-5 py-10">
+        <div class="md:flex md:justify-between">
+          <div class="border-b md:border-none py-4">
+            <div class="flex justify-center md:justify-start">
+              <img src="{% static "image/public/logo2.svg" %}" alt="logo" class="mb-5"/>
             </div>
-              <p class="text-white text-center mt-7">Copyright © <script>document.write(/\d{4}/.exec(Date())[0])</script> KeDA Tech. All Rights Reserved.</p>
+            <p class="text-white text-center md:text-left md:w-[292px]">Komplek Green Ville, Jalan Ratu<br class="hidden md:block"/> Kemuning Blok BL No. 1,<br class="hidden md:block"/> RT08/RW14, DKI Jakarta <br class="hidden md:block"/>+(62-81) 398-716-212</p>
+          </div>
+          <div class="flex justify-around md:gap-20 pt-5">
+            <div class="">
+              <h1 class="text-white md:text-2xl font-bold mb-3">Quick Links</h1>
+              <p class="text-white mb-3">Home</p>
+              <p class="text-white mb-3">About</p>
+              <p class="text-white mb-3">Services</p>
+              <p class="text-white mb-3">Process</p>
+              <p class="text-white mb-3">Projects</p>
+            </div>
+            <div class="">
+              <h1 class="text-white md:text-2xl font-bold mb-3">Find Us On</h1>
+              <p class="text-white mb-3">Facebook</p>
+              <p class="text-white mb-3">Instagram</p>
+              <p class="text-white mb-3">Facebook</p>
+              <p class="text-white mb-3">Linkedin</p>
+            </div>
           </div>
         </div>
+          <p class="text-white mt-7 flex justify-center">Copyright © <script>document.write(/\d{4}/.exec(Date())[0])</script> KeDA Tech<span class="md:block hidden">. All Rights Reserved.</span></p>
+      </div>
+    </div>
     {% comment %} After Footer {% endcomment %}
         <div style="background-image: url('{% static "image/public/bgAfterFooterRed.svg" %}')" class="h-[720px] shadow-black">
           <div class="container px-64 pt-72">

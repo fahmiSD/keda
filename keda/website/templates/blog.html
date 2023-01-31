@@ -1,16 +1,17 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
     <div>
      {% comment %} Banner Blog  {% endcomment %}
-        <div style="background-image: url('{% static "image/public/bgKeDABlog.svg" %}')" class="h-[641px]">
-          <div class="px-24 pt-64">
-              <img src="{% static "image/public/KeDABlog.svg" %}" alt="logo" class=""/>
-            </div>
+        <div style="background-image: url('{% static "image/public/bgKeDABlog.svg" %}')" class="h-[641px] hidden md:block">
+        <div class="px-24 pt-64">
+            <img src="{% static "image/public/KeDABlog.svg" %}" alt="logo" class=""/>
+          </div>
         </div>
+        <img src="{% static "image/public/bgKeDABlogSmall.png" %}" alt="logo" class=" md:hidden"/>
     {% comment %} Main Blog {% endcomment %}
         <div class="bg-[white]">
-            <div class=" grid grid-cols-2 place-content-between py-10 px-10">
-                <input type="search" placeholder="⌕ Search" class="w-[559px] py-2 rounded-sm border-gray-300 shadow-sm focus:ring-[#d20008] focus:border-gray-200 transition duration-300"/>
-                <div class="grid grid-cols-4 pl-10 items-center gap-4">
+            <div class=" md:grid md:grid-cols-2 md:place-content-between md:py-10 pt-10 px-10">
+                <input type="search" placeholder="⌕ Search" class="md:w-[559px] w-[306px] py-2 rounded-sm border-gray-300 shadow-sm focus:ring-[#d20008] focus:border-gray-200 transition duration-300 mb-5"/>
+                <div class="grid md:grid-cols-4 grid-cols-2 md:pl-10 items-center gap-4">
                     <div class="flex bg-purple-600 justify-center items-center py-2 rounded-lg gap-3">
                         <p class="text-white">Programmer</p>
                         <p class="text-white">x</p>
@@ -29,11 +30,11 @@
                     </div>
                 </div>
             </div>
-            <div class="grid grid-cols-12 gap-10 px-12 py-6">
+            <div class="md:grid md:grid-cols-12 gap-10 md:px-12 px-7 py-6">
                 <div class="col-span-9">
-                    <div class=" grid grid-cols-2 gap-10 py-5">
+                    <div class=" md:grid md:grid-cols-2 gap-10 py-5">
                       {% for blog in blogs %}
-                        <div class="grid gap-5">
+                        <div class="grid gap-5 py-5">
                             <img src="{{ blog.image_blog.url }}" alt="" class="w-full"/>
                             <p style="background-color : {{ blog.blog_tag.color_id.hex_code }}" class="text-white rounded-full py-1 px-4 w-fit">{{ blog.blog_tag}}</p>
                             <h3 class="text-xl font-bold">{{ blog.blog_header }}</h3>
@@ -43,11 +44,11 @@
                         </div>
                       {% endfor %}
                     </div>
-                    <div class="flex justify-center items-center py-8">
+                    <div class="flex justify-center items-center md:py-8">
                         <Button class="mt-5 rounded py-1 w-[128px] border bg-[#555555] text-white hover:bg-[#444444] font-medium transition duration-300">Load more</Button>
                     </div>
                 </div>
-                <div class="col-span-3 bg-[#f8f8f8] p-5">
+                <div class="col-span-3 bg-[#f8f8f8] p-5 hidden md:block">
                     <h1 class="text-2xl text-center font-semibold mb-4">Trending Article</h1>
                     {% for trending in trendings %}
                     <div class="grid gap-2">
@@ -68,37 +69,36 @@
           </div>
         </div>
     {% comment %} Footer {% endcomment %}
-        <div class="bg-black  ">
-          <div class="container px-20 pt-12 pb-5">
-            <div class="flex justify-between ite">
-              <div>
-                <img src="{% static "image/public/logo2.svg" %}" alt="logo" class="mb-5"/>
-                <p class="text-white">Komplek Green Ville, Jalan Ratu</p>
-                <p class="text-white">Kemuning Blok BL No. 1,</p>
-                <p class="text-white">RT08/RW14, DKI Jakarta</p>
-                <p class="text-white">+(62-81) 398-716-212</p>
-              </div>
-              <div class="grid grid-cols-2 gap-24 pt-5">
-                <div class="grid gap-3">
-                  <h1 class="text-white text-2xl font-bold">Quick Links</h1>
-                  <p class="text-white">Home</p>
-                  <p class="text-white">About</p>
-                  <p class="text-white">Services</p>
-                  <p class="text-white">Process</p>
-                  <p class="text-white">Projects</p>
-                </div>
-                <div class="grid gap-3">
-                  <h1 class="text-white text-2xl font-bold">Find Us On</h1>
-                  <p class="text-white">Facebook</p>
-                  <p class="text-white">Instagram</p>
-                  <p class="text-white">Facebook</p>
-                  <p class="text-white">Linkedin</p>
-                </div>
-              </div>
+    <div class="bg-black  ">
+      <div class="px-7 md:px-20 md:pt-12 md:pb-5 py-10">
+        <div class="md:flex md:justify-between">
+          <div class="border-b md:border-none py-4">
+            <div class="flex justify-center md:justify-start">
+              <img src="{% static "image/public/logo2.svg" %}" alt="logo" class="mb-5"/>
             </div>
-              <p class="text-white text-center mt-7">Copyright © <script>document.write(/\d{4}/.exec(Date())[0])</script> KeDA Tech. All Rights Reserved.</p>
+            <p class="text-white text-center md:text-left md:w-[292px]">Komplek Green Ville, Jalan Ratu<br class="hidden md:block"/> Kemuning Blok BL No. 1,<br class="hidden md:block"/> RT08/RW14, DKI Jakarta <br class="hidden md:block"/>+(62-81) 398-716-212</p>
+          </div>
+          <div class="flex justify-around md:gap-20 pt-5">
+            <div class="">
+              <h1 class="text-white md:text-2xl font-bold mb-3">Quick Links</h1>
+              <p class="text-white mb-3">Home</p>
+              <p class="text-white mb-3">About</p>
+              <p class="text-white mb-3">Services</p>
+              <p class="text-white mb-3">Process</p>
+              <p class="text-white mb-3">Projects</p>
+            </div>
+            <div class="">
+              <h1 class="text-white md:text-2xl font-bold mb-3">Find Us On</h1>
+              <p class="text-white mb-3">Facebook</p>
+              <p class="text-white mb-3">Instagram</p>
+              <p class="text-white mb-3">Facebook</p>
+              <p class="text-white mb-3">Linkedin</p>
+            </div>
           </div>
         </div>
+          <p class="text-white mt-7 flex justify-center">Copyright © <script>document.write(/\d{4}/.exec(Date())[0])</script> KeDA Tech<span class="md:block hidden">. All Rights Reserved.</span></p>
+      </div>
+    </div>
     {% comment %} After Footer {% endcomment %}
         <div style="background-image: url('{% static "image/public/bgAfterFooterGreen.svg" %}')" class="h-[720px] shadow-black">
           <div class="container px-64 pt-72">
