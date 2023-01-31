@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
     <div>
     {% comment %} Banner Careers  {% endcomment %}
-        <div class="bg-white h-[641px] px-10 py-10">
+        <div class="bg-white h-[641px] px-10 py-10 hidden md:block">
             <div class="grid grid-cols-5 py-28 px-10">
                 <img src="{% static "image/public/imgCareer.svg" %}" alt="" class="w-[409px] col-span-2"/>
                 <div class="col-span-3 mt-12 pl-8">
@@ -11,58 +11,70 @@
                 </div>
             </div>
         </div>
+        <div class="md:hidden">
+          <img src="{% static "image/public/imgCareerSmall.svg" %}" alt="" class="w-[409px] col-span-2"/>
+          <div class="col-span-3 mt-12 px-5">
+            <h1 class="text-4xl font-bold mb-5">Careers</h1>
+            <p class="mb-5">Kami adalah sekumpulan programmer, designers, dan project manager yang tersebar di seluruh penjuru Indonesia. 
+            <br/><br/>Karena kami tahu di KeDA Tech, Anda bisa beekerja dari mana saja dan yang dapat kami pastikan adalah kesungguhan hati kami dalam memberikan teknologi yang tepat untuk bisnis para client. </p>
+        </div>
+        </div>
     {% comment %} ICON ICON {% endcomment %}
-        <div class="bg-[fbfbfb] h-[562px] py-28">
-            <div class="grid grid-cols-4 px-24 mb-5">
-                <img src="{% static "image/public/iconCareer1.svg" %}" alt="" class="pl-10 pt-3"/>
-                <img src="{% static "image/public/iconCareer2.svg" %}" alt="" class="pl-16 pt-3"/>
-                <img src="{% static "image/public/iconCareer3.svg" %}" alt="" class="pl-10 pt-3"/>
-                <img src="{% static "image/public/iconCareer4.svg" %}" alt="" class="pl-20"/>
+        <div class="bg-[fbfbfb] md:h-[562px] md:py-28">
+            <div class="grid grid-cols-4 md:px-24 px-5 gap-5 mb-5 place-content-center place-items-center">
+                <img src="{% static "image/public/iconCareer1.svg" %}" alt="" class="w-[156px] md:w-[194px]"/>
+                <img src="{% static "image/public/iconCareer2.svg" %}" alt="" class="w-[104px] md:w-[130px]"/>
+                <img src="{% static "image/public/iconCareer3.svg" %}" alt="" class="w-[142px] md:w-[178px]"/>
+                <img src="{% static "image/public/iconCareer4.svg" %}" alt="" class="w-[60px] md:w-[98px]"/>
             </div>
             <div class="">
-                <p class="text-center text-4xl font-bold italic px-24 leading-normal">Dengan tim yang berisi anak muda, KeDA Tech penuh dengan 
+                <p class="text-center md:text-4xl text-xl px-5 font-bold italic md:px-24 leading-normal">Dengan tim yang berisi anak muda, KeDA Tech penuh dengan 
                 kretivitas dan inovasi untuk kemajuan bersama. </p>
             </div>
         </div>
     {% comment %} Benefit {% endcomment %}
         <div>
-            <div class="bg-white flex items-center justify-end pb-8 pt-12 px-10">
+            <div class="bg-white md:flex items-center justify-end pb-8 pt-12 px-10 hidden">
                 <p class="pr-4 text-2xl font-bold">1/6</p>
                 <img src="{% static "image/public/iconDetailTechnologies.svg" %}" alt="" />
             </div>
-            <div class="bg-white grid grid-cols-2 py-14">
-                <div class="py-20 pl-12">
-                    <h1 class="text-5xl font-bold mb-5">work from anywhere</h1>
-                    <p class="pr-10 leading-normal text-2xl">Anda bisa bekerja dari mana saja asal tetap terhubung dengan kami.</p>
+            <div class="bg-white md:grid md:grid-cols-2 md:py-14 pt-14">
+                <div class="md:hidden">
+                  <img src="{% static "image/public/workFromAnywhere.svg" %}" alt="" class="w-[490px]"/>
                 </div>
-                <div class="pl-24">
+                <div class="md:py-20 md:pl-12 px-10 py-10">
+                    <h1 class="md:text-5xl text-3xl font-bold mb-5">work from anywhere</h1>
+                    <p class="md:pr-10 leading-normal md:text-2xl">Anda bisa bekerja dari mana saja asal tetap terhubung dengan kami.</p>
+                </div>
+                <div class="pl-24 hidden md:block">
                     <img src="{% static "image/public/workFromAnywhere.svg" %}" alt="" class="w-[490px]"/>
                 </div>
             </div>
         </div>
     {% comment %} Question Hiring Process {% endcomment %}
-        <div class="bg-[#f8f8f8] py-28">
+        <div class="bg-[#f8f8f8] py-28 hidden md:block">
           <div>
             <h1 class="text-center text-5xl font-bold">So what’s the hir­ing process like?</h1>
           </div>
         </div>
     {% comment %} Process Overview {% endcomment %}
         <div class="bg-white">
-            <div class="py-10 px-24">
-                <h1 class="text-5xl font-bold">It could look some­thing like this</h1>
+            <div class="py-10 md:px-24 px-10">
+                <h1 class="md:text-5xl text-3xl font-bold">It could look some­thing like this</h1>
             </div>
             <div class="flex justify-center py-14">
-                <img src="{% static "image/public/hiringProcess.svg" %}" alt="" class="w-[904px]"/>
+                <img src="{% static "image/public/hiringProcess.svg" %}" alt="" class="w-[904px] hidden md:block"/>
+                <img src="{% static "image/public/hiringProcessSmall.svg" %}" alt="" class="md:hidden"/>
             </div>
         </div>
     {% comment %} Open Roles {% endcomment %}
-        <div class="bg-[white] py-28 px-16">
-            <div class="mb-14 ">
+        <div class="bg-[white] md:py-28 md:px-16 px-10">
+            <div class="mb-14 hidden md:block">
                 <h1 class="text-5xl font-bold">Open Roles</h1>
             </div>
-            <div class=" grid grid-cols-2 place-content-between pb-16">
-                <Input type="search" placeholder="⌕ Search" class="w-[559px] py-2 rounded-sm border-gray-300 shadow-sm focus:ring-[#d20008] focus:border-gray-200 transition duration-300"/>
-                <div class="grid grid-cols-4 pl-10 items-center gap-4">
+            <div class=" md:grid grid-cols-2 place-content-between md:pb-16 pb-10">
+                <Input type="search" placeholder="⌕ Search" class="md:w-[559px] w-[306px] py-2 rounded-sm border-gray-300 shadow-sm focus:ring-[#d20008] focus:border-gray-200 transition duration-300 mb-5 md:mb-0"/>
+                <div class="grid md:grid-cols-4 grid-cols-2 md:pl-10 items-center gap-4">
                     <div class="flex bg-[#d20008] justify-center items-center py-2 rounded-lg gap-3">
                         <p class="text-white">Programmer</p>
                         <p class="text-white">x</p>
@@ -81,12 +93,12 @@
                     </div>
                 </div>
             </div>
-            <div class="grid grid-cols-2 gap-10">
+            <div class="md:grid grid-cols-2 gap-10">
 
               {% for career in careers %}
               
               
-             <Card class="p-8 block w-full py-5 rounded-xl bg-white shadow-md">
+             <Card class="p-8 block w-full py-5 rounded-xl bg-white shadow-md mb-9 md:mb-0">
                 <div>
                   <div class="flex justify-between mb-3">
                     <h1 class="text-2xl font-bold">{{ career.career_name }}</h1>
@@ -111,37 +123,36 @@
           </div>
         </div>
     {% comment %} Footer {% endcomment %}
-        <div class="bg-black  ">
-          <div class="container px-20 pt-12 pb-5">
-            <div class="flex justify-between">
-              <div>
-                <img src="{% static "image/public/logo2.svg" %}" alt="logo" class="mb-5"/>
-                <p class="text-white">Komplek Green Ville, Jalan Ratu</p>
-                <p class="text-white">Kemuning Blok BL No. 1,</p>
-                <p class="text-white">RT08/RW14, DKI Jakarta</p>
-                <p class="text-white">+(62-81) 398-716-212</p>
-              </div>
-              <div class="grid grid-cols-2 gap-24 pt-5">
-                <div class="grid gap-3">
-                  <h1 class="text-white text-2xl font-bold">Quick Links</h1>
-                  <p class="text-white">Home</p>
-                  <p class="text-white">About</p>
-                  <p class="text-white">Services</p>
-                  <p class="text-white">Process</p>
-                  <p class="text-white">Projects</p>
-                </div>
-                <div class="grid gap-3">
-                  <h1 class="text-white text-2xl font-bold">Find Us On</h1>
-                  <p class="text-white">Facebook</p>
-                  <p class="text-white">Instagram</p>
-                  <p class="text-white">Facebook</p>
-                  <p class="text-white">Linkedin</p>
-                </div>
-              </div>
+    <div class="bg-black  ">
+      <div class="px-7 md:px-20 md:pt-12 md:pb-5 py-10">
+        <div class="md:flex md:justify-between">
+          <div class="border-b md:border-none py-4">
+            <div class="flex justify-center md:justify-start">
+              <img src="{% static "image/public/logo2.svg" %}" alt="logo" class="mb-5"/>
             </div>
-              <p class="text-white text-center mt-7">Copyright © <script>document.write(/\d{4}/.exec(Date())[0])</script> KeDA Tech. All Rights Reserved.</p>
+            <p class="text-white text-center md:text-left md:w-[292px]">Komplek Green Ville, Jalan Ratu<br class="hidden md:block"/> Kemuning Blok BL No. 1,<br class="hidden md:block"/> RT08/RW14, DKI Jakarta <br class="hidden md:block"/>+(62-81) 398-716-212</p>
+          </div>
+          <div class="flex justify-around md:gap-20 pt-5">
+            <div class="">
+              <h1 class="text-white md:text-2xl font-bold mb-3">Quick Links</h1>
+              <p class="text-white mb-3">Home</p>
+              <p class="text-white mb-3">About</p>
+              <p class="text-white mb-3">Services</p>
+              <p class="text-white mb-3">Process</p>
+              <p class="text-white mb-3">Projects</p>
+            </div>
+            <div class="">
+              <h1 class="text-white md:text-2xl font-bold mb-3">Find Us On</h1>
+              <p class="text-white mb-3">Facebook</p>
+              <p class="text-white mb-3">Instagram</p>
+              <p class="text-white mb-3">Facebook</p>
+              <p class="text-white mb-3">Linkedin</p>
+            </div>
           </div>
         </div>
+          <p class="text-white mt-7 flex justify-center">Copyright © <script>document.write(/\d{4}/.exec(Date())[0])</script> KeDA Tech<span class="md:block hidden">. All Rights Reserved.</span></p>
+      </div>
+    </div>
     {% comment %} After Footer {% endcomment %}
         <div style="background-image: url('{% static "image/public/bgAfterFooterTosca.svg" %}')" class="h-[720px] shadow-black">
           <div class="container px-64 pt-72">

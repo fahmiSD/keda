@@ -1,17 +1,17 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
     <div>
     {% comment %} Banner Careers  {% endcomment %}
-        <div class="bg-white px-14 py-10">
+        <div class="bg-white md:px-14 md:py-10 px-5">
             <div class="">
-            <h1 class="text-3xl font-bold mb-4 text-[#333333]">Consul with Us Now</h1>
-            <p class="leading-relaxed mb-2 text-[#555555] text-2xl w-[703px]">Melangkah dalam bisnis digital dan teknologi pasti menghasilkan
+            <h1 class="text-3xl font-bold mb-4 text-[#333333] text-center md:text-left">Consul with Us Now</h1>
+            <p class="leading-relaxed mb-2 text-[#555555] md:text-2xl md:w-[703px] text-md text-center md:text-left">Melangkah dalam bisnis digital dan teknologi pasti menghasilkan
             banyak pertanyaan. Anda bisa memulainya dengan mengisi form 
             di bawah ini, dan jawabannya akan kami berikan secara gratis.</p>
             </div>
         </div>
       {% comment %} Form Question  {% endcomment %}
-        <div class="bg-white px-14 py-10">
-            <div class="grid grid-cols-2 gap-5">
+        <div class="bg-white md:px-14 md:py-10 px-6">
+            <div class="md:grid grid-cols-2 gap-5">
               <div>
                 <p style="color: rgb(16 185 129);" class="text-xs italic">
                   {{ success }}
@@ -57,16 +57,15 @@
                       {{ form_consult.question.errors }}
                     </p>
                      </div>
-                  <div>
+                  <div class="flex justify-center md:justify-start">
                     <Button type="submit" class="px-10 py-1 border bg-[#d20008] border-white text-white rounded hover:bg-[#b3020f] hover:border-[#d20008] text-sm font-medium transition duration-300">Kirim</Button>
                   </div>
                 </form>
               </div>
-              <div class="pl-10">
+              <div class="md:pl-10 py-10 md:py-0">
                 <div class="mb-8">
                   <iframe
-                  width='480px'
-                  height='520px'
+                  class="md:w-[480px] md:h-[520px] w-[340px] h-[350px]"
                   id='gmap_canvas'
                   src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.7101577225726!2d106.77033131378478!3d-6.169551762175906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f7117df8300d%3A0xc05953c74ffd0ab3!2sKeDa%20Tech!5e0!3m2!1sen!2sid!4v1674531061711!5m2!1sen!2sid'
                   frameBorder='0'
@@ -75,61 +74,61 @@
                   marginWidth='0'
                   title='myFrame'></iframe>
                 </div>
-                <div>
+                <div class="">
                   <h1 class="text-2xl font-semibold mb-5">Jakarta Office</h1>
-                  <p class="w-[469px]">8, Jl. Ratu Kemuning Bl. Bl No.1, RT.12/RW.14, Duri Kepa, Kec. Kb. Jeruk, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11510</p>
+                  <p class="md:w-[469px]">8, Jl. Ratu Kemuning Bl. Bl No.1, RT.12/RW.14, Duri Kepa, Kec. Kb. Jeruk, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11510</p>
                 </div>
               </div>
             </div>
         </div>
       {% comment %} what's in it for you? {% endcomment %}
-        <div class="bg-[#fbfbfb] h-[720px] flex flex-col justify-center gap-6 px-20">
-          <h1 class="text-6xl font-bold">What's in it for you?</h1>
-          <p class="text-2xl font-semibold">Here’s an example of what we’ll discuss during you initial assessment</p>
+        <div class="bg-[#fbfbfb] md:h-[720px] flex flex-col justify-center gap-6 md:px-20 px-7 py-20">
+          <h1 class="md:text-6xl text-3xl font-bold ">What's in it for you?</h1>
+          <p class="md:text-2xl font-semibold text-[#333333]">Here’s an example of what we’ll discuss during you initial assessment</p>
         </div>
       {% comment %} The Problem {% endcomment %}
-        <div class="bg-[#ffffff] h-[720px] flex justify-around items-center px-16 gap-24">
+        <div class="bg-[#ffffff] md:h-[720px] md:flex justify-around items-center md:px-16 gap-24">
             <img src="{% static "image/public/theProblem.svg" %}" alt="" class="w-[492px]"/>
-            <div class="">
-                <h1 class="text-5xl font-bold mb-5">1. The Problem</h1>
+            <div class="px-5 py-5 md:px-0 md:py-0">
+                <h1 class="md:text-5xl text-4xl font-bold mb-5">1. The Problem</h1>
                 <p class="leading-loose">simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled</p>
             </div>
         </div>
       {% comment %} The Solution {% endcomment %}
-        <div class="bg-[#fbfbfb] h-[720px] flex justify-around items-center px-16 gap-24">
+        <div class="bg-[#fbfbfb] md:h-[720px] md:flex justify-around items-center md:px-16 gap-24">
             <img src="{% static "image/public/theSolution.svg" %}" alt="" class="w-[492px]"/>
-            <div class="">
-                <h1 class="text-5xl font-bold mb-5">2. The Solution</h1>
+            <div class="px-5 py-5 md:px-0 md:py-0">
+                <h1 class="md:text-5xl text-4xl font-bold mb-5">2. The Solution</h1>
                 <p class="leading-loose">simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled</p>
             </div>
         </div>
       {% comment %} Next Steps {% endcomment %}
-        <div class="bg-[#ffffff] h-[720px] flex justify-around items-center px-16 gap-24">
+        <div class="bg-[#ffffff] md:h-[720px] md:flex justify-around items-center md:px-16 gap-24">
             <img src="{% static "image/public/Next_Steps.svg" %}" alt="" class="w-[492px]"/>
-            <div class="">
-                <h1 class="text-5xl font-bold mb-5">3. Next Steps</h1>
+            <div class="px-5 py-5 md:px-0 md:py-0">
+                <h1 class="md:text-5xl text-4xl font-bold mb-5">3. Next Steps</h1>
                 <p class="leading-loose">simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled</p>
             </div>
         </div>
       {% comment %} What They Said {% endcomment %}
         <div class="grid gap-10 py-12 bg-white">
-          <h1 class="text-center text-6xl font-bold">What They Said</h1>
-          <div class="grid grid-cols-3 gap-12 place-items-center px-12">
-            <div class="grid gap-4">
+          <h1 class="text-center md:text-6xl text-4xl font-bold">What They Said</h1>
+          <div class="md:grid grid-cols-3 gap-12 place-items-center md:px-12 px-5">
+            <div class="grid gap-4 mb-8 md:mb-0">
               <img src="{% static "image/public/vidWayFinderProject.svg" %}" alt="" class="w-full"/>
               <h2 class="text-2xl font-bold">Way Finder Project</h2>
               <p class="w-full">
               simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled
               </p>
             </div>
-            <div class="grid gap-4">
+            <div class="grid gap-4 mb-8 md:mb-0">
               <img src="{% static "image/public/vidAXAProject.svg" %}" alt="" class="w-full"/>
               <h2 class="text-2xl font-bold">AXA Project</h2>
               <p class="w-full">
               simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled
               </p>
             </div>
-            <div class="grid gap-4">
+            <div class="grid gap-4 mb-8 md:mb-0">
               <img src="{% static "image/public/vidCLPProject.svg" %}" alt="" class="w-full"/>
               <h2 class="text-2xl font-bold">CLP Project</h2>
               <p class="w-full">
@@ -139,8 +138,8 @@
           </div>
         </div>
       {% comment %} client {% endcomment %}
-        <div class=" bg-[#ffffff] py-16 pl-7 pr-14">
-          <div class="grid grid-cols-5 place-items-center ">
+        <div class=" bg-[#ffffff] py-16">
+          <div class="md:grid md:grid-cols-5 grid grid-cols-3 gap-5 place-items-center place-content-center px-8">
                 <img src="{% static "image/public/axa.svg" %}" alt="" />
                 <img src="{% static "image/public/ckm.svg" %}" alt="" />
                 <img src="{% static "image/public/shinta-vr.svg" %}" alt="" />
@@ -156,37 +155,36 @@
           </div>
         </div>
     {% comment %} Footer {% endcomment %}
-        <div class="bg-black  ">
-          <div class="container px-20 pt-12 pb-5">
-            <div class="flex justify-between">
-              <div>
-                <img src="{% static "image/public/logo2.svg" %}" alt="logo" class="mb-5"/>
-                <p class="text-white">Komplek Green Ville, Jalan Ratu</p>
-                <p class="text-white">Kemuning Blok BL No. 1,</p>
-                <p class="text-white">RT08/RW14, DKI Jakarta</p>
-                <p class="text-white">+(62-81) 398-716-212</p>
-              </div>
-              <div class="grid grid-cols-2 gap-24 pt-5">
-                <div class="grid gap-3">
-                  <h1 class="text-white text-2xl font-bold">Quick Links</h1>
-                  <p class="text-white">Home</p>
-                  <p class="text-white">About</p>
-                  <p class="text-white">Services</p>
-                  <p class="text-white">Process</p>
-                  <p class="text-white">Projects</p>
-                </div>
-                <div class="grid gap-3">
-                  <h1 class="text-white text-2xl font-bold">Find Us On</h1>
-                  <p class="text-white">Facebook</p>
-                  <p class="text-white">Instagram</p>
-                  <p class="text-white">Facebook</p>
-                  <p class="text-white">Linkedin</p>
-                </div>
-              </div>
+    <div class="bg-black  ">
+      <div class="px-7 md:px-20 md:pt-12 md:pb-5 py-10">
+        <div class="md:flex md:justify-between">
+          <div class="border-b md:border-none py-4">
+            <div class="flex justify-center md:justify-start">
+              <img src="{% static "image/public/logo2.svg" %}" alt="logo" class="mb-5"/>
             </div>
-              <p class="text-white text-center mt-7">Copyright © <script>document.write(/\d{4}/.exec(Date())[0])</script> KeDA Tech. All Rights Reserved.</p>
+            <p class="text-white text-center md:text-left md:w-[292px]">Komplek Green Ville, Jalan Ratu<br class="hidden md:block"/> Kemuning Blok BL No. 1,<br class="hidden md:block"/> RT08/RW14, DKI Jakarta <br class="hidden md:block"/>+(62-81) 398-716-212</p>
+          </div>
+          <div class="flex justify-around md:gap-20 pt-5">
+            <div class="">
+              <h1 class="text-white md:text-2xl font-bold mb-3">Quick Links</h1>
+              <p class="text-white mb-3">Home</p>
+              <p class="text-white mb-3">About</p>
+              <p class="text-white mb-3">Services</p>
+              <p class="text-white mb-3">Process</p>
+              <p class="text-white mb-3">Projects</p>
+            </div>
+            <div class="">
+              <h1 class="text-white md:text-2xl font-bold mb-3">Find Us On</h1>
+              <p class="text-white mb-3">Facebook</p>
+              <p class="text-white mb-3">Instagram</p>
+              <p class="text-white mb-3">Facebook</p>
+              <p class="text-white mb-3">Linkedin</p>
+            </div>
           </div>
         </div>
+          <p class="text-white mt-7 flex justify-center">Copyright © <script>document.write(/\d{4}/.exec(Date())[0])</script> KeDA Tech<span class="md:block hidden">. All Rights Reserved.</span></p>
+      </div>
+    </div>
     {% comment %} After Footer {% endcomment %}
         <div style="background-image: url('{% static "image/public/bgAfterFooterLime.svg" %}')" class="h-[720px] shadow-black">
           <div class="container px-64 pt-72">

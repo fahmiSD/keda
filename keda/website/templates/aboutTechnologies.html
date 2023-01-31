@@ -1,30 +1,32 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
     <div>
     {% comment %} Image Technologies {% endcomment %}
-        <div style="background-image: url('{% static "image/public/bannerTechnologies.svg" %}')" class="h-[329px]">
+        <div style="background-image: url('{% static "image/public/bannerTechnologies.svg" %}')" class="h-[329px] hidden md:block">
+        </div>
+        <div style="background-image: url('{% static "image/public/imgTeknologiSmall.svg" %}')" class="h-[329px] md:hidden">
         </div>
     {% comment %} Technologi {% endcomment %}
-        <div class="bg-white h-[312px] ">
-            <div class="px-20 py-16">
-                <h1 class="text-8xl font-bold mb-7">Teknologi</h1>
-                <p class="text-2xl pl-12 ">Untuk kemajuan teknologi Anda, kami menggunakan semua fitur di bawah ini</p>
+        <div class="bg-white md:h-[312px] ">
+            <div class="md:px-20 md:py-16 px-8 py-10">
+                <h1 class="md:text-8xl text-4xl font-bold md:mb-7 mb-5">Teknologi</h1>
+                <p class="md:text-2xl md:pl-12 ">Untuk kemajuan teknologi Anda, kami menggunakan semua fitur di bawah ini</p>
             </div>
         </div>
     {% comment %} Programming Languege {% endcomment %}
-        <div class=" bg-[#fbfbfb] h-[155px]">
-          <div class="grid grid-cols-5 py-5  pr-2">
-              <img src="{% static "image/public/unreal.svg" %}" alt="" class="pl-16"/>
-              <img src="{% static "image/public/mysql.svg" %}" alt="" class="pl-10"/>
-              <img src="{% static "image/public/python.svg" %}" alt="" class="pl-3 pt-5"/>
-              <img src="{% static "image/public/unity.svg" %}" alt="" class="pl-7 pt-5"/>
-              <img src="{% static "image/public/mongoDB.svg" %}" alt="" class="pl-7 pt-5"/>
+        <div class=" bg-[#fbfbfb] md:h-[155px] py-5">
+          <div class="md:grid md:grid-cols-5 grid grid-cols-3 py-5 md:pr-2 place-content-center place-items-center gap-5 px-8">
+              <img src="{% static "image/public/unreal.svg" %}" alt="" class=""/>
+              <img src="{% static "image/public/mysql.svg" %}" alt="" class=""/>
+              <img src="{% static "image/public/python.svg" %}" alt="" class=""/>
+              <img src="{% static "image/public/unity.svg" %}" alt="" class=""/>
+              <img src="{% static "image/public/mongoDB.svg" %}" alt="" class=""/>
           </div>
         </div>
     {% comment %} Unreal Engine {% endcomment %}
-        <div class="bg-white h-[720px] flex justify-around items-center px-10">
-            <div class="">
-                <h1 class="text-5xl font-bold mb-5">UNREAL ENGINE</h1>
-                <p class="mb-5">Game Engine dari Epic ini mampu menghasilkan framerate yang stabil,<br/> grafik yang bagus, shadow, depth of field, dan mendukung DX 11.</p>
+        <div class="bg-white md:h-[720px] md:flex justify-around items-center md:px-10 px-6 py-16 md:py-0">
+            <div class="mb-8 md:mb-0">
+                <h1 class="md:text-5xl text-3xl font-bold mb-5">UNREAL ENGINE</h1>
+                <p class="mb-5">Game Engine dari Epic ini mampu menghasilkan framerate yang stabil,<br class="hidden md:block"/> grafik yang bagus, shadow, depth of field, dan mendukung DX 11.</p>
                 <Link href="/detail-unreal-engine">
                     <div class="flex items-center cursor-pointer">
                         <img src="{% static "image/public/iconDetailTechnologies.svg" %}" alt="" />
@@ -32,14 +34,19 @@
                     </div>
                 </Link>
             </div>
-            <img src="{% static "image/public/unreal.svg" %}" alt="" class="w-[281px]"/>
+            <img src="{% static "image/public/unreal.svg" %}" alt="" class="md:w-[281px] w-[222px] hidden md:block"/>
+            <div class="flex justify-center md:hidden">
+                <img src="{% static "image/public/unreal.svg" %}" alt="" class="w-[222px]"/>
+            </div>
         </div>
     {% comment %} Mysql {% endcomment %}
-        <div class="bg-[fbfbfb] h-[720px] flex justify-around items-center px-10">
-            <img src="{% static "image/public/mysql.svg" %}" alt="" class="w-[409px]"/>
-            <div class="">
-                <h1 class="text-5xl font-bold mb-5">My SQL</h1>
-                <p class="mb-5">Memiliki tingkat fleksibilitas tinggi terhadap teknologi dan bersifat cross<br/> platform. Struktur tabelnya yang cenderung mudah digunakan,<br/> menjadikan MySQL memiliki performa yang baik saat diterapkan.</p>
+        <div class="bg-[fbfbfb] md:h-[720px] md:flex justify-around items-center md:px-10 px-5 py-16 md:py-0">
+            <div class="hidden md:block">
+                <img src="{% static "image/public/mysql.svg" %}" alt="" class="w-[409px]"/>
+            </div>
+            <div class="mb-8 md:mb-0">
+                <h1 class="md:text-5xl text-3xl font-bold mb-5">My SQL</h1>
+                <p class="mb-5">Memiliki tingkat fleksibilitas tinggi terhadap teknologi dan bersifat cross<br class="hidden md:block"/> platform. Struktur tabelnya yang cenderung mudah digunakan,<br class="hidden md:block"/> menjadikan MySQL memiliki performa yang baik saat diterapkan.</p>
                 <Link href="/detail-mysql">
                     <div class="flex items-center cursor-pointer">
                         <img src="{% static "image/public/iconDetailTechnologies.svg" %}" alt="" />
@@ -47,12 +54,15 @@
                     </div>
                 </Link>
             </div>
+            <div class="flex justify-center md:hidden px-10">
+                <img src="{% static "image/public/mysql.svg" %}" alt="" class="w-[409px]"/>
+            </div>
         </div>
     {% comment %} Django {% endcomment %}
-        <div class="bg-white h-[720px] flex justify-around items-center px-10">
-            <div class="">
-                <h1 class="text-5xl font-bold mb-5">Django Python</h1>
-                <p class="mb-5">simply dummy text of the printing and typesetting industry. Lorem Ipsum <br/>has been the industry's standard dummy text ever since the 1500s,</p>
+        <div class="bg-white md:h-[720px] md:flex justify-around items-center md:px-10 px-5 py-16 md:py-0">
+            <div class="mb-10 md:mb-0">
+                <h1 class="md:text-5xl text-3xl font-bold mb-5">Django Python</h1>
+                <p class="mb-5">simply dummy text of the printing and typesetting industry. Lorem Ipsum <br class="hidden md:block"/>has been the industry's standard dummy text ever since the 1500s,</p>
                 <Link href="/detail-python">
                     <div class="flex items-center cursor-pointer">
                         <img src="{% static "image/public/iconDetailTechnologies.svg" %}" alt="" />
@@ -60,40 +70,41 @@
                     </div>
                 </Link>
             </div>
-            <img src="{% static "image/public/python.svg" %}" alt="" class="w-[369px]"/>
+            <div class="flex justify-center md:hidden px-10">
+                <img src="{% static "image/public/python.svg" %}" alt="" class="w-[369px]"/>
+            </div>
         </div>
     {% comment %} Footer {% endcomment %}
-        <div class="bg-black  ">
-          <div class="container px-20 pt-12 pb-5">
-            <div class="flex justify-between ite">
-              <div>
+    <div class="bg-black  ">
+        <div class="px-7 md:px-20 md:pt-12 md:pb-5 py-10">
+          <div class="md:flex md:justify-between">
+            <div class="border-b md:border-none py-4">
+              <div class="flex justify-center md:justify-start">
                 <img src="{% static "image/public/logo2.svg" %}" alt="logo" class="mb-5"/>
-                <p class="text-white">Komplek Green Ville, Jalan Ratu</p>
-                <p class="text-white">Kemuning Blok BL No. 1,</p>
-                <p class="text-white">RT08/RW14, DKI Jakarta</p>
-                <p class="text-white">+(62-81) 398-716-212</p>
               </div>
-              <div class="grid grid-cols-2 gap-24 pt-5">
-                <div class="grid gap-3">
-                  <h1 class="text-white text-2xl font-bold">Quick Links</h1>
-                  <p class="text-white">Home</p>
-                  <p class="text-white">About</p>
-                  <p class="text-white">Services</p>
-                  <p class="text-white">Process</p>
-                  <p class="text-white">Projects</p>
-                </div>
-                <div class="grid gap-3">
-                  <h1 class="text-white text-2xl font-bold">Find Us On</h1>
-                  <p class="text-white">Facebook</p>
-                  <p class="text-white">Instagram</p>
-                  <p class="text-white">Facebook</p>
-                  <p class="text-white">Linkedin</p>
-                </div>
+              <p class="text-white text-center md:text-left md:w-[292px]">Komplek Green Ville, Jalan Ratu<br class="hidden md:block"/> Kemuning Blok BL No. 1,<br class="hidden md:block"/> RT08/RW14, DKI Jakarta <br class="hidden md:block"/>+(62-81) 398-716-212</p>
+            </div>
+            <div class="flex justify-around md:gap-20 pt-5">
+              <div class="">
+                <h1 class="text-white md:text-2xl font-bold mb-3">Quick Links</h1>
+                <p class="text-white mb-3">Home</p>
+                <p class="text-white mb-3">About</p>
+                <p class="text-white mb-3">Services</p>
+                <p class="text-white mb-3">Process</p>
+                <p class="text-white mb-3">Projects</p>
+              </div>
+              <div class="">
+                <h1 class="text-white md:text-2xl font-bold mb-3">Find Us On</h1>
+                <p class="text-white mb-3">Facebook</p>
+                <p class="text-white mb-3">Instagram</p>
+                <p class="text-white mb-3">Facebook</p>
+                <p class="text-white mb-3">Linkedin</p>
               </div>
             </div>
-              <p class="text-white text-center mt-7">Copyright © <script>document.write(/\d{4}/.exec(Date())[0])</script> KeDA Tech. All Rights Reserved.</p>
           </div>
+            <p class="text-white mt-7 flex justify-center">Copyright © <script>document.write(/\d{4}/.exec(Date())[0])</script> KeDA Tech<span class="md:block hidden">. All Rights Reserved.</span></p>
         </div>
+      </div>
     {% comment %} After Footer {% endcomment %}
         <div style="background-image: url('{% static "image/public/bgAfterFooterPurple.svg" %}')" class="h-[720px] shadow-black">
           <div class="container px-64 pt-72">

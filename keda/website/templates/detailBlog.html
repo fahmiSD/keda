@@ -33,35 +33,34 @@
     </div>
     {% comment %} Footer {% endcomment %}
     <div class="bg-black  ">
-          <div class="container px-20 pt-12 pb-5">
-            <div class="flex justify-between ite">
-              <div>
-                <img src="{% static "image/public/logo2.svg" %}" alt="logo" class="mb-5"/>
-                <p class="text-white">Komplek Green Ville, Jalan Ratu</p>
-                <p class="text-white">Kemuning Blok BL No. 1,</p>
-                <p class="text-white">RT08/RW14, DKI Jakarta</p>
-                <p class="text-white">+(62-81) 398-716-212</p>
-              </div>
-              <div class="grid grid-cols-2 gap-24 pt-5">
-                <div class="grid gap-3">
-                  <h1 class="text-white text-2xl font-bold">Quick Links</h1>
-                  <p class="text-white">Home</p>
-                  <p class="text-white">About</p>
-                  <p class="text-white">Services</p>
-                  <p class="text-white">Process</p>
-                  <p class="text-white">Projects</p>
-                </div>
-                <div class="grid gap-3">
-                  <h1 class="text-white text-2xl font-bold">Find Us On</h1>
-                  <p class="text-white">Facebook</p>
-                  <p class="text-white">Instagram</p>
-                  <p class="text-white">Facebook</p>
-                  <p class="text-white">Linkedin</p>
-                </div>
-              </div>
+      <div class="px-7 md:px-20 md:pt-12 md:pb-5 py-10">
+        <div class="md:flex md:justify-between">
+          <div class="border-b md:border-none py-4">
+            <div class="flex justify-center md:justify-start">
+              <img src="{% static "image/public/logo2.svg" %}" alt="logo" class="mb-5"/>
             </div>
-              <p class="text-white text-center mt-7">Copyright © <script>document.write(/\d{4}/.exec(Date())[0])</script> KeDA Tech. All Rights Reserved.</p>
+            <p class="text-white text-center md:text-left md:w-[292px]">Komplek Green Ville, Jalan Ratu<br class="hidden md:block"/> Kemuning Blok BL No. 1,<br class="hidden md:block"/> RT08/RW14, DKI Jakarta <br class="hidden md:block"/>+(62-81) 398-716-212</p>
           </div>
+          <div class="flex justify-around md:gap-20 pt-5">
+            <div class="">
+              <h1 class="text-white md:text-2xl font-bold mb-3">Quick Links</h1>
+              <p class="text-white mb-3">Home</p>
+              <p class="text-white mb-3">About</p>
+              <p class="text-white mb-3">Services</p>
+              <p class="text-white mb-3">Process</p>
+              <p class="text-white mb-3">Projects</p>
+            </div>
+            <div class="">
+              <h1 class="text-white md:text-2xl font-bold mb-3">Find Us On</h1>
+              <p class="text-white mb-3">Facebook</p>
+              <p class="text-white mb-3">Instagram</p>
+              <p class="text-white mb-3">Facebook</p>
+              <p class="text-white mb-3">Linkedin</p>
+            </div>
+          </div>
+        </div>
+          <p class="text-white mt-7 flex justify-center">Copyright © <script>document.write(/\d{4}/.exec(Date())[0])</script> KeDA Tech<span class="md:block hidden">. All Rights Reserved.</span></p>
+      </div>
     </div>
     {% comment %} After Footer {% endcomment %}
     <div style="background-image: url('{% static "image/public/bgAfterFooterOrange.svg" %}')" class="h-[720px] shadow-black">

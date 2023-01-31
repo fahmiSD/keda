@@ -1,42 +1,42 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
     <div>
       {% comment %} Banner Careers  {% endcomment %}
-        <div class="bg-white px-14 py-10">
+        <div class="bg-white md:px-14 py-10 px-2">
            <div>
-              <div class="mb-10">
+              <div class="mb-10 px-5">
                 <h1 class="text-4xl font-bold mb-4">{{ career.career_name }}</h1>
                 <p style="background-color: {{ career.career_tag_id.color_id.hex_code }};" class="text-lg w-[132px] pt-1 pb-1.5 text-center rounded-full text-white mb-5">{{career.career_tag_id}}</p>
                 <p class="leading-relaxed mb-2">{{career.description |safe}}</p>
                 <p class="text-sm font-semibold">Apply Before: {{ career.deadline|date:"j F Y" }}</p>
               </div>
               <div class="mb-10">
-                <h1 class="text-2xl font-semibold mb-4">Role & Responsibility</h1>
-                <div class="bullet">
+                <h1 class="text-2xl font-semibold mb-4 pl-5">Role & Responsibility</h1>
+                <div class="bullet pr-5">
                   {{career.role_responsibility|safe}}
                 </div>
               </div>
               <div class="mb-10">
-                <h1 class="text-2xl font-semibold mb-4">Requirement Employee</h1>
-                <div class="bullet">
+                <h1 class="text-2xl font-semibold mb-4 pl-5">Requirement Employee</h1>
+                <div class="bullet pr-5">
                   {{career.requirement|safe}}
                 </div>
               </div>
               <div class="mb-10">
-                <h1 class="text-2xl font-semibold mb-4">Plus</h1>
-                <div class="bullet">
+                <h1 class="text-2xl font-semibold mb-4 pl-5">Plus</h1>
+                <div class="bullet pr-5">
                   {{career.plus|safe}}
                 </div>
               </div>
-              <div class="pb-10 border-b-2 border-[#696969]">
-                <h1 class="text-2xl font-semibold mb-4">Benefits</h1>
-                <div class="bullet">
+              <div class="pb-10 md:border-b-2 border-[#696969]">
+                <h1 class="text-2xl font-semibold mb-4 p-5">Benefits</h1>
+                <div class="bullet pr-5">
                   {{career.benefits|safe}}
                 </div>
               </div>
            </div>
         </div>
       {% comment %} Form Registration {% endcomment %}
-        <div class="bg-white py-16 px-14">
+        <div class="bg-white md:py-16 md:px-14 pb-10 px-8">
             <div>
               <p style="color: rgb(16 185 129);" class="text-xs italic">
                 {{ success }}
@@ -67,7 +67,7 @@
                 <div class="grid grid-rows-2 mb-10">
                   
                   <label for="phone" class="font-semibold">No Whatsapp</label>
-                  <div class="flex w-[557px]">
+                  <div class="flex md:w-[557px]">
                   {{form_candidate.whatsapp_number}} 
                   </div>
                   <p style="color: rgb(220 38 38);" class="text-xs italic">
@@ -84,7 +84,7 @@
                 <div class="grid gap-2 mb-10">
                   
                   <label for="cv" class="font-semibold">Upload your CV here</label>
-                    <div class="flex justify-between w-[557px] border rounded-lg border-gray-300 shadow-sm cursor-pointer">
+                    <div class="flex justify-between md:w-[557px] border rounded-lg border-gray-300 shadow-sm cursor-pointer">
                       <label for="cv">
                         <div class="py-2 px-3 cursor-pointer">
                           <p class="text-gray-400 text-sm" id="wpName">
@@ -112,43 +112,42 @@
                 </div>
 
                 <div>
-                  <Button class="w-[557px] px-4 py-2 border bg-[#d20008] border-white text-white rounded hover:bg-[#b3020f] hover:border-[#d20008] text-sm font-medium transition duration-300"><span class="flex justify-center items-center"><p class="mr-3">Join Now</p> <img src="{% static "image/public/lebihDari.svg" %}" alt="" class="mt-1"/></span></Button>
+                  <Button class="md:w-[557px] w-full px-4 py-2 border bg-[#d20008] border-white text-white rounded hover:bg-[#b3020f] hover:border-[#d20008] text-sm font-medium transition duration-300"><span class="flex justify-center items-center"><p class="mr-3">Join Now</p> <img src="{% static "image/public/lebihDari.svg" %}" alt="" class="mt-1"/></span></Button>
                 </div>
               </form>
             </div>
         </div>
       {% comment %} Footer {% endcomment %}
-        <div class="bg-black  ">
-          <div class="container px-20 pt-12 pb-5">
-            <div class="flex justify-between">
-              <div>
+      <div class="bg-black  ">
+        <div class="px-7 md:px-20 md:pt-12 md:pb-5 py-10">
+          <div class="md:flex md:justify-between">
+            <div class="border-b md:border-none py-4">
+              <div class="flex justify-center md:justify-start">
                 <img src="{% static "image/public/logo2.svg" %}" alt="logo" class="mb-5"/>
-                <p class="text-white">Komplek Green Ville, Jalan Ratu</p>
-                <p class="text-white">Kemuning Blok BL No. 1,</p>
-                <p class="text-white">RT08/RW14, DKI Jakarta</p>
-                <p class="text-white">+(62-81) 398-716-212</p>
               </div>
-              <div class="grid grid-cols-2 gap-24 pt-5">
-                <div class="grid gap-3">
-                  <h1 class="text-white text-2xl font-bold">Quick Links</h1>
-                  <p class="text-white">Home</p>
-                  <p class="text-white">About</p>
-                  <p class="text-white">Services</p>
-                  <p class="text-white">Process</p>
-                  <p class="text-white">Projects</p>
-                </div>
-                <div class="grid gap-3">
-                  <h1 class="text-white text-2xl font-bold">Find Us On</h1>
-                  <p class="text-white">Facebook</p>
-                  <p class="text-white">Instagram</p>
-                  <p class="text-white">Facebook</p>
-                  <p class="text-white">Linkedin</p>
-                </div>
+              <p class="text-white text-center md:text-left md:w-[292px]">Komplek Green Ville, Jalan Ratu<br class="hidden md:block"/> Kemuning Blok BL No. 1,<br class="hidden md:block"/> RT08/RW14, DKI Jakarta <br class="hidden md:block"/>+(62-81) 398-716-212</p>
+            </div>
+            <div class="flex justify-around md:gap-20 pt-5">
+              <div class="">
+                <h1 class="text-white md:text-2xl font-bold mb-3">Quick Links</h1>
+                <p class="text-white mb-3">Home</p>
+                <p class="text-white mb-3">About</p>
+                <p class="text-white mb-3">Services</p>
+                <p class="text-white mb-3">Process</p>
+                <p class="text-white mb-3">Projects</p>
+              </div>
+              <div class="">
+                <h1 class="text-white md:text-2xl font-bold mb-3">Find Us On</h1>
+                <p class="text-white mb-3">Facebook</p>
+                <p class="text-white mb-3">Instagram</p>
+                <p class="text-white mb-3">Facebook</p>
+                <p class="text-white mb-3">Linkedin</p>
               </div>
             </div>
-              <p class="text-white text-center mt-7">Copyright © <script>document.write(/\d{4}/.exec(Date())[0])</script> KeDA Tech. All Rights Reserved.</p>
           </div>
+            <p class="text-white mt-7 flex justify-center">Copyright © <script>document.write(/\d{4}/.exec(Date())[0])</script> KeDA Tech<span class="md:block hidden">. All Rights Reserved.</span></p>
         </div>
+      </div>
       {% comment %} After Footer {% endcomment %}
         <div style="background-image: url('{% static "image/public/bgAfterFooterGreens.svg" %}')" class="h-[720px] shadow-black">
           <div class="container px-64 pt-72">

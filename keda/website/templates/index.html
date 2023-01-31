@@ -1,11 +1,13 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
 <div>
    {% comment %} banner  {% endcomment %}
-        <div style="background-image: url('{% static "image/public/BackgroundHomeDark.svg" %}')" class="h-[646px]">
-          <div class="col-span-3 container px-20 pt-32">
+        <div style="background-image: url('{% static "image/public/BackgroundHomeDark.svg" %}')" class="h-[646px] ">
+          <div class="col-span-3 container md:px-20 px-10 pt-32">
+            <div class="">
               <img src="{% static "image/public/logoHomePage.svg" %}" alt="logo" class="mb-6" width={448} height={254}/>
-              <p class="text-white text-3xl font-semibold mb-14">Your Digital Transformation Partner</p>
-              <button class="px-12 py-4 border text-2xl font-bold bg-[#d20008] border-[#d20008] text-white rounded  hover:bg-[#b3020f] hover:border-[#d20008] transition duration-300">Book a chat</button>
+            </div>
+              <p class="text-white md:text-3xl text-xl font-semibold md:mb-14 mb-5">Your Digital Transformation Partner</p>
+              <button class="md:px-12 md:py-4 py-2 px-5 border text-2xl font-bold bg-[#d20008] border-[#d20008] text-white rounded  hover:bg-[#b3020f] hover:border-[#d20008] transition duration-300">Book a chat</button>
             </div>
         </div>
     {% comment %} quote {% endcomment %}
@@ -17,12 +19,15 @@
     {% comment %} prosess  {% endcomment %}
         <div class="bg-[#fbfbfb]">
           <div class=" md:px-10 px-5 py-14">
-            <div class="grid md:grid-cols-2 md:gap-14">
+            <div class="md:grid md:grid-cols-2 md:gap-14">
               <p class="md:text-3xl md:hidden text-xl font-semibold mb-7">Proses yang Kami Lakukan</p>
-              <div class="md:col-span-1">
-                <img src="{% static "image/public/homeProcess1.svg" %}" alt="" className="hidden md:block object-cover"/>
+              <div class="md:col-span-1 hidden md:block">
+                <img src="{% static "image/public/homeProcess1.svg" %}" alt="" className=" object-cover"/>
               </div>
-              <div class="md:mt-36 md:pl-5 col-span-1">
+              <div class="md:hidden">
+                <img src="{% static "image/public/homeProcess.svg" %}" alt="" className=" object-cover"/>
+              </div>
+              <div class="md:mt-36 md:pl-5 col-span-1 mt-5 md-mt-0">
                 <p class="md:text-3xl hidden md:block text-xl font-semibold mb-7">Proses yang Kami Lakukan</p>
                 <p class="md:text-4xl text-2xl font-bold mb-5">Kami mandengar dan paham kebutuhan bisnis Anda</p>
                 <button class="md:px-24 px-10 py-2 border text-lg font-bold bg-[#d20008] border-[#d20008] text-white rounded hover:bg-[#b3020f] hover:border-[#d20008] transition duration-300">Detail</button>
@@ -119,31 +124,33 @@
         </div>
     {% comment %} Footer {% endcomment %}
         <div class="bg-black  ">
-          <div class="px-7 md:px-20 pt-12 pb-5">
+          <div class="px-7 md:px-20 md:pt-12 md:pb-5 py-10">
             <div class="md:flex md:justify-between">
-              <div>
-                <img src="{% static "image/public/logo2.svg" %}" alt="logo" class="mb-5"/>
-                <p class="text-white text-center w-[292px] ml-12">Komplek Green Ville, Jalan Ratu Kemuning Blok BL No. 1, RT08/RW14, DKI Jakarta +(62-81) 398-716-212</p>
-              </div>
-              <div class="grid grid-cols-2 gap-24 pt-5">
-                <div class="grid gap-3">
-                  <h1 class="text-white text-2xl font-bold">Quick Links</h1>
-                  <p class="text-white">Home</p>
-                  <p class="text-white">About</p>
-                  <p class="text-white">Services</p>
-                  <p class="text-white">Process</p>
-                  <p class="text-white">Projects</p>
+              <div class="border-b md:border-none py-4">
+                <div class="flex justify-center md:justify-start">
+                  <img src="{% static "image/public/logo2.svg" %}" alt="logo" class="mb-5"/>
                 </div>
-                <div class="grid gap-3">
-                  <h1 class="text-white text-2xl font-bold">Find Us On</h1>
-                  <p class="text-white">Facebook</p>
-                  <p class="text-white">Instagram</p>
-                  <p class="text-white">Facebook</p>
-                  <p class="text-white">Linkedin</p>
+                <p class="text-white text-center md:text-left md:w-[292px]">Komplek Green Ville, Jalan Ratu<br class="hidden md:block"/> Kemuning Blok BL No. 1,<br class="hidden md:block"/> RT08/RW14, DKI Jakarta <br class="hidden md:block"/>+(62-81) 398-716-212</p>
+              </div>
+              <div class="flex justify-around md:gap-20 pt-5">
+                <div class="">
+                  <h1 class="text-white md:text-2xl font-bold mb-3">Quick Links</h1>
+                  <p class="text-white mb-3">Home</p>
+                  <p class="text-white mb-3">About</p>
+                  <p class="text-white mb-3">Services</p>
+                  <p class="text-white mb-3">Process</p>
+                  <p class="text-white mb-3">Projects</p>
+                </div>
+                <div class="">
+                  <h1 class="text-white md:text-2xl font-bold mb-3">Find Us On</h1>
+                  <p class="text-white mb-3">Facebook</p>
+                  <p class="text-white mb-3">Instagram</p>
+                  <p class="text-white mb-3">Facebook</p>
+                  <p class="text-white mb-3">Linkedin</p>
                 </div>
               </div>
             </div>
-              <p class="text-white text-center mt-7">Copyright © <script>document.write(/\d{4}/.exec(Date())[0])</script> KeDA Tech. All Rights Reserved.</p>
+              <p class="text-white mt-7 flex justify-center">Copyright © <script>document.write(/\d{4}/.exec(Date())[0])</script> KeDA Tech<span class="md:block hidden">. All Rights Reserved.</span></p>
           </div>
         </div>
    {% comment %} after footer {% endcomment %}
