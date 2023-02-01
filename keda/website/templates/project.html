@@ -6,7 +6,7 @@
               <img src="{% static "image/public/projects.svg" %}" alt="logo" class=""/>
             </div>
         </div>
-        <img src="{% static "image/public/bgProjectSmall.png" %}" alt="logo" class=""/>
+        <img src="{% static "image/public/bgProjectSmall.png" %}" alt="logo" class="md:hidden"/>
       {% comment %} Quote {% endcomment %}
         <div style="background-image: url('{% static "image/public/bgProjectWhite.svg" %}')" class="md:h-[720px] shadow shadow-black hidden md:block">
           <div class="px-10 py-20 md:px-28 md:pt-64">
@@ -28,8 +28,8 @@
                 <p>Indoor navigation integrated with custom Warehouse Management System to allow workers to insert and take items with improved efficiency.</p>
                 <button class="mt-5 py-1 w-full border bg-[#d20008] text-white rounded-sm hover:bg-[#b3020f] font-medium transition duration-300">See Project</button>
             </Card>
-            <Card class="p-8 block w-full py-5 bg-white shadow-gray-500 shadow-sm hover:shadow-md hover:shadow-black transition duration-300 cursor-pointer">
-            <img src="{% static "image/public/cardWayFinder.svg" %}" alt="" class="mb-3"/>
+            <Card class="p-8 block w-full py-5 bg-white shadow-gray-500 shadow-sm hover:shadow-md hover:shadow-black transition duration-300 cursor-pointer mb-8">
+                <img src="{% static "image/public/cardWayFinder.svg" %}" alt="" class="mb-3"/>
                 <p class="text-[#555555] text-lg font-semibold mb-4">PT. Citra Kreasi Makmur</p>
                 <h2 class="font-bold text-3xl mb-4">WayFinder</h2>
                 <p>Indoor navigation integrated with custom Warehouse Management System to allow workers to insert and take items with improved efficiency.</p>

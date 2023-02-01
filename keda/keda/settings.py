@@ -143,9 +143,11 @@ USE_TZ = True
 
 STATIC_URL = 'theme/static/'
 
-STATICFILES_DIRS = [
-    BASE_DIR / 'theme/static/',
-] 
+# STATICFILES_DIRS = [
+#     BASE_DIR / 'theme/static/',
+# ] 
+
+STATIC_ROOT = BASE_DIR / 'theme/static'
 
 IMPORT_EXPORT_USE_TRANSACTIONS = True
 

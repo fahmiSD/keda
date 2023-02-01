@@ -1,0 +1,299 @@
+{% extends 'base.html' %} {% load static %} {% block content %} 
+    <div>
+    {% comment %} banner  {% endcomment %}
+        <div style="background-image: url('{% static "image/public/backgroundDetailProject.svg" %}')" class="h-[641px] hidden md:block">
+            <div class="pt-10">
+                <p class="font-bold text-center text-5xl underline ">WAYFINDER</p>
+            </div>
+            <div class="flex justify-around py-20">
+                <div>
+                    <div class="mb-3">
+                        <div class="flex items-center py-1">
+                            <img src="{% static "image/public/time.svg" %}" alt=""/> <p class="font-semibold">Time</p>
+                        </div>
+                        <hr class="w-[188px] border-black border-[1px]"/>
+                        <div class="px-1 py-2">
+                            <p>3 Months</p>                    
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="flex items-center py-1">
+                            <img src="{% static "image/public/theWorker.svg" %}" alt=""/> <p class="font-semibold">The Worker</p>
+                        </div>
+                        <hr class="w-[188px] border-black border-[1px]"/>
+                        <div class="px-1 py-2">
+                            <p>2 Front-end</p>                    
+                            <p>1 Back-end</p>                    
+                            <p>1 C++  Engine</p>                    
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="flex items-center py-1">
+                            <img src="{% static "image/public/theTech.svg" %}" alt=""/> <p class="font-semibold">The Worker</p>
+                        </div>
+                        <hr class="w-[188px] border-black border-[1px]"/>
+                        <div class="flex items-center justify-around gap-5 py-2">
+                            <img src="{% static "image/public/unreal.svg" %}" alt="" class="w-[50px]"/>
+                            <img src="{% static "image/public/mysql.svg" %}" alt="" class="w-[74px]"/>
+                            <img src="{% static "image/public/python.svg" %}" alt="" class="w-[114px]"/>
+                            <img src="{% static "image/public/unity.svg" %}" alt="" class="w-[100px]"/>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <img src="{% static "image/public/wayFinders.svg" %}" alt="" class="w-[538px]"/>
+                </div>
+            </div>
+        </div>
+        <div style="background-image: url('{% static "image/public/backgroundDetailProjectSmall.svg" %}')" class="h-[794px] bg-cover bg-center md:hidden">
+            <div class="pt-10">
+                <p class="font-bold text-center text-4xl ">WAYFINDER</p>
+            </div>
+            <div class="px-8">
+                <div>
+                    <img src="{% static "image/public/wayFinder.svg" %}" alt="" class="w-[538px]"/>
+                </div>
+                <div>
+                    <div class="mb-4">
+                        <div class="flex items-center py-1">
+                            <img src="{% static "image/public/time.svg" %}" alt=""/> <p class="font-semibold">Time</p>
+                        </div>
+                        <hr class="w-[188px] border-black border-[1px]"/>
+                        <div class="px-1 py-2">
+                            <p>3 Months</p>                    
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="flex items-center py-1">
+                            <img src="{% static "image/public/theWorker.svg" %}" alt=""/> <p class="font-semibold">The Worker</p>
+                        </div>
+                        <hr class="w-[188px] border-black border-[1px]"/>
+                        <div class="px-1 py-2">
+                            <p>2 Front-end</p>                    
+                            <p>1 Back-end</p>                    
+                            <p>1 C++  Engine</p>                    
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="flex items-center py-1">
+                            <img src="{% static "image/public/theTech.svg" %}" alt=""/> <p class="font-semibold">The Worker</p>
+                        </div>
+                        <hr class="w-[188px] border-black border-[1px]"/>
+                        <div class="flex items-center justify-around gap-5 py-2">
+                            <img src="{% static "image/public/unreal.svg" %}" alt="" class="w-[50px]"/>
+                            <img src="{% static "image/public/mysql.svg" %}" alt="" class="w-[74px]"/>
+                            <img src="{% static "image/public/python.svg" %}" alt="" class="w-[114px]"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% comment %} solution {% endcomment %}
+        <div class="bg-white md:h-[720px] ">
+            <div class="md:px-16 px-5 pt-16 md:pt-32 md:py-32">
+                <div class="md:flex justify-around gap-24 items-center">
+                    <div class="mb-5">
+                        <p class="hidden md:block">WayFinder Indonesia</p>
+                        <h1 class="md:w-[570px] w-[276px] font-bold text-3xl md:text-5xl leading-tight md:leading-normal">Sistem indoor navigasi 
+                        yang terintegrasi dengan 
+                        sistem manufaktur.</h1>
+                    </div>
+                    <div>
+                        <p>
+                            Sistem ini mengijinkan para pekerjanya untuk memasukan juga mengeluarkan items satau barang secara efisien.
+                        </p>
+                    </div>
+                </div>
+                <div class="md:flex justify-around md:px-32 md:py-32 py-16">
+                    <div class="items-center flex gap-3 px-7 mb-7">
+                        <p class="font-bold text-5xl">5</p> <p>Weeks in scop­ing</p>
+                    </div>
+                    <div class="items-center flex gap-3 px-10 mb-7">
+                        <p class="font-bold text-5xl">25</p> <p>Weeks in de­vel­op­ment</p>
+                    </div>
+                    <div class="items-center flex gap-3 px-14 mb-7">
+                        <p class="font-bold text-5xl">300</p> <p>Tickets com­pleted</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+      {% comment %} Understanding The Problem {% endcomment %}
+        <div class="md:grid grid-cols-2 md:px-10 px-5 py-10 md:py-32 place-content-center place-items-center bg-[#fbfbfb]">
+            <div class="flex flex-col md:gap-4">
+                <h1 class="font-bold md:text-4xl text-3xl mb-6">Understanding the prob­lem</h1>
+                <img src="{% static "image/public/underStandingTheProblem.svg" %}" alt="" class="w-[492px] rounded-md mb-6"/>
+                <div class="md:flex justify-end items-center gap-3 hidden">
+                    <hr class="w-[221px] border-black border-[1px]"/>
+                    <p class="font-semibold">01</p>
+                </div>
+            </div>
+            <div class="">
+                <h1 class="font-bold md:text-4xl text-3xl leading-normal mb-5 md:w-[513px]">Bagaimana cara membuat teknologi sistem manufaktur atau gudang  bisa memudahkan para pekerjanya.</h1>
+                <p class="leading-relaxed">simply dummy text of the printing and typesetting industry. Lorem Ipsum has<br class="hidden md:block"/> been the industry's standard dummy text ever since the 1500s</p>
+            </div>
+        </div>
+      {% comment %} Understanding The Problem {% endcomment %}
+        <div class="md:grid grid-cols-2 md:px-10 px-5 py-10 md:py-32 place-content-center place-items-center">
+            <div class="flex flex-col md:gap-4">
+                <h1 class="font-bold md:text-4xl text-3xl mb-6">Pembuatan Ide</h1>
+                <img src="{% static "image/public/pembuatanIde.svg" %}" alt="" class="w-[492px] rounded-md mb-6"/>
+                <div class="md:flex justify-end items-center gap-3 hidden">
+                    <hr class="w-[221px] border-black border-[1px]"/>
+                    <p class="font-semibold">02</p>
+                </div>
+            </div>
+            <div class="">
+                <p class="leading-relaxed">Ide sistem ini muncul dengan tujuan untuk meningkatkan efisiensi para pekerja sistem gudang, khususnya mengenai tata letak barang dalam suatu ruangan.</p>
+            </div>
+        </div>
+        {% comment %} Understanding The Problem {% endcomment %}
+        <div class="md:grid grid-cols-2 md:px-10 px-5 py-10 md:py-32 place-content-center place-items-center bg-[#fbfbfb]">
+            <div class="flex flex-col md:gap-4">
+                <h1 class="font-bold md:text-4xl text-3xl mb-6">Solusi</h1>
+                <img src="{% static "image/public/solusii.svg" %}" alt="" class="w-[492px] rounded-md mb-6"/>
+                <div class="md:flex justify-end items-center gap-3 hidden">
+                    <hr class="w-[221px] border-black border-[1px]"/>
+                    <p class="font-semibold">03</p>
+                </div>
+            </div>
+            <div class="">
+                <h1 class="font-bold md:text-4xl text-3xl leading-normal mb-5 md:w-[513px]">Dengan Wayfinder, sistem gudang menjadi lebih efektif dan efisien</h1>
+                <p class="leading-relaxed">Karena data yang dimasukan terintegrasi dengan keadaan ruangan saat itu juga.</p>
+            </div>
+        </div>
+        {% comment %} Understanding The Problem {% endcomment %}
+        <div class="md:px-8 px-7 h-[720px] flex flex-col justify-center">
+            <h1 class="font-bold md:text-4xl text-3xl mb-5 leading-normal">“Their con­stant com­mu­ni­ca­tion to solve the process’ needs is key to solid pro­ject man­age­ment. The team also praises their com­mit­ment to the suc­cess of their tasks through their proac­tive­ness and in­tegrity.”<h1/>
+            <p class="md:text-xl">Richard Moran, IT Project Coordinator</p>
+        </div>
+        {% comment %} Our Project {% endcomment %}
+        <div class="bg-white  ">
+          <div class="container px-20 py-14">
+            <h1 class="text-center text-3xl md:text-6xl font-bold mb-14">Proyek Kami</h1>
+            <div class="md:grid md:grid-cols-3 hidden">
+              <div class="block max-w-xs py-5 bg-white shadow-gray-500 shadow-md hover:shadow-2xl hover:shadow-black transition duration-300 cursor-pointer">
+                <div>
+                  <p class="px-6 text-xl font-semibold mb-5">Pengembangan Website</p>
+                </div>
+                <div class="mb-5">
+                  <img src="{% static "image/public/proyek.svg" %}" alt="" />
+                </div>
+                <div class="px-7">
+                  <h3 class="text-3xl font-bold mb-3">Container Loader</h3>
+                  <p>Sebuah software simulasi yang mampu menghitung secara optimal tentang konfigurasi barang yang masuk dalam kargo atau kontainer.</p>
+                </div>
+              </div>
+              <div class="block max-w-xs py-5 bg-white shadow-gray-500 shadow-md hover:shadow-2xl hover:shadow-black transition duration-300 cursor-pointer">
+                <div>
+                  <p class="px-6 text-xl font-semibold mb-5">Pengembangan Website</p>
+                </div>
+                <div class="mb-5">
+                  <img src="{% static "image/public/proyek.svg" %}" alt="" />
+                </div>
+                <div class="px-7">
+                  <h3 class="text-3xl font-bold mb-3">Container Loader</h3>
+                  <p>Sebuah software simulasi yang mampu menghitung secara optimal tentang konfigurasi barang yang masuk dalam kargo atau kontainer.</p>
+                </div>
+              </div>
+              <div class="block max-w-xs py-5 bg-white shadow-gray-500 shadow-md hover:shadow-2xl hover:shadow-black transition duration-300 cursor-pointer">
+                <div>
+                  <p class="px-6 text-xl font-semibold mb-5">Pengembangan Website</p>
+                </div>
+                <div class="mb-5">
+                  <img src="{% static "image/public/proyek.svg" %}" alt="" />
+                </div>
+                <div class="px-7">
+                  <h3 class="text-3xl font-bold mb-3">Container Loader</h3>
+                  <p>Sebuah software simulasi yang mampu menghitung secara optimal tentang konfigurasi barang yang masuk dalam kargo atau kontainer.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+       {% comment %} digital transformation  {% endcomment %}
+        <div style="background-image: url('{% static "image/public/backgroundDigitalTransformationBlue.svg" %}')" class="h-[283px] hidden md:block">
+          <div class=" px-20 py-16">
+            <img src="{% static "image/public/YourDigitalTransfoemationPartner.svg" %}" alt="" />
+            <Button onclick="window.location.href = '{% url "consultation" %}';"  class="ml-6 mt-6 px-7 py-5 border bg-[#d20008] text-xl text-white rounded-sm hover:bg-[#b3020f] font-medium transition duration-300">Book a chat</Button>
+          </div>
+        </div>
+        <div style="background-image: url('{% static "image/public/backgroundDigitalTransformationBlueSmall.svg" %}')" class="h-[656px] bg-no-repeat bg-center bg-cover md:hidden">
+          <div class="container px-10 py-16">
+            <img src="{% static "image/public/YourDigitalTransfoemationPartnerSmall.svg" %}" width={312} alt="" />
+            <button onclick="window.location.href = '{% url "consultation" %}';" class="ml-6 mt-6 px-7 py-3 md:py-5 border bg-[#d20008] text-xl text-white rounded-sm hover:bg-[#b3020f] font-medium transition duration-300">Book a chat</button>
+          </div>
+        </div>
+       {% comment %} footer {% endcomment %}
+       <div class="bg-black  ">
+        <div class="px-7 md:px-20 md:pt-12 md:pb-5 py-10">
+          <div class="md:flex md:justify-between">
+            <div class="border-b md:border-none py-4">
+              <div class="flex justify-center md:justify-start">
+                <img src="{% static "image/public/logo2.svg" %}" alt="logo" class="mb-5"/>
+              </div>
+              <p class="text-white text-center md:text-left md:w-[292px]">Komplek Green Ville, Jalan Ratu<br class="hidden md:block"/> Kemuning Blok BL No. 1,<br class="hidden md:block"/> RT08/RW14, DKI Jakarta <br class="hidden md:block"/>+(62-81) 398-716-212</p>
+            </div>
+            <div class="flex justify-around md:gap-20 pt-5">
+              <div class="">
+                <h1 class="text-white md:text-2xl font-bold mb-3">Quick Links</h1>
+                <p class="text-white mb-3">Home</p>
+                <p class="text-white mb-3">About</p>
+                <p class="text-white mb-3">Services</p>
+                <p class="text-white mb-3">Process</p>
+                <p class="text-white mb-3">Projects</p>
+              </div>
+              <div class="">
+                <h1 class="text-white md:text-2xl font-bold mb-3">Find Us On</h1>
+                <p class="text-white mb-3">Facebook</p>
+                <p class="text-white mb-3">Instagram</p>
+                <p class="text-white mb-3">Facebook</p>
+                <p class="text-white mb-3">Linkedin</p>
+              </div>
+            </div>
+          </div>
+            <p class="text-white mt-7 flex justify-center">Copyright © <script>document.write(/\d{4}/.exec(Date())[0])</script> KeDA Tech<span class="md:block hidden">. All Rights Reserved.</span></p>
+        </div>
+      </div>
+       {% comment %} after footer {% endcomment %}
+        <div style="background-image: url('{% static "image/public/bgAfterFooterBlue.svg" %}')" class="h-[720px] shadow-black hidden md:block">
+          <div class=" px-64 pt-72">
+            <h1 class="text-5xl font-bold mb-4">Tetap Terhubung Bersama Kami</h1>
+            <p class="text-2xl pr-20 mb-4">Sign up for the lat­est up­dates to our Way of Working, case stud­ies, and more.</p>
+            <div>
+              <form action="" method="POST">
+                {% csrf_token %}
+                {{form}}
+                <button type="submit" class="px-3 py-1 border bg-[#d20008] text-white text-md ml-3 font-bold rounded hover:bg-[#b3020f] hover:border-[#d20008] transition duration-300">Berlangganan</button>
+              </form> 
+
+              {% if message == 'berhasil' %}
+                <p style="color: rgb(16 185 129);" class="text-xs italic">Selamat, Anda telah berlangganan dengan kami!</p>
+              {% elif message == 'error' %}
+                <p style="color: rgb(220 38 38);" class="text-xs italic">Format Email yang Anda masukkan salah!</p>
+              {% endif %} </div></div>
+          </div>
+        </div>
+        {% comment %} after footer mobile {% endcomment %}
+        <div style="background-image: url('{% static "image/public/bgAfterFooterBlueSmall.svg" %}')" class="h-[720px] bg-center bg-cover bg-no-repeat md:hidden">
+          <div class="py-52 px-10">
+            <h1 class="text-4xl font-bold mb-4 text">Tetap Terhubung Bersama Kami</h1>
+            <p class="text-xl  mb-4">Sign up for the lat­est up­dates to our Way of Working, case stud­ies, and more.</p>
+            <div>
+              <form action="" method="POST">
+                {% csrf_token %}
+                {{form}}
+                <div class="mt-5">
+                  <button type="submit" class="px-3 py-1 border bg-[#d20008] text-white text-md font-bold rounded hover:bg-[#b3020f] hover:border-[#d20008] transition duration-300">Berlangganan</button>
+                </div>
+              </form> 
+
+              {% if message == 'berhasil' %}
+                <p style="color: rgb(16 185 129);" class="text-xs italic">Selamat, Anda telah berlangganan dengan kami!</p>
+              {% elif message == 'error' %}
+                <p style="color: rgb(220 38 38);" class="text-xs italic">Format Email yang Anda masukkan salah!</p>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+    </div>
+{% endblock content %}
