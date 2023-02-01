@@ -958,6 +958,10 @@ select {
   height: 283px;
 }
 
+.h-\[656px\] {
+  height: 656px;
+}
+
 .h-\[720px\] {
   height: 720px;
 }
@@ -990,8 +994,16 @@ select {
   height: 329px;
 }
 
+.h-\[308px\] {
+  height: 308px;
+}
+
 .h-\[350px\] {
   height: 350px;
+}
+
+.h-\[794px\] {
+  height: 794px;
 }
 
 .h-\[646px\] {
@@ -1008,10 +1020,6 @@ select {
 
 .h-\[80px\] {
   height: 80px;
-}
-
-.h-\[656px\] {
-  height: 656px;
 }
 
 .h-\[202px\] {
@@ -1125,6 +1133,42 @@ select {
 
 .w-\[492px\] {
   width: 492px;
+}
+
+.w-\[188px\] {
+  width: 188px;
+}
+
+.w-\[50px\] {
+  width: 50px;
+}
+
+.w-\[74px\] {
+  width: 74px;
+}
+
+.w-\[114px\] {
+  width: 114px;
+}
+
+.w-\[100px\] {
+  width: 100px;
+}
+
+.w-\[538px\] {
+  width: 538px;
+}
+
+.w-\[276px\] {
+  width: 276px;
+}
+
+.w-\[221px\] {
+  width: 221px;
+}
+
+.w-\[513px\] {
+  width: 513px;
 }
 
 .w-\[80px\] {
@@ -1313,6 +1357,10 @@ select {
   border-width: 1px;
 }
 
+.border-\[1px\] {
+  border-width: 1px;
+}
+
 .border-b {
   border-bottom-width: 1px;
 }
@@ -1342,6 +1390,11 @@ select {
 .border-\[\#696969\] {
   --tw-border-opacity: 1;
   border-color: rgb(105 105 105 / var(--tw-border-opacity));
+}
+
+.border-black {
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity));
 }
 
 .border-\[\#d20008\] {
@@ -1437,6 +1490,11 @@ select {
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.object-center {
+  -o-object-position: center;
+     object-position: center;
 }
 
 .p-3 {
@@ -1542,6 +1600,11 @@ select {
   padding-right: 1.75rem;
 }
 
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -1607,6 +1670,16 @@ select {
   padding-right: 0.5rem;
 }
 
+.px-14 {
+  padding-left: 3.5rem;
+  padding-right: 3.5rem;
+}
+
+.py-32 {
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
 .px-16 {
   padding-left: 4rem;
   padding-right: 4rem;
@@ -1615,11 +1688,6 @@ select {
 .py-8 {
   padding-top: 2rem;
   padding-bottom: 2rem;
-}
-
-.py-3 {
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
 }
 
 .pl-3 {
@@ -1706,12 +1774,12 @@ select {
   padding-right: 1.25rem;
 }
 
-.pt-32 {
-  padding-top: 8rem;
+.pt-16 {
+  padding-top: 4rem;
 }
 
-.pt-36 {
-  padding-top: 9rem;
+.pt-32 {
+  padding-top: 8rem;
 }
 
 .pt-24 {
@@ -1724,22 +1792,6 @@ select {
 
 .pt-9 {
   padding-top: 2.25rem;
-}
-
-.pt-16 {
-  padding-top: 4rem;
-}
-
-.pt-40 {
-  padding-top: 10rem;
-}
-
-.pt-44 {
-  padding-top: 11rem;
-}
-
-.pr-3 {
-  padding-right: 0.75rem;
 }
 
 .text-center {
@@ -1823,6 +1875,10 @@ select {
   line-height: 2;
 }
 
+.leading-tight {
+  line-height: 1.25;
+}
+
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -1861,6 +1917,10 @@ select {
 .text-\[\#d20008\] {
   --tw-text-opacity: 1;
   color: rgb(210 0 8 / var(--tw-text-opacity));
+}
+
+.underline {
+  text-decoration-line: underline;
 }
 
 .shadow {
@@ -2171,6 +2231,14 @@ select {
     width: 557px;
   }
 
+  .md\:w-\[570px\] {
+    width: 570px;
+  }
+
+  .md\:w-\[513px\] {
+    width: 513px;
+  }
+
   .md\:w-\[173px\] {
     width: 173px;
   }
@@ -2223,6 +2291,10 @@ select {
     gap: 5rem;
   }
 
+  .md\:gap-4 {
+    gap: 1rem;
+  }
+
   .md\:gap-14 {
     gap: 3.5rem;
   }
@@ -2270,6 +2342,11 @@ select {
     padding-right: 4rem;
   }
 
+  .md\:py-5 {
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+  }
+
   .md\:px-20 {
     padding-left: 5rem;
     padding-right: 5rem;
@@ -2315,6 +2392,16 @@ select {
     padding-right: 3.5rem;
   }
 
+  .md\:py-32 {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+
+  .md\:px-32 {
+    padding-left: 8rem;
+    padding-right: 8rem;
+  }
+
   .md\:py-4 {
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -2325,9 +2412,9 @@ select {
     padding-right: 7rem;
   }
 
-  .md\:py-5 {
-    padding-top: 1.25rem;
-    padding-bottom: 1.25rem;
+  .md\:px-8 {
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 
   .md\:pl-12 {
@@ -2402,6 +2489,10 @@ select {
     padding-right: 0.5rem;
   }
 
+  .md\:pt-32 {
+    padding-top: 8rem;
+  }
+
   .md\:pt-72 {
     padding-top: 18rem;
   }
@@ -2446,5 +2537,14 @@ select {
   .md\:text-3xl {
     font-size: 1.875rem;
     line-height: 2.25rem;
+  }
+
+  .md\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  .md\:leading-normal {
+    line-height: 1.5;
   }
 }

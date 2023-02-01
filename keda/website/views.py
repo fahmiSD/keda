@@ -460,3 +460,6 @@ def processSupport(request):
 
 def processNextSteps(request):
     return render(request, 'processNextSteps.html')
+
+def detailProject(request):
+    return render(request, 'detailProject.html')
