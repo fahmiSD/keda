@@ -733,6 +733,10 @@ select {
   position: fixed;
 }
 
+.absolute {
+  position: absolute;
+}
+
 .relative {
   position: relative;
 }
@@ -753,16 +757,16 @@ select {
   right: 0px;
 }
 
-.z-10 {
-  z-index: 10;
-}
-
-.z-30 {
-  z-index: 30;
+.bottom-0 {
+  bottom: 0px;
 }
 
 .z-50 {
   z-index: 50;
+}
+
+.z-10 {
+  z-index: 10;
 }
 
 .col-span-2 {
@@ -787,6 +791,10 @@ select {
 
 .col-span-1 {
   grid-column: span 1 / span 1;
+}
+
+.float-left {
+  float: left;
 }
 
 .m-0 {
@@ -990,6 +998,10 @@ select {
   height: 600px;
 }
 
+.h-\[222px\] {
+  height: 222px;
+}
+
 .h-\[329px\] {
   height: 329px;
 }
@@ -1004,6 +1016,10 @@ select {
 
 .h-\[794px\] {
   height: 794px;
+}
+
+.h-\[636px\] {
+  height: 636px;
 }
 
 .h-\[646px\] {
@@ -1106,6 +1122,10 @@ select {
   width: 320px;
 }
 
+.w-\[200px\] {
+  width: 200px;
+}
+
 .w-\[222px\] {
   width: 222px;
 }
@@ -1167,8 +1187,12 @@ select {
   width: 221px;
 }
 
-.w-\[513px\] {
-  width: 513px;
+.w-\[360px\] {
+  width: 360px;
+}
+
+.w-\[303px\] {
+  width: 303px;
 }
 
 .w-\[80px\] {
@@ -1279,6 +1303,10 @@ select {
   gap: 2.5rem;
 }
 
+.gap-8 {
+  gap: 2rem;
+}
+
 .gap-2 {
   gap: 0.5rem;
 }
@@ -1314,6 +1342,10 @@ select {
 .divide-gray-100 > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-opacity: 1;
   border-color: rgb(243 244 246 / var(--tw-divide-opacity));
+}
+
+.overflow-hidden {
+  overflow: hidden;
 }
 
 .overflow-y-auto {
@@ -1355,6 +1387,10 @@ select {
 
 .border {
   border-width: 1px;
+}
+
+.border-0 {
+  border-width: 0px;
 }
 
 .border-\[1px\] {
@@ -1525,6 +1561,10 @@ select {
   padding: 2rem;
 }
 
+.p-0 {
+  padding: 0px;
+}
+
 .px-1 {
   padding-left: 0.25rem;
   padding-right: 0.25rem;
@@ -1675,11 +1715,6 @@ select {
   padding-right: 3.5rem;
 }
 
-.py-32 {
-  padding-top: 8rem;
-  padding-bottom: 8rem;
-}
-
 .px-16 {
   padding-left: 4rem;
   padding-right: 4rem;
@@ -1750,6 +1785,14 @@ select {
   padding-left: 3rem;
 }
 
+.pt-16 {
+  padding-top: 4rem;
+}
+
+.pr-12 {
+  padding-right: 3rem;
+}
+
 .pb-12 {
   padding-bottom: 3rem;
 }
@@ -1774,8 +1817,8 @@ select {
   padding-right: 1.25rem;
 }
 
-.pt-16 {
-  padding-top: 4rem;
+.pb-5 {
+  padding-bottom: 1.25rem;
 }
 
 .pt-32 {
@@ -2013,6 +2056,10 @@ select {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.hover\:no-underline:hover {
+  text-decoration-line: none;
+}
+
 .hover\:shadow-2xl:hover {
   --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
   --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
@@ -2030,9 +2077,23 @@ select {
   --tw-shadow: var(--tw-shadow-colored);
 }
 
+.hover\:outline-none:hover {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
 .focus\:border-gray-200:focus {
   --tw-border-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
+}
+
+.focus\:no-underline:focus {
+  text-decoration-line: none;
+}
+
+.focus\:outline-none:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
 }
 
 .focus\:ring-\[\#d20008\]:focus {
@@ -2402,6 +2463,11 @@ select {
     padding-right: 8rem;
   }
 
+  .md\:px-8 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
   .md\:py-4 {
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -2410,11 +2476,6 @@ select {
   .md\:px-28 {
     padding-left: 7rem;
     padding-right: 7rem;
-  }
-
-  .md\:px-8 {
-    padding-left: 2rem;
-    padding-right: 2rem;
   }
 
   .md\:pl-12 {
@@ -2534,14 +2595,14 @@ select {
     line-height: 1;
   }
 
-  .md\:text-3xl {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
-  }
-
   .md\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
+  }
+
+  .md\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
   }
 
   .md\:leading-normal {

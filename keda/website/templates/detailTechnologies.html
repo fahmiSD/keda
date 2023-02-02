@@ -1,0 +1,180 @@
+{% extends 'base.html' %} {% load static %} {% block content %} 
+    <div>
+        {% comment %} Detail Technologies {% endcomment %}
+        <div class="bg-white h-[636px] px-10 py-10">
+          <Link href="/about-technologies">
+            <div class="flex items-center cursor-pointer">
+              <img src="{% static "image/public/iconDetailTechnologiesReverse.svg" %}" alt="" />
+              <p class="ml-2 font-semibold">Kembali ke Teknologi</p>
+            </div>
+          </Link>
+          <div class="flex justify-around items-center py-16">
+            <img src="{% static "image/public/unreal.svg" %}" alt="" class="w-[360px]" />
+            <div class="">
+              <h1 class="text-5xl font-bold mb-5">UNREAL ENGINE</h1>
+              <p class="mb-5">
+                Aplikasi game engine ini dibuat oleh Epic Games dan memulai
+                debutnya di
+                <br /> tahun 1998. Diawali dengan game tembak-menembak, sekarang
+                Unreal
+                <br /> Engine mampu membuat memvisualisasikan benda disekitar
+                Anda menjadi
+                <br /> 3D real time.
+                <br />
+                <br />
+                Peningkatan yang terus terasa dari Unreal Engine adalah membuat
+                bentuk
+                <br /> 3D semakin nyata seperti aslinya.{" "}
+              </p>
+            </div>
+          </div>
+        </div>
+        {% comment %} Aplicate The Technologies {% endcomment %}
+        <div class="bg-[fbfbfb] grid grid-cols-2 px-20 py-14">
+          <img
+            src="{% static "image/public/howToApplicatedTechnologies.svg" %}"
+            alt=""
+            class="w-[492px]"
+          />
+          <div class="py-14">
+            <h1 class="text-5xl font-bold mb-5">
+              Bagaimana penerapan teknologi ini
+            </h1>
+            <p class="mb-5">
+              Unreal Engine mengijinkan Anda membuat proyek tanpa batas. Karena
+              tidak hanya untuk games, Unreal Engine bisa Anda terapkan untuk
+              film, arsitektur, otomotif dan transportasi, broadcast events,
+              sampai segala macam simulasi.
+            </p>
+          </div>
+        </div>
+        {% comment %} Benefit {% endcomment %}
+        <div class="bg-white grid grid-cols-2 px-20 py-14">
+          <img src="{% static "image/public/whatAdvantage.svg" %}" alt="" class="w-[492px]" />
+          <div class="py-20">
+            <h1 class="text-5xl font-bold mb-5">Apa keuntungannya</h1>
+            <p class="mb-5">
+              Dengan menerapkan Unreal Engine Anda bisa mendapatkan gambaran
+              yang sempurna sesuai dengan aslinya. Anda bisa memperkirakan
+              simulasi secara maksimal dengan Unreal Engine ini.
+            </p>
+          </div>
+        </div>
+        {% comment %} Our Project {% endcomment %}
+        <div class="bg-white  ">
+          <div class="container px-20 py-14">
+            <h1 class="text-4xl font-bold mb-14">
+              Proyek kami yang memakai UNREAL Engine
+            </h1>
+            <div class="grid grid-cols-3">
+              <Card>
+                <div>
+                  <p class="px-6 text-xl font-semibold mb-5">
+                    Pengembangan Website
+                  </p>
+                </div>
+                <div class="mb-5">
+                  <img src="{% static "image/public/proyek.svg" %}" alt="" />
+                </div>
+                <div class="px-7">
+                  <h3 class="text-3xl font-bold mb-3">Container Loader</h3>
+                  <p>
+                    Sebuah software simulasi yang mampu menghitung secara
+                    optimal tentang konfigurasi barang yang masuk dalam kargo
+                    atau kontainer.
+                  </p>
+                </div>
+              </Card>
+              <Card>
+                <div>
+                  <p class="px-6 text-xl font-semibold mb-5">
+                    Pengembangan Website
+                  </p>
+                </div>
+                <div class="mb-5">
+                  <img src="{% static "image/public/proyek.svg" %}" alt="" />
+                </div>
+                <div class="px-7">
+                  <h3 class="text-3xl font-bold mb-3">Container Loader</h3>
+                  <p>
+                    Sebuah software simulasi yang mampu menghitung secara
+                    optimal tentang konfigurasi barang yang masuk dalam kargo
+                    atau kontainer.
+                  </p>
+                </div>
+              </Card>
+              <Card>
+                <div>
+                  <p class="px-6 text-xl font-semibold mb-5">
+                    Pengembangan Website
+                  </p>
+                </div>
+                <div class="mb-5">
+                  <img src="{% static "image/public/proyek.svg" %}" alt="" />
+                </div>
+                <div class="px-7">
+                  <h3 class="text-3xl font-bold mb-3">Container Loader</h3>
+                  <p>
+                    Sebuah software simulasi yang mampu menghitung secara
+                    optimal tentang konfigurasi barang yang masuk dalam kargo
+                    atau kontainer.
+                  </p>
+                </div>
+              </Card>
+            </div>
+          </div>
+        </div>
+        {% comment %} Footer {% endcomment %}
+        <div class="bg-black  ">
+          <div class="container px-20 pt-12 pb-5">
+            <div class="flex justify-between ite">
+              <div>
+                <img src="{% static "image/public/logo2.svg" %}" alt="logo" class="mb-5" />
+                <p class="text-white">Komplek Green Ville, Jalan Ratu</p>
+                <p class="text-white">Kemuning Blok BL No. 1,</p>
+                <p class="text-white">RT08/RW14, DKI Jakarta</p>
+                <p class="text-white">+(62-81) 398-716-212</p>
+              </div>
+              <div class="grid grid-cols-2 gap-24 pt-5">
+                <div class="grid gap-3">
+                  <h1 class="text-white text-2xl font-bold">Quick Links</h1>
+                  <p class="text-white">Home</p>
+                  <p class="text-white">About</p>
+                  <p class="text-white">Services</p>
+                  <p class="text-white">Process</p>
+                  <p class="text-white">Projects</p>
+                </div>
+                <div class="grid gap-3">
+                  <h1 class="text-white text-2xl font-bold">Find Us On</h1>
+                  <p class="text-white">Facebook</p>
+                  <p class="text-white">Instagram</p>
+                  <p class="text-white">Facebook</p>
+                  <p class="text-white">Linkedin</p>
+                </div>
+              </div>
+            </div>
+            <p class="text-white text-center mt-7">
+              Copyright © 2022 KeDA Tech. All Rights Reserved.
+            </p>
+          </div>
+        </div>
+        {% comment %} After Footer {% endcomment %}
+        <div style="background-image: url('{% static "image/public/bgAfterFooterPurple.svg" %}')" class="h-[720px] shadow-black">
+          <div class="container px-64 pt-72">
+            <h1 class="text-5xl font-bold mb-4">
+              Tetap Terhubung Bersama Kami
+            </h1>
+            <p class="text-2xl pr-20 mb-4">
+              Sign up for the lat­est up­dates to our Way of Working, case
+              stud­ies, and more.
+            </p>
+            <div>
+              <Input type="email" placeholder="Email Anda di sini" />
+              <Button class="px-3 py-1 border bg-bg-[#d20008] text-white text-md ml-3 font-bold rounded hover:bg-secondary hover:border-bg-[#d20008] transition duration-300">
+                Berlangganan
+              </Button>
+            </div>
+          </div>
+        </div>
+    </div
+{% endblock content %}

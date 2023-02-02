@@ -463,3 +463,6 @@ def processNextSteps(request):
 
 def detailProject(request):
     return render(request, 'detailProject.html')
+
+def detailTechnologies(request):
+    return render(request, 'detailTechnologies.html')
