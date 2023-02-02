@@ -47,7 +47,7 @@ class CandidateForm(ModelForm):
             'cv': ('CV')
         }
         widgets = {
-            'candidate_name' : forms.TextInput(attrs={'id':'name','class':'md:w-[557px] py-1 rounded border-gray-300 shadow-sm focus:ring-[#d20008] focus:border-gray-200 transition duration-300', 'onkeydown':'return /[a-zA-Z.-]/i.test(event.key)'}),
+            'candidate_name' : forms.TextInput(attrs={'id':'name','class':'md:w-[557px] py-1 rounded border-gray-300 shadow-sm focus:ring-[#d20008] focus:border-gray-200 transition duration-300', 'onkeydown':'return /[a-zA-Z .-]/i.test(event.key)'}),
             'career_tag_id' : forms.Select(attrs={"class":'md:w-[557px] py-1 rounded border-gray-300 shadow-sm focus:ring-[#d20008] focus:border-gray-200 transition duration-300'}),
             'whatsapp_number' : PhoneNumberPrefixWidget(initial="ID",attrs={'class':'py-1 rounded border-gray-300 shadow-sm focus:ring-[#d20008] focus:border-gray-200 transition duration-300"','id':'phone', 'placeholder':'82388400299'}),
             'email' : forms.EmailInput(attrs={'id':'email','class':'md:w-[557px] py-1 rounded border-gray-300 shadow-sm focus:ring-[#d20008] focus:border-gray-200 transition duration-300'}),

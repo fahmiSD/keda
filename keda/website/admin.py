@@ -30,6 +30,7 @@ admin.site.register(Team, TeamAdmin)
 
 class ConsultAdmin(ExportMixin,admin.ModelAdmin):
     list_display = ['name', 'business_sector', 'phone_number', 'email', 'datetime']
+    readonly_fields = ['name', 'business_sector', 'phone_number', 'email', 'question', 'datetime']
     resource_class = ConsultResource
 admin.site.register(Consult, ConsultAdmin)
 
@@ -40,7 +41,8 @@ admin.site.register(Blog_tag, BlogTagAdmin)
 
 
 class BlogAdmin(admin.ModelAdmin):
-    list_display = ['blog_header','blog_tag','image_blog','datetime']
+    list_display = ['blog_header','blog_tag','status','datetime']
+    readonly_fields = ['slug_blog']
 admin.site.register(Blog, BlogAdmin)
 
 
@@ -50,11 +52,13 @@ admin.site.register(Career_tag,CareerTagAdmin)
 
 
 class CareerAdmin(admin.ModelAdmin):
-    list_display = ['career_name', 'career_tag_id', 'deadline', 'datetime']
+    list_display = ['career_name', 'career_tag_id', 'deadline', 'status', 'datetime']
+    readonly_fields = ['slug_career']
 admin.site.register(Career, CareerAdmin)
 
 
 class CandidateAdmin(ExportMixin, admin.ModelAdmin):
     list_display = ['candidate_name', 'career_tag_id', 'email', 'datetime']
+    readonly_fields = ['candidate_name', 'career_tag_id', 'email', 'whatsapp_number', 'cv', 'datetime']
     resource_class = CandidateResource
 admin.site.register(Candidate, CandidateAdmin)
