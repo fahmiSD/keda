@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from website.forms import *
+from django.http import HttpResponse
 
 # Create your views here.
 def index(request):
@@ -66,7 +67,7 @@ def aboutCareer(request):
     if request.POST:
         form = SubscriptionForm(request.POST)
         if form.is_valid():
-            careers = Career.objects.select_related('career_tag_id', 'career_tag_id__color_id')
+            careers = Career.objects.select_related('career_tag_id', 'career_tag_id__color_id').filter(status=1)
             form.save()
             form = SubscriptionForm()
             message = "berhasil"
@@ -80,7 +81,7 @@ def aboutCareer(request):
         else:
             form = SubscriptionForm()
             message = "error"
-            careers = Career.objects.select_related('career_tag_id', 'career_tag_id__color_id')
+            careers = Career.objects.select_related('career_tag_id', 'career_tag_id__color_id').filter(status=1)
             context = {
                 'form' : form,
                 'message' : message,
@@ -90,20 +91,20 @@ def aboutCareer(request):
 
     else:
         form = SubscriptionForm()
-        careers = Career.objects.select_related('career_tag_id', 'career_tag_id__color_id')
+        careers = Career.objects.select_related('career_tag_id', 'career_tag_id__color_id').filter(status=1)
         context = {
             'form' : form,
             'careers' : careers,
         }
         return render(request, 'aboutCareer.html', context)
 
-def detailCareer(request, id_career):
+def detailCareer(request, slug_career):
     if request.method == 'POST':
         if request.POST.get("form_type") == 'form_candidate':
             form_candidate = CandidateForm(request.POST, request.FILES)
             if form_candidate.is_valid():
                 form_candidate.save()
-                career = Career.objects.select_related('career_tag_id', 'career_tag_id__color_id').get(id=id_career)
+                career = Career.objects.select_related('career_tag_id', 'career_tag_id__color_id').get(slug_career=slug_career)
                 form_candidate = CandidateForm()
                 form_subs = SubscriptionForm()
                 context = {
@@ -115,7 +116,7 @@ def detailCareer(request, id_career):
                 return render(request, 'detailCareer.html', context)
 
             else:
-                career = Career.objects.select_related('career_tag_id', 'career_tag_id__color_id').get(id=id_career)
+                career = Career.objects.select_related('career_tag_id', 'career_tag_id__color_id').get(slug_career=slug_career)
                 form_candidate = CandidateForm(request.POST)
                 form_subs = SubscriptionForm()
                 context = {
@@ -131,7 +132,7 @@ def detailCareer(request, id_career):
             form_subs = SubscriptionForm(request.POST)
             if form_subs.is_valid():
                 form_subs.save()
-                career = Career.objects.select_related('career_tag_id', 'career_tag_id__color_id').get(id=id_career)
+                career = Career.objects.select_related('career_tag_id', 'career_tag_id__color_id').get(slug_career=slug_career)
                 form_candidate = CandidateForm()
                 form_subs = SubscriptionForm()
                 message = "berhasil"
@@ -144,7 +145,7 @@ def detailCareer(request, id_career):
                 return render(request, 'detailCareer.html', context)
 
             else:
-                career = Career.objects.select_related('career_tag_id', 'career_tag_id__color_id').get(id=id_career)
+                career = Career.objects.select_related('career_tag_id', 'career_tag_id__color_id').get(slug_career=slug_career)
                 form_candidate = CandidateForm()
                 form_subs = SubscriptionForm()
                 message = "error"
@@ -157,7 +158,7 @@ def detailCareer(request, id_career):
                 return render(request, 'detailCareer.html', context)
         
     else:
-        career = Career.objects.select_related('career_tag_id', 'career_tag_id__color_id').get(id=id_career)
+        career = Career.objects.select_related('career_tag_id', 'career_tag_id__color_id').get(slug_career=slug_career)
         form_candidate = CandidateForm()
         form_subs = SubscriptionForm()
         context = {
@@ -167,14 +168,15 @@ def detailCareer(request, id_career):
         }
         return render(request, 'detailCareer.html', context)
 
-def detailBlog(request, id_blog):
+def detailBlog(request, slug_blog):
     if request.POST:
         form = SubscriptionForm(request.POST)
         if form.is_valid():
+            
             form.save()
             form = SubscriptionForm()
-            blog = Blog.objects.select_related('blog_tag', 'blog_tag__color_id').get(id=id_blog)
-            related_blogs = Blog.objects.select_related('blog_tag', 'blog_tag__color_id').exclude(id=id_blog).order_by("?")[:4]
+            blog = Blog.objects.select_related('blog_tag', 'blog_tag__color_id').get(slug_blog=slug_blog)
+            related_blogs = Blog.objects.select_related('blog_tag', 'blog_tag__color_id').exclude(id=slug_blog).order_by("?")[:4]
             message = 'berhasil'
             context = {
                 'blog' : blog,
@@ -186,8 +188,8 @@ def detailBlog(request, id_blog):
 
         else:
             form = SubscriptionForm()
-            blog = Blog.objects.select_related('blog_tag', 'blog_tag__color_id').get(id=id_blog)
-            related_blogs = Blog.objects.select_related('blog_tag', 'blog_tag__color_id').exclude(id=id_blog).order_by("?")[:4]
+            blog = Blog.objects.select_related('blog_tag', 'blog_tag__color_id').get(slug_blog=slug_blog)
+            related_blogs = Blog.objects.select_related('blog_tag', 'blog_tag__color_id').exclude(slug_blog=slug_blog).order_by("?")[:4]
             message = 'error'
             context = {
                 'blog' : blog,
@@ -198,9 +200,10 @@ def detailBlog(request, id_blog):
             return render(request, 'detailBlog.html', context)
 
     else:
+        
         form = SubscriptionForm()
-        blog = Blog.objects.select_related('blog_tag', 'blog_tag__color_id').get(id=id_blog)
-        related_blogs = Blog.objects.select_related('blog_tag', 'blog_tag__color_id').exclude(id=id_blog).order_by("?")[:4]
+        blog = Blog.objects.select_related('blog_tag', 'blog_tag__color_id').get(slug_blog=slug_blog)
+        related_blogs = Blog.objects.select_related('blog_tag', 'blog_tag__color_id').exclude(slug_blog=slug_blog).order_by("?")[:4]
         context = {
             'blog' : blog,
             'form' : form,

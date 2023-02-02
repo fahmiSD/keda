@@ -2,7 +2,7 @@ from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
 from django.contrib import admin
 from ckeditor_uploader.fields import RichTextUploadingField
-import os
+from django.utils.text import slugify
 
 class AuthorAdmin(admin.ModelAdmin):
     list_display = ('Subscription', 'Categories', 'Position')
@@ -73,6 +73,15 @@ class Blog(models.Model):
     image_blog = models.ImageField(upload_to='blog/')
     description = RichTextUploadingField()
     datetime = models.DateTimeField(auto_now_add=True)
+    slug_blog = models.SlugField(blank=True, unique=True)
+    inactive = 0
+    active = 1
+    choice = ((active, ('Active')),(inactive, ('Inactive')))
+    status = models.IntegerField(default=1, choices=choice)
+
+    def save(self):
+        self.slug_blog = slugify(self.blog_header)
+        super(Blog, self).save()
 
     def __str__(self):
         return self.blog_header
@@ -94,7 +103,16 @@ class Career(models.Model):
     requirement = RichTextUploadingField(null=True)
     plus = RichTextUploadingField(null=True)
     benefits = RichTextUploadingField(null=True)
+    slug_career = models.SlugField(blank=True, null=True)
 
+    inactive = 0
+    active = 1
+    choice = ((active, ('Active')),(inactive, ('Inactive')))
+    status = models.IntegerField(default=1, choices=choice)
+
+    def save(self):
+        self.slug_career = slugify(self.career_name)
+        super(Career, self).save()
 
     def __str__(self):
         return self.career_name
