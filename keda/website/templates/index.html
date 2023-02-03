@@ -7,7 +7,7 @@
               <img src="{% static "image/public/logoHomePage.svg" %}" alt="logo" class="mb-6" width={448} height={254}/>
             </div>
               <p class="text-white md:text-3xl text-xl font-semibold md:mb-14 mb-5">Your Digital Transformation Partner</p>
-              <button class="md:px-12 md:py-4 py-2 px-5 border text-2xl font-bold bg-[#d20008] border-[#d20008] text-white rounded  hover:bg-[#b3020f] hover:border-[#d20008] transition duration-300">Book a chat</button>
+              <button onclick="window.location.href = '{% url "consultation" %}';" class="md:px-12 md:py-4 py-2 px-5 border text-2xl font-bold bg-[#d20008] border-[#d20008] text-white rounded  hover:bg-[#b3020f] hover:border-[#d20008] transition duration-300">Book a chat</button>
             </div>
         </div>
         <div style="background-image: url('{% static "image/public/bgIndexSmall.svg" %}')" class="h-[646px] md:hidden bg-center bg-cover">
@@ -16,7 +16,7 @@
               <img src="{% static "image/public/logoHomePage.svg" %}" alt="logo" class="mb-6" width={448} height={254}/>
             </div>
               <p class="text-white text-lg font-semibold mb-5">Your Digital Transformation Partner</p>
-              <button class="md:px-12 md:py-4 py-2 px-5 border text-2xl font-bold bg-[#d20008] border-[#d20008] text-white rounded  hover:bg-[#b3020f] hover:border-[#d20008] transition duration-300">Book a chat</button>
+              <button onclick="window.location.href = '{% url "consultation" %}';" class="md:px-12 md:py-4 py-2 px-5 border text-2xl font-bold bg-[#d20008] border-[#d20008] text-white rounded  hover:bg-[#b3020f] hover:border-[#d20008] transition duration-300">Book a chat</button>
             </div>
         </div>
     {% comment %} quote {% endcomment %}
@@ -39,7 +39,7 @@
               <div class="md:mt-36 md:pl-5 col-span-1 mt-5 md-mt-0">
                 <p class="md:text-3xl hidden md:block text-xl font-semibold mb-7">Proses yang Kami Lakukan</p>
                 <p class="md:text-4xl text-2xl font-bold mb-5">Kami mandengar dan paham kebutuhan bisnis Anda</p>
-                <button class="md:px-24 px-10 py-2 border text-lg font-bold bg-[#d20008] border-[#d20008] text-white rounded hover:bg-[#b3020f] hover:border-[#d20008] transition duration-300">Detail</button>
+                <button onclick="window.location.href = '{% url "processOverview" %}';" class="md:px-24 px-10 py-2 border text-lg font-bold bg-[#d20008] border-[#d20008] text-white rounded hover:bg-[#b3020f] hover:border-[#d20008] transition duration-300">Detail</button>
               </div>
             </div>
           </div>
@@ -83,7 +83,7 @@
         <div class="bg-white  ">
           <div class="container px-20 py-14">
             <h1 class="text-center text-3xl md:text-6xl font-bold mb-14">Proyek Kami</h1>
-            <div class="md:grid md:grid-cols-3 hidden">
+            <div class="md:grid md:grid-cols-3 place-content-center place-items-center hidden">
               <div class="block max-w-xs py-5 bg-white shadow-gray-500 shadow-md hover:shadow-2xl hover:shadow-black transition duration-300 cursor-pointer">
                 <div>
                   <p class="px-6 text-xl font-semibold mb-5">Pengembangan Website</p>
@@ -202,7 +202,6 @@
               {% elif message == 'error' %}
                 <p style="color: rgb(220 38 38);" class="text-xs italic">Format Email yang Anda masukkan salah!</p>
               {% endif %}
-
             </div>
           </div>
         </div>

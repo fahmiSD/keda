@@ -27,12 +27,12 @@
             <div class="mb-8 md:mb-0">
                 <h1 class="md:text-5xl text-3xl font-bold mb-5">UNREAL ENGINE</h1>
                 <p class="mb-5">Game Engine dari Epic ini mampu menghasilkan framerate yang stabil,<br class="hidden md:block"/> grafik yang bagus, shadow, depth of field, dan mendukung DX 11.</p>
-                <Link href="/detail-unreal-engine">
+                <a href="/detailTechnologies">
                     <div class="flex items-center cursor-pointer">
                         <img src="{% static "image/public/iconDetailTechnologies.svg" %}" alt="" />
                         <p class="ml-2 font-semibold">Selengkapnya tentang UNREAL ENGINE</p>
                     </div>
-                </Link>
+                </a>
             </div>
             <img src="{% static "image/public/unreal.svg" %}" alt="" class="md:w-[281px] w-[222px] hidden md:block"/>
             <div class="flex justify-center md:hidden">
@@ -47,12 +47,12 @@
             <div class="mb-8 md:mb-0">
                 <h1 class="md:text-5xl text-3xl font-bold mb-5">My SQL</h1>
                 <p class="mb-5">Memiliki tingkat fleksibilitas tinggi terhadap teknologi dan bersifat cross<br class="hidden md:block"/> platform. Struktur tabelnya yang cenderung mudah digunakan,<br class="hidden md:block"/> menjadikan MySQL memiliki performa yang baik saat diterapkan.</p>
-                <Link href="/detail-mysql">
+                <a href="/detailMysql">
                     <div class="flex items-center cursor-pointer">
                         <img src="{% static "image/public/iconDetailTechnologies.svg" %}" alt="" />
                         <p class="ml-2 font-semibold">Selengkapnya tentang My SQL</p>
                     </div>
-                </Link>
+                </a>
             </div>
             <div class="flex justify-center md:hidden px-10">
                 <img src="{% static "image/public/mysql.svg" %}" alt="" class="w-[409px]"/>
@@ -60,25 +60,24 @@
         </div>
     {% comment %} Django {% endcomment %}
         <div class="bg-white md:h-[720px] md:flex justify-around items-center md:px-10 px-5 py-16 md:py-0">
-            <div class="md:block hidden px-10">
-              <img src="{% static "image/public/python.svg" %}" alt="" class="w-[369px]"/>
+            <div class="md:hidden px-10">
             </div>
             <div class="mb-10 md:mb-0">
                 <h1 class="md:text-5xl text-3xl font-bold mb-5">Django Python</h1>
                 <p class="mb-5">simply dummy text of the printing and typesetting industry. Lorem Ipsum <br class="hidden md:block"/>has been the industry's standard dummy text ever since the 1500s,</p>
-                <Link href="/detail-python">
+                <a href="/detailPython">
                     <div class="flex items-center cursor-pointer">
                         <img src="{% static "image/public/iconDetailTechnologies.svg" %}" alt="" />
                         <p class="ml-2 font-semibold">Selengkapnya tentang Python</p>
                     </div>
-                </Link>
+                </a>
             </div>
-            <div class="flex justify-center md:hidden px-10">
+            <div class="flex justify-center px-10">
                 <img src="{% static "image/public/python.svg" %}" alt="" class="w-[369px]"/>
             </div>
         </div>
     {% comment %} Footer {% endcomment %}
-    <div class="bg-black  ">
+      <div class="bg-black  ">
         <div class="px-7 md:px-20 md:pt-12 md:pb-5 py-10">
           <div class="md:flex md:justify-between">
             <div class="border-b md:border-none py-4">
@@ -130,27 +129,27 @@
           </div>
         </div>
     {% comment %} after footer mobile {% endcomment %}
-    <div style="background-image: url('{% static "image/public/bgAfterFooterPurpleSmall.svg" %}')" class="h-[720px] bg-center bg-cover bg-no-repeat md:hidden">
-        <div class="py-52 px-10">
-          <h1 class="text-4xl font-bold mb-4 text">Tetap Terhubung Bersama Kami</h1>
-          <p class="text-xl  mb-4">Sign up for the lat­est up­dates to our Way of Working, case stud­ies, and more.</p>
-          <div>
-            <form action="" method="POST">
-              {% csrf_token %}
-              {{form}}
-              <div class="mt-5">
-                <button type="submit" class="px-3 py-1 border bg-[#d20008] text-white text-md font-bold rounded hover:bg-[#b3020f] hover:border-[#d20008] transition duration-300">Berlangganan</button>
-              </div>
-            </form> 
+      <div style="background-image: url('{% static "image/public/bgAfterFooterPurpleSmall.svg" %}')" class="h-[720px] bg-center bg-cover bg-no-repeat md:hidden">
+          <div class="py-52 px-10">
+            <h1 class="text-4xl font-bold mb-4 text">Tetap Terhubung Bersama Kami</h1>
+            <p class="text-xl  mb-4">Sign up for the lat­est up­dates to our Way of Working, case stud­ies, and more.</p>
+            <div>
+              <form action="" method="POST">
+                {% csrf_token %}
+                {{form}}
+                <div class="mt-5">
+                  <button type="submit" class="px-3 py-1 border bg-[#d20008] text-white text-md font-bold rounded hover:bg-[#b3020f] hover:border-[#d20008] transition duration-300">Berlangganan</button>
+                </div>
+              </form> 
 
-            {% if message == 'berhasil' %}
-              <p style="color: rgb(16 185 129);" class="text-xs italic">Selamat, Anda telah berlangganan dengan kami!</p>
-            {% elif message == 'error' %}
-              <p style="color: rgb(220 38 38);" class="text-xs italic">Format Email yang Anda masukkan salah!</p>
-            {% endif %}
+              {% if message == 'berhasil' %}
+                <p style="color: rgb(16 185 129);" class="text-xs italic">Selamat, Anda telah berlangganan dengan kami!</p>
+              {% elif message == 'error' %}
+                <p style="color: rgb(220 38 38);" class="text-xs italic">Format Email yang Anda masukkan salah!</p>
+              {% endif %}
 
+            </div>
           </div>
         </div>
       </div>
-    </div>
 {% endblock content %}

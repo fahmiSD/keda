@@ -107,7 +107,7 @@
                   <p style="background-color: {{ career.career_tag_id.color_id.hex_code }};" class=" w-[132px] py-1 text-center rounded-full text-white mb-3">{{ career.career_tag_id.career_tag_name }}</p>
                   <p class="text-lg">{{ career.description|safe|truncatechars:140 }}</p>
                   <p class="text-lg font-semibold">Apply before: {{career.deadline}}</p>
-                  <Button onclick="window.location.href = '{% url "detailCareer" career.id %}';" href="" class="mt-5 py-2 w-full border bg-[#d20008] text-white rounded-md hover:bg-[#b3020f] font-medium transition duration-300">Apply Now </Button>
+                  <button onclick="window.location.href = '{% url "detailCareer" career.id %}';" href="" class="mt-5 py-2 w-full border bg-[#d20008] text-white rounded-md hover:bg-[#b3020f] font-medium transition duration-300">Apply Now </button>
                </div>
               </Card>
               
@@ -119,7 +119,7 @@
         <div style="background-image: url('{% static "image/public/backgroundDigitalTransformationTosca.svg" %}')" class="h-[283px] hidden md:block">
           <div class="container px-20 py-16">
             <img src="{% static 'image/public/YourDigitalTransfoemationPartner.svg' %}" alt="" />
-            <Button class="ml-6 mt-6 px-7 py-5 border bg-[#d20008] text-xl text-white rounded-sm hover:bg-[#b3020f] font-medium transition duration-300">Book a chat</Button>
+            <button onclick="window.location.href = '{% url "consultation" %}';" class="ml-6 mt-6 px-7 py-5 border bg-[#d20008] text-xl text-white rounded-sm hover:bg-[#b3020f] font-medium transition duration-300">Book a chat</button>
           </div>
         </div>
         <div style="background-image: url('{% static "image/public/backgroundDigitalTransformationToscaSmall.svg" %}')" class="h-[656px] bg-no-repeat bg-center bg-cover md:hidden">

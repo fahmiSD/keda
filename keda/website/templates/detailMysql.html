@@ -8,57 +8,52 @@
               <p class="ml-2 font-semibold">Kembali ke Teknologi</p>
             </div>
           </a>
-          <div class="md:flex justify-around items-center md:py-16 py-5">
-            <div class="flex justify-center mb-10">
-              <img src="{% static "image/public/unreal.svg" %}" alt="" class="md:w-[360px] w-[230px]" />
+          <div class="md:grid grid-cols-5 md:py-28 md:px-10 gap-6 px-7">
+            <div class="flex justify-center col-span-2">
+              <img src="{% static "image/public/mysql.svg" %}" alt="" class="md:w-[409px] w-[274px]" />
             </div>
-            <div class="py-7 md:py-0 px-7 md:px-0">
-              <h1 class="md:text-5xl text-4xl font-bold mb-5">UNREAL ENGINE</h1>
+            <div class="col-span-3 mt-12">
+              <h1 class="md:text-5xl text-4xl font-bold mb-5">My SQL</h1>
               <p class="mb-5">
-                Aplikasi game engine ini dibuat oleh Epic Games dan memulai
-                debutnya di
-                <br class="hidden md:block"/> tahun 1998. Diawali dengan game tembak-menembak, sekarang
-                Unreal
-                <br class="hidden md:block"/> Engine mampu membuat memvisualisasikan benda disekitar
-                Anda menjadi
-                <br class="hidden md:block"/> 3D real time.
+                Awalnya, MySQL adalah pengembangan lanjutan dari proyek UNIREG
+                yang belum terlalu kompatibel dengan database dinamis yang
+                dipakai dalam website.
                 <br />
                 <br />
-                Peningkatan yang terus terasa dari Unreal Engine adalah membuat
-                bentuk
-                <br class="hidden md:block"/> 3D semakin nyata seperti aslinya.{" "}
+                Seiring perkembangannya, MySQL menjadi sebuah database
+                management system yang menggunakan perintah dasar SQL atau
+                Structured Query Language yang cukup terkenal.{" "}
               </p>
             </div>
           </div>
         </div>
         {% comment %} Aplicate The Technologies {% endcomment %}
-        <div class="bg-[fbfbfb] md:grid md:grid-cols-2 md:px-20 md:py-14 px-7">
+        <div class="bg-[fbfbfb] md:grid grid-cols-2 md:px-20 md:py-14 py-8 px-7">
           <img
-            src="{% static "image/public/howToApplicatedTechnologies.svg" %}"
+            src="{% static "image/public/howToApplicatedTechnologies2.svg" %}"
             alt=""
             class="w-[492px] rounded"
           />
-          <div class="md:py-14 py-8">
+          <div class="md:py-16 py-5">
             <h1 class="md:text-5xl text-3xl font-bold mb-5">
               Bagaimana penerapan teknologi ini
             </h1>
             <p class="mb-5">
-              Unreal Engine mengijinkan Anda membuat proyek tanpa batas. Karena
-              tidak hanya untuk games, Unreal Engine bisa Anda terapkan untuk
-              film, arsitektur, otomotif dan transportasi, broadcast events,
-              sampai segala macam simulasi.
+              MySQL masuk ke dalam jenis Relational Database Management System,
+              sehingga istilah seperti baris, kolom, tabel, dipakai pada
+              aplikasi database ini.
             </p>
           </div>
         </div>
         {% comment %} Benefit {% endcomment %}
-        <div class="bg-white md:grid md:grid-cols-2 md:px-20 md:py-14 px-7">
-          <img src="{% static "image/public/whatAdvantage.svg" %}" alt="" class="w-[492px] rounded" />
-          <div class="md:py-20 py-8">
+        <div class="bg-white md:grid grid-cols-2 md:px-20 md:py-14 pb-8 px-7">
+          <img src="{% static "image/public/whatAdvantage2.svg" %}" alt="" class="w-[492px]" />
+          <div class="md:py-20 py-5">
             <h1 class="md:text-5xl text-3xl font-bold mb-5">Apa keuntungannya</h1>
-            <p class="mb-5">
-              Dengan menerapkan Unreal Engine Anda bisa mendapatkan gambaran
-              yang sempurna sesuai dengan aslinya. Anda bisa memperkirakan
-              simulasi secara maksimal dengan Unreal Engine ini.
+            <p class="md:pr-3">
+              Dengan menerapkan MySQL, Anda tidak membutuhkan RAM yang besar.
+              Selain itu MySQL juga mendukung integrasi dengan bahasa pemrograma
+              lain.{" "}
             </p>
           </div>
         </div>
@@ -180,5 +175,5 @@
             </div>
           </div>
         </div>
-    </div
+    </div>
 {% endblock content %}

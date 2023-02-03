@@ -1,71 +1,67 @@
 {% extends 'base.html' %} {% load static %} {% block content %} 
     <div>
         {% comment %} Detail Technologies {% endcomment %}
-        <div class="bg-white md:h-[636px] md:px-10 md:py-10">
+        <div class="bg-white md:h-[636px] md:px-10 px-7 md:py-10">
           <a href="/aboutTechnologies">
             <div class="md:flex items-center cursor-pointer hidden">
               <img src="{% static "image/public/iconDetailTechnologiesReverse.svg" %}" alt="" />
               <p class="ml-2 font-semibold">Kembali ke Teknologi</p>
             </div>
           </a>
-          <div class="md:flex justify-around items-center md:py-16 py-5">
-            <div class="flex justify-center mb-10">
-              <img src="{% static "image/public/unreal.svg" %}" alt="" class="md:w-[360px] w-[230px]" />
-            </div>
-            <div class="py-7 md:py-0 px-7 md:px-0">
-              <h1 class="md:text-5xl text-4xl font-bold mb-5">UNREAL ENGINE</h1>
+          <div class="md:grid grid-cols-5 md:py-28 md:px-10 gap-6">
+            <img
+              src="{% static "image/public/python.svg" %}"
+              alt=""
+              class="w-[409px] col-span-2 pt-16"
+            />
+            <div class="col-span-3 py-5">
+              <h1 class="text-5xl font-bold mb-5">Python</h1>
               <p class="mb-5">
-                Aplikasi game engine ini dibuat oleh Epic Games dan memulai
-                debutnya di
-                <br class="hidden md:block"/> tahun 1998. Diawali dengan game tembak-menembak, sekarang
-                Unreal
-                <br class="hidden md:block"/> Engine mampu membuat memvisualisasikan benda disekitar
-                Anda menjadi
-                <br class="hidden md:block"/> 3D real time.
+                Dibuat tahun 2003, Django sendiri baru dirilis versi pertamanya
+                tahun 2008. Karena Django adalah suatu kerangka full-stack untuk
+                membuat aplikasi web dengan bahasa pemrograman Python.
                 <br />
                 <br />
-                Peningkatan yang terus terasa dari Unreal Engine adalah membuat
-                bentuk
-                <br class="hidden md:block"/> 3D semakin nyata seperti aslinya.{" "}
+                Sampai di tahun 2019 baru muncul versi keduanya.{" "}
               </p>
             </div>
           </div>
         </div>
         {% comment %} Aplicate The Technologies {% endcomment %}
-        <div class="bg-[fbfbfb] md:grid md:grid-cols-2 md:px-20 md:py-14 px-7">
+        <div class="bg-[fbfbfb] md:grid grid-cols-2 md:px-20 px-7 md:py-14">
           <img
-            src="{% static "image/public/howToApplicatedTechnologies.svg" %}"
+            src="{% static "image/public/howToApplicatedTechnologies3.svg" %}"
             alt=""
-            class="w-[492px] rounded"
+            class="w-[492px]"
           />
-          <div class="md:py-14 py-8">
+          <div class="md:py-16 py-5">
             <h1 class="md:text-5xl text-3xl font-bold mb-5">
               Bagaimana penerapan teknologi ini
             </h1>
             <p class="mb-5">
-              Unreal Engine mengijinkan Anda membuat proyek tanpa batas. Karena
-              tidak hanya untuk games, Unreal Engine bisa Anda terapkan untuk
-              film, arsitektur, otomotif dan transportasi, broadcast events,
-              sampai segala macam simulasi.
+              Django juga adalah kerangka kerja python web tingkat tinggi yang
+              dapat melakukan pengembangan aplikasi dengan cepat dan memiliki
+              desain pragmatis yang bersih.{" "}
             </p>
           </div>
         </div>
         {% comment %} Benefit {% endcomment %}
-        <div class="bg-white md:grid md:grid-cols-2 md:px-20 md:py-14 px-7">
-          <img src="{% static "image/public/whatAdvantage.svg" %}" alt="" class="w-[492px] rounded" />
-          <div class="md:py-20 py-8">
+        <div class="bg-white md:grid grid-cols-2 md:px-20 md:py-14 px-7">
+          <img src="{% static "image/public/whatAdvantage3.svg" %}" alt="" class="w-[492px]" />
+          <div class="md:py-20 py-5">
             <h1 class="md:text-5xl text-3xl font-bold mb-5">Apa keuntungannya</h1>
-            <p class="mb-5">
-              Dengan menerapkan Unreal Engine Anda bisa mendapatkan gambaran
-              yang sempurna sesuai dengan aslinya. Anda bisa memperkirakan
-              simulasi secara maksimal dengan Unreal Engine ini.
+            <p class="md:pr-3">
+              Django cocok untuk segala ukuran project Anda, mulai dari project
+              kecil sampai yang besar. Django juga memiliki banyak fitur
+              dibandingkan dengan frameworks lainnya, sehingga Django mampu
+              memuat banyak hal yang dibutuhkan untuk mebangun suatu aplikasi.{" "}
             </p>
           </div>
         </div>
         {% comment %} Our Project {% endcomment %}
           <div class="bg-white  ">
-          <div class="container md:px-20 px-6 md:py-14">
-            <h1 class="text-center text-3xl md:text-6xl font-bold mb-14">Proyek kami yang memakai UNREAL Engine</h1>
+          <div class="md:px-20 px-6 md:py-14">
+            <h1 class="text-center text-3xl md:text-6xl font-bold mb-14">Proyek kami yang memakai Python</h1>
             <div class="md:grid md:grid-cols-3 place-content-center place-items-center hidden">
               <div class="block max-w-xs py-5 bg-white shadow-gray-500 shadow-md hover:shadow-2xl hover:shadow-black transition duration-300 cursor-pointer">
                 <div>

@@ -466,3 +466,9 @@ def detailProject(request):
 
 def detailTechnologies(request):
     return render(request, 'detailTechnologies.html')
+
+def detailMysql(request):
+    return render(request, 'detailMysql.html')
+
+def detailPython(request):
+    return render(request, 'detailPython.html')
