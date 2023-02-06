@@ -94,7 +94,7 @@
                 <div class="md:flex justify-around gap-24 items-center">
                     <div class="mb-5">
                         <p class="hidden md:block">WayFinder Indonesia</p>
-                        <h1 class="md:w-[570px] w-[276px] font-bold text-3xl md:text-5xl leading-tight md:leading-normal">Sistem indoor navigasi 
+                        <h1 class="md:w-[570px] font-bold text-3xl md:text-5xl leading-tight md:leading-normal">Sistem indoor navigasi 
                         yang terintegrasi dengan 
                         sistem manufaktur.</h1>
                     </div>
@@ -119,7 +119,7 @@
         </div>
       {% comment %} Understanding The Problem {% endcomment %}
         <div class="md:grid grid-cols-2 md:px-10 px-5 py-10 md:py-32 place-content-center place-items-center bg-[#fbfbfb]">
-            <div class="flex flex-col md:gap-4">
+            <div class="flex flex-col">
                 <h1 class="font-bold md:text-4xl text-3xl mb-6">Understanding the prob­lem</h1>
                 <img src="{% static "image/public/underStandingTheProblem.svg" %}" alt="" class="w-[492px] rounded-md mb-6"/>
                 <div class="md:flex justify-end items-center gap-3 hidden">
@@ -134,7 +134,7 @@
         </div>
       {% comment %} Understanding The Problem {% endcomment %}
         <div class="md:grid grid-cols-2 md:px-10 px-5 py-10 md:py-32 place-content-center place-items-center">
-            <div class="flex flex-col md:gap-4">
+            <div class="flex flex-col">
                 <h1 class="font-bold md:text-4xl text-3xl mb-6">Pembuatan Ide</h1>
                 <img src="{% static "image/public/pembuatanIde.svg" %}" alt="" class="w-[492px] rounded-md mb-6"/>
                 <div class="md:flex justify-end items-center gap-3 hidden">
@@ -148,7 +148,7 @@
         </div>
         {% comment %} Understanding The Problem {% endcomment %}
         <div class="md:grid grid-cols-2 md:px-10 px-5 py-10 md:py-32 place-content-center place-items-center bg-[#fbfbfb]">
-            <div class="flex flex-col md:gap-4">
+            <div class="flex flex-col">
                 <h1 class="font-bold md:text-4xl text-3xl mb-6">Solusi</h1>
                 <img src="{% static "image/public/solusii.svg" %}" alt="" class="w-[492px] rounded-md mb-6"/>
                 <div class="md:flex justify-end items-center gap-3 hidden">
@@ -167,7 +167,7 @@
             <p class="md:text-xl">Richard Moran, IT Project Coordinator</p>
         </div>
         {% comment %} Our Project {% endcomment %}
-        <div class="bg-white  ">
+        <div class="bg-white hidden md:block">
           <div class=" px-20 py-14">
             <h1 class="text-center text-3xl md:text-6xl font-bold mb-14">Proyek Kami</h1>
             <div class="md:grid md:grid-cols-3 hidden place-content-center place-items-center">
@@ -205,6 +205,68 @@
                 <div class="px-7">
                   <h3 class="text-3xl font-bold mb-3">Container Loader</h3>
                   <p>Sebuah software simulasi yang mampu menghitung secara optimal tentang konfigurasi barang yang masuk dalam kargo atau kontainer.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% comment %} Our Project Mobile{% endcomment %}
+        <div id="carouselExampleCaptions" class="carousel slide relative md:hidden" data-bs-ride="carousel">
+          <h1 class="text-center text-3xl md:text-6xl font-bold">Proyek Kami</h1>
+          <div class="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4">
+            <button
+              type="button"
+              data-bs-target="#carouselExampleCaptions"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleCaptions"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleCaptions"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleCaptions"
+              data-bs-slide-to="3"
+              aria-label="Slide 4"
+            ></button>
+          </div>
+          <div class="carousel-inner relative w-full overflow-hidden">
+            <div class="carousel-item active relative float-left w-full">
+              <div class="py-10 px-10">
+                <div style="background-image: url('https://mdbootstrap.com/img/Photos/Slides/img%20(15).jpg')" class="h-[280px]">
+                  <img src=""/>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item relative float-left w-full">
+              <div class="py-10 px-10">
+                <div style="background-image: url('https://mdbootstrap.com/img/Photos/Slides/img%20(15).jpg')" class="h-[280px]">
+                  <img src=""/>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item relative float-left w-full">
+              <div class="py-10 px-10">
+                <div style="background-image: url('https://mdbootstrap.com/img/Photos/Slides/img%20(15).jpg')" class="h-[280px]">
+                  <img src=""/>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item relative float-left w-full">
+              <div class="py-10 px-10">
+                <div style="background-image: url('https://mdbootstrap.com/img/Photos/Slides/img%20(15).jpg')" class="h-[280px]">
+                  <img src=""/>
                 </div>
               </div>
             </div>
